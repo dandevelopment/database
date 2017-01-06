@@ -41,37 +41,75 @@
 
 </style>
 <body style="font-family:Verdana;">
-<div style="border-bottom:solid;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);top:0;position:absolute;width:100%;padding:20px;">Dashboard</div><div style="margin-top:50px;"></div>
-<div class="itemz" style="width:25%" id="visitreward">
+<div style="border-bottom:solid;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);top:0;position:absolute;width:100%;padding:20px;"><img src="https://cdn3.iconfinder.com/data/icons/streamline-icon-set-free-pack/48/Streamline-18-128.png"style="width:30px;float-left;margin-right:10px;">Dashboard</div><div style="margin-top:70px;"></div>
+<div style="border-bottom:solid;margin-top:0px;"id="space"></div>
+<div class="itemz" style="width:25%" id="manage">
     <div class="tpof" style="background:cornflowerblue">
       Manage
     </div>
-		<img style="width:100px;float:left;margin:5px" src="http://www.doplussoftware.com/images/staff.png">
+		<img style="width:100px;float:left;margin:5px" src="http://simpleicon.com/wp-content/uploads/users.png">
     <div style="margin:7%;width:93%">
        Manage People
-      <a href="manage.html" onclick="" class="button">Manage</a>
+      <a href="#manage.html" onclick="" class="button"id="manage-button">Manage</a>
     </div>
 		</div>
-<div class="itemz" style="width:25%" id="visitreward">
+<div class="itemz" style="width:25%" id="attendance">
     <div class="tpof" style="background:cornflowerblue">
       Attendance
     </div>
 		<img style="width:100px;float:left;margin:5px" src="http://image.flaticon.com/icons/png/512/2/2123.png">
     <div style="margin:7%;width:93%">
        Take Attendance
-      <a href="manage.html" onclick="" class="button">Take</a>
+      <a href="#attendance.html" onclick="" class="button"id="attendance-button">Take</a>
     </div>
 		</div>
-    <div class="itemz" style="width:25%" id="visitreward">
+    <div class="itemz" style="width:25%" id="logs">
     <div class="tpof" style="background:cornflowerblue">
       Logs
     </div>
 		<img style="width:100px;float:left;margin:5px" src="https://image.freepik.com/free-icon/log-file-format_318-45052.jpg">
     <div style="margin:7%;width:93%">
        View Logs
-      <a href="manage.html" onclick="" class="button">View</a>
+      <a href="#log.html" onclick="" class="button" id="log-button">View</a>
     </div>
 		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
+	<script>$(document).ready(function(){
+    $("#manage-button").click(function(){
+        $("#space").animate({
+           // left: '250px',
+            //opacity: '0.5',
+						//top:100,
+            height: '500px'
+            //width: '150px'
+        },3000);
+				setspace('manage.html')
+    });
+		 $("#attendance-button").click(function(){
+        $("#space").animate({
+           // left: '250px',
+            //opacity: '0.5',
+						//top:100,
+            height: '500px'
+            //width: '150px'
+        },3000);
+				setspace('attendance.html')
+    });
+				 $("#log-button").click(function(){
+        $("#space").animate({
+           // left: '250px',
+            //opacity: '0.5',
+						//top:100,
+            height: '500px'
+            //width: '150px'
+        },3000);
+				setspace('log.html')
+    });
+});
+function setspace(pop){
+document.getElementById('space').innerHTML = '<iframe src="'+pop+'style="border-none;"width="900"height="495"></iframe>'
+}</script>
 </head>
 </html>
