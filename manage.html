@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>Manage</title><style>
- .button {
+.button {
   background-color: #1e90ff;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -44,45 +44,88 @@
   border-width: 1px;
   border-color: grey;
   padding: 10px;
-	height:30px;
+  height: 30px;
 }
-.options{
-	width:30%;float:left;
+
+.options {
+  width: 30%;
+  float: left;
+  overflow: hidden;
+  height: 20px;
 }
+
   </style>
 </head>
 <body style="font-family:Verdana">
-  <div style="position:absolute;top:0;width:100%;border-bottom:solid;padding:20px;background-color:white;">Tools<img src="http://downloadicons.net/sites/default/files/plus-icon-27951.png" style="width:20px;padding-left:20px"><img src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png" style="padding-left:20px;width:20px;"></div>
-  <div style="height:70px;"></div>
-	<div style="width:30%;text-align:center;float:left;">Name</div>
-	<div style="width:30%;text-align:center;float:left;">Option2</div>
-	<div style="width:30%;text-align:center;float:left;">Option3</div>
-  <div id="peoplearea"style="margin-top:20px;">
-    
+  <div style="position:absolute;top:0;width:100%;border-bottom:solid;padding:20px;background-color:white;">Tools<img src="http://downloadicons.net/sites/default/files/plus-icon-27951.png" style="width:20px;padding-left:20px" onclick="document.getElementById('addArea').style.display = 'block'"id="sut"><img src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png" style="padding-left:20px;width:20px;"
+    onclick="deleteData()">
+    <img src="https://image.freepik.com/free-icon/height-size-symbol-of-a-square-with-arrows_318-32351.jpg" style="padding-right:50px;width:20px;float:right" onclick="changeMargin()"><img src="http://www.pixempire.com/images/preview/central-alignment-icon.jpg"
+    style="padding-right:20px;width:20px;float:right;" onclick="align()"></div>
+  <div style="#efefef">
+    <div style="height:70px;"></div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px">Name</div>
+    <div class="options"style="background-color:#777777;color:white;padding:10px">Option2</div>
+    <div class="options"style="background-color:#777777;color:white;padding:10px">Option3</div>
+    <div class="person" id="addArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <div class="options">Name:</div>
+      <div class="options">Option2:</div>
+      <div class="options">Option3:</div>
+    </div>
+    <div id="peoplearea" style="margin-top:40px;">
+    </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
+
 <script>
-	//𐌀
+//𐌀
 //𐌁
 //𐌂
 //𐌃
-if (/*getCookie('users')*/' ' == '') {
-  document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
-} else {
-var i = 0;
- var tosplite = 'Dan 𐌁 sopt 𐌂 topt 𐌀 And 𐌁 sopt 𐌂 topt 𐌀 The rest of them 𐌁 sopt 𐌂 topt 𐌀 '//getCookie('users')
- var data = tosplite.split('𐌀')
- while(i < data.length-1){
- var Namex = data[i].split('𐌁')[0]
- var secd = data[i].split('𐌁')[1]
- var option2 = secd.split('𐌂')[0]
- var option3 = secd.split('𐌂')[1]
- document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options">'+Namex+'</div><div class="options">'+option2+'</div><div class="options">'+option3+'</div></div>'
- i++
- }
+function loadData(actionz) {
+  if ( /*getCookie('users')*/ ' ' == '') {
+    document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
+  } else {
+    var i = 0;
+    var tosplite = 'Dan 𐌁 sopt 𐌂 topt 𐌀 And 𐌁 sopt 𐌂 topt 𐌀 The rest of them 𐌁 sopt 𐌂 topt 𐌀 ' //getCookie('users')
+    var data = tosplite.split('𐌀')
+    while (i < data.length - 1) {
+      var Namex = data[i].split('𐌁')[0]
+      var secd = data[i].split('𐌁')[1]
+      var option2 = secd.split('𐌂')[0]
+      var option3 = secd.split('𐌂')[1]
+      document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options">' + Namex + '</div><div class="options">' + option2 + '</div><div class="options">' + option3 + '</div></div>'
+      i++
+    }
+  }
 }
-
-
+loadData('none')
+//document.getElementById('addArea').style.display = 'none';
+$("#addArea").animate({
+           // left: '250px',
+            //opacity: '0.5',
+						//top:100,
+            width: '1%'
+            //width: '150px'
+        },2000);
+				document.getElementById('addArea').style.display = 'none'
+function adddatad() {
+ // console.log('add')
+ // document.getElementById('addArea').style.display = 'block'
+	//document.getElementById('addArea').style.width = '0px'
+}
+$(document).ready(function(){
+    $("#sut").click(function(){
+		document.getElementById('addArea').style.display = 'block'
+		$("#addArea").animate({
+           // left: '250px',
+            //opacity: '0.5',
+						//top:100,
+            width: '100%'
+            //width: '150px'
+        },3000);
+				})
+				})
 function getCookie(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
@@ -97,5 +140,6 @@ function getCookie(cname) {
   }
   return "";
 }
+
 </script>
 </html>
