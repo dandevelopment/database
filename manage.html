@@ -112,36 +112,29 @@ setData('1','TestName','TestOption2','TestOption3','TestOption3')
 setInterval(function() {
   loadData()
 }, 100)
-
 function loadData() {
   if (getCookie('1') == '') {
     document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
   } else {
 	var i = 1
    while(getCookie(i) != ''){
-	   alert(getCookie(i))
 	 document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
-      i++	 
+i++	 
    }
   }
 }
-
 $("#addArea").animate({
   width: '0%',
   height: '0px',
   padding: '0px'
 }, 1);
 document.getElementById('addArea').style.display = 'none';
-
 $("#deleteArea").animate({
   width: '0%',
   height: '0px',
   padding: '0px'
 }, 1);
 document.getElementById('deleteArea').style.display = 'none';
-
-
-
 $("#sut").click(function() {
   document.getElementById('addArea').style.display = 'block'
   $("#addArea").animate({
@@ -167,8 +160,6 @@ $("#finishAdd").click(function() {
     }, 3000)
     //setCookie('data',document.getElementById(''))
 })
-
-
 $("#deleteData").click(function() {
   document.getElementById('deleteArea').style.display = 'block'
   $("#deleteArea").animate({
@@ -199,7 +190,6 @@ $("#finishDelete").click(function() {
         var order = ''
         var seleteda = 0;
         var del = 'false'
-
         function loadData(actionz) {
           del = 'false'
           if (actionz == 'add') {
@@ -217,7 +207,6 @@ $("#finishDelete").click(function() {
             document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
           } else {
             var i = 0;
-
             var data = tosplite.split('𐌀')
               //if (order == 'reverse') {
               // data = data.reverse()
@@ -252,7 +241,6 @@ $("#finishDelete").click(function() {
             //width: '150px'
         }, 1);
         document.getElementById('addArea').style.display = 'none'
-
         document.getElementById('deleteArea').style.display = 'none'
         $("#deleteArea").animate({
           // left: '250px',
@@ -263,8 +251,6 @@ $("#finishDelete").click(function() {
           padding: '0px'
             //width: '150px'
         }, 1);
-
-
         function adddatad() {
           // console.log('add')
           // document.getElementById('addArea').style.display = 'block'
@@ -329,7 +315,6 @@ $("#finishDelete").click(function() {
           $("#changeOrder").click(function() {
             console.log('ordered')
             loadData('order')
-
           })
         })
 */
@@ -347,580 +332,10 @@ function getCookie(cname) {
   }
   return "";
 }
-
 function setCookie(cname, val) {
   document.cookie = cname + '=' + val + ';'
   return ''
 }
-
-function setData(ID, Name, Option2, Option3) {
-  if (Name == '') {
-    Name = 'NAME:' + getData(ID, 'Name')
-  }
-  if (Option2 == '') {
-    Name = 'Option2:' + getData(ID, 'Option2')
-  }
-  if (Option3 == '') {
-    Name = 'Option3:' + getData(ID, 'Option3')
-  }
-  document.cookie = ID + '=' + Name + Option2 + Option3
-	return 'set.'
-}
-
-function getData(Id, Data) {
-  var Type = getCookie(Id)
-  if (Data == 'Name') {
-    return Type.split('NAME:')[1].split('|')[0]
-  }
-  if (Data == 'Option2') {
-    return Type.split('OPTION2:')[1].split('|')[0]
-  }
-  if (Data == 'Option3') {
-    return Type.split('OPTION3:')[1].split('|')[0]
-  }
-	return ''
-}
-/*
-    var ie = 0
-//𐌀
-//𐌁
-//𐌂
-//𐌃
-//𐌄
-setData('1','TestName','TestOption2','TestOption3','TestOption3')
-setInterval(function() {
-  loadData()
-}, 100)
-
-function loadData() {
-  if (getCookie('1') == '') {
-    document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
-  } else {
-	var i = 1
-   while(getCookie(i) != ''){
-	 document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
-	 }
-  }
-}
-
-$("#addArea").animate({
-  width: '0%',
-  height: '0px',
-  padding: '0px'
-}, 1);
-document.getElementById('addArea').style.display = 'none';
-
-$("#deleteArea").animate({
-  width: '0%',
-  height: '0px',
-  padding: '0px'
-}, 1);
-document.getElementById('deleteArea').style.display = 'none';
-
-
-
-$("#sut").click(function() {
-  document.getElementById('addArea').style.display = 'block'
-  $("#addArea").animate({
-    width: '100%',
-    top: '50px'
-  }, 2000);
-  $("#addArea").animate({
-    padding: '10px',
-    height: '30px'
-  }, 500);
-})
-$("#finishAdd").click(function() {
-  $("#addArea").animate({
-    height: '0px',
-    padding: '0px'
-  }, 1000);
-  $("#addArea").animate({
-    width: '0px',
-    top: '0px'
-  }, 2000);
-  setTimeout(function() {
-      document.getElementById('addArea').style.display = 'none'
-    }, 3000)
-    //setCookie('data',document.getElementById(''))
-})
-
-
-$("#deleteData").click(function() {
-  document.getElementById('deleteArea').style.display = 'block'
-  $("#deleteArea").animate({
-    width: '100%',
-    top: '50px'
-  }, 2000);
-  $("#deleteArea").animate({
-    padding: '10px',
-    height: '30px'
-  }, 500);
-  loadData('delete')
-})
-$("#finishDelete").click(function() {
-    $("#deleteArea").animate({
-      height: '0px',
-      padding: '0px'
-    }, 1000);
-    $("#deleteArea").animate({
-      width: '0px',
-      top: '0px'
-    }, 2000);
-    setTimeout(function() {
-      document.getElementById('deleteArea').style.display = 'none'
-    }, 3000)
-  })
-  /*
-        var tosplite = 'Dan 𐌁 sopt 𐌂 topt 𐌃1𐌄  𐌀 And 𐌁 sopt 𐌂 topt 𐌃2𐌄  𐌀 The rest of them 𐌁 sopt 𐌂 topt 𐌃3𐌄  𐌀 ' //getCookie('users')
-        var order = ''
-        var seleteda = 0;
-        var del = 'false'
-
-        function loadData(actionz) {
-          del = 'false'
-          if (actionz == 'add') {
-            document.getElementById('peoplearea').innerHTML = ''
-          }
-          if (actionz == 'order') {
-            document.getElementById('peoplearea').innerHTML = ''
-          }
-          if (actionz == 'delete') {
-            document.getElementById('peoplearea').innerHTML = ''
-            del = 'true';
-          }
-          console.log(del)
-          if (tosplite == '') {
-            document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
-          } else {
-            var i = 0;
-
-            var data = tosplite.split('𐌀')
-              //if (order == 'reverse') {
-              // data = data.reverse()
-              //}<input type="checkbox"> name="" value=""> checked>
-            while (i < data.length - 1) {
-              var Namex = data[i].split('𐌁')[0]
-              var secd = data[i].split('𐌁')[1]
-              var option2 = secd.split('𐌂')[0]
-        			var secd2 = secd.split('𐌂')[1]
-              var option3 = secd.split('𐌃')[0]
-        			var secd3 = secd.split('𐌃')[1]
-        			var id = secd.split('𐌄')[0]
-        			var placeholder = secd.split('𐌄')[1]
-              if (del != 'true') {
-                document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options" >' + Namex + '</div><div class="options">' + option2 + '</div><div class="options">' + option3 + '</div></div>'
-              } else {
-                document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="delcheck' + i + '"name="'++'"><div class="options" style="">' + Namex + '</div><div class="options">' + option2 + '</div><div class="options">' + option3 + '</div></div>'
-              }
-              i++
-            }
-          }
-        }
-        loadData('none')
-          //document.getElementById('addArea').style.display = 'none';
-        $("#addArea").animate({
-          // left: '250px',
-          //opacity: '0.5',
-          //top:100,
-          width: '0%',
-          height: '0px',
-          padding: '0px'
-            //width: '150px'
-        }, 1);
-        document.getElementById('addArea').style.display = 'none'
-
-        document.getElementById('deleteArea').style.display = 'none'
-        $("#deleteArea").animate({
-          // left: '250px',
-          //opacity: '0.5',
-          //top:100,
-          width: '0%',
-          height: '0px',
-          padding: '0px'
-            //width: '150px'
-        }, 1);
-
-
-        function adddatad() {
-          // console.log('add')
-          // document.getElementById('addArea').style.display = 'block'
-          //document.getElementById('addArea').style.width = '0px'
-        }
-        $(document).ready(function() {
-          $("#sut").click(function() {
-            document.getElementById('addArea').style.display = 'block'
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              width: '100%',
-              top: '50px'
-                //width: '150px'
-            }, 2000);
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              padding: '10px',
-              height: '30px'
-                //width: '150px'
-            }, 500);
-          })
-          $("#finishAdd").click(function() {
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              height: '0px',
-              padding: '0px'
-                //width:'150px'
-            }, 1000);
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              width: '0px',
-              top: '0px'
-                //width:'150px'
-            }, 2000);
-            setTimeout(function() {
-              document.getElementById('addArea').style.display = 'none'
-            }, 3000)
-        		var tempid = ''
-        		var i6 = 1
-        		
-        		
-        		while (tosplite.split('𐌃')[i6].split('𐌄')[0] != '') {
-        		  
-        		}
-            tosplite = tosplite + '' + document.getElementById('addname').value
-            tosplite = tosplite + '𐌁' + document.getElementById('addoption2').value
-            tosplite = tosplite + '𐌂' + document.getElementById('addoption3').value + '𐌃' + tempid + '𐌄'
-            tosplite = tosplite + '𐌀'
-            document.getElementById('addname').value = ''
-            document.getElementById('addoption2').value = ''
-            document.getElementById('addoption3').value = ''
-            loadData('add')
-          })
-          $("#changeOrder").click(function() {
-            console.log('ordered')
-            loadData('order')
-
-          })
-        })
-*/
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function setCookie(cname, val) {
-  document.cookie = cname + '=' + val + ';'
-  return ''
-}
-
-function setData(ID, Name, Option2, Option3) {
-  if (Name == '') {
-    Name = 'NAME:' + getData(ID, 'Name')
-  }
-  if (Option2 == '') {
-    Name = 'OPTION2:' + getData(ID, 'Option2')
-  }
-  if (Option3 == '') {
-    Name = 'OPTION3:' + getData(ID, 'Option3')
-  }
-  setCookie(ID, Name + Option2 + Option3)
-	return 'set.'
-}
-
-function getData(Id, Data) {
-  var Type = getCookie(Id)
-  if (Data == 'Name') {
-    return Type.split('NAME:')[1].split('|')[0]
-  }
-  if (Data == 'Option2') {
-    return Type.split('OPTION2:')[1].split('|')[0]
-  }
-  if (Data == 'Option3') {
-    return Type.split('OPTION3:')[1].split('|')[0]
-  }
-	return ''
-}
-/*
-    var ie = 0
-    $("#align").click(function() {
-      var mySpan = $('style');
-      while (ie < document.getElementsByClassName('options').length + 1) {
-        //console.log(document.getElementsByClassName('options')[ie].style)
-        document.getElementsByClassName('options')[ie].style.text.align = 'text-align:center;'
-        ie++
-        //console.log(document.getElementsByClassName('options')[ie-1].style)
-      }
-      //alert($('style')[0].outerHTML);
-    })
-    $(document).ready(function() {
-      $("#deleteData").click(function() {
-        document.getElementById('deleteArea').style.display = 'block'
-        $("#deleteArea").animate({
-//𐌀
-//𐌁
-//𐌂
-//𐌃
-//𐌄
-setData('1','TestName','TestOption2','TestOption3','TestOption3')
-setInterval(function() {
-  loadData()
-}, 100)
-
-function loadData() {
-  if (getCookie('1') == '') {
-    document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
-  } else {
-	var i = 1
-   while(getCookie(i) != ''){
-	 document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
-	 }
-  }
-}
-
-$("#addArea").animate({
-  width: '0%',
-  height: '0px',
-  padding: '0px'
-}, 1);
-document.getElementById('addArea').style.display = 'none';
-
-$("#deleteArea").animate({
-  width: '0%',
-  height: '0px',
-  padding: '0px'
-}, 1);
-document.getElementById('deleteArea').style.display = 'none';
-
-
-
-$("#sut").click(function() {
-  document.getElementById('addArea').style.display = 'block'
-  $("#addArea").animate({
-    width: '100%',
-    top: '50px'
-  }, 2000);
-  $("#addArea").animate({
-    padding: '10px',
-    height: '30px'
-  }, 500);
-})
-$("#finishAdd").click(function() {
-  $("#addArea").animate({
-    height: '0px',
-    padding: '0px'
-  }, 1000);
-  $("#addArea").animate({
-    width: '0px',
-    top: '0px'
-  }, 2000);
-  setTimeout(function() {
-      document.getElementById('addArea').style.display = 'none'
-    }, 3000)
-    //setCookie('data',document.getElementById(''))
-})
-
-
-$("#deleteData").click(function() {
-  document.getElementById('deleteArea').style.display = 'block'
-  $("#deleteArea").animate({
-    width: '100%',
-    top: '50px'
-  }, 2000);
-  $("#deleteArea").animate({
-    padding: '10px',
-    height: '30px'
-  }, 500);
-  loadData('delete')
-})
-$("#finishDelete").click(function() {
-    $("#deleteArea").animate({
-      height: '0px',
-      padding: '0px'
-    }, 1000);
-    $("#deleteArea").animate({
-      width: '0px',
-      top: '0px'
-    }, 2000);
-    setTimeout(function() {
-      document.getElementById('deleteArea').style.display = 'none'
-    }, 3000)
-  })
-  /*
-        var tosplite = 'Dan 𐌁 sopt 𐌂 topt 𐌃1𐌄  𐌀 And 𐌁 sopt 𐌂 topt 𐌃2𐌄  𐌀 The rest of them 𐌁 sopt 𐌂 topt 𐌃3𐌄  𐌀 ' //getCookie('users')
-        var order = ''
-        var seleteda = 0;
-        var del = 'false'
-
-        function loadData(actionz) {
-          del = 'false'
-          if (actionz == 'add') {
-            document.getElementById('peoplearea').innerHTML = ''
-          }
-          if (actionz == 'order') {
-            document.getElementById('peoplearea').innerHTML = ''
-          }
-          if (actionz == 'delete') {
-            document.getElementById('peoplearea').innerHTML = ''
-            del = 'true';
-          }
-          console.log(del)
-          if (tosplite == '') {
-            document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
-          } else {
-            var i = 0;
-
-            var data = tosplite.split('𐌀')
-              //if (order == 'reverse') {
-              // data = data.reverse()
-              //}<input type="checkbox"> name="" value=""> checked>
-            while (i < data.length - 1) {
-              var Namex = data[i].split('𐌁')[0]
-              var secd = data[i].split('𐌁')[1]
-              var option2 = secd.split('𐌂')[0]
-        			var secd2 = secd.split('𐌂')[1]
-              var option3 = secd.split('𐌃')[0]
-        			var secd3 = secd.split('𐌃')[1]
-        			var id = secd.split('𐌄')[0]
-        			var placeholder = secd.split('𐌄')[1]
-              if (del != 'true') {
-                document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options" >' + Namex + '</div><div class="options">' + option2 + '</div><div class="options">' + option3 + '</div></div>'
-              } else {
-                document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="delcheck' + i + '"name="'++'"><div class="options" style="">' + Namex + '</div><div class="options">' + option2 + '</div><div class="options">' + option3 + '</div></div>'
-              }
-              i++
-            }
-          }
-        }
-        loadData('none')
-          //document.getElementById('addArea').style.display = 'none';
-        $("#addArea").animate({
-          // left: '250px',
-          //opacity: '0.5',
-          //top:100,
-          width: '0%',
-          height: '0px',
-          padding: '0px'
-            //width: '150px'
-        }, 1);
-        document.getElementById('addArea').style.display = 'none'
-
-        document.getElementById('deleteArea').style.display = 'none'
-        $("#deleteArea").animate({
-          // left: '250px',
-          //opacity: '0.5',
-          //top:100,
-          width: '0%',
-          height: '0px',
-          padding: '0px'
-            //width: '150px'
-        }, 1);
-
-
-        function adddatad() {
-          // console.log('add')
-          // document.getElementById('addArea').style.display = 'block'
-          //document.getElementById('addArea').style.width = '0px'
-        }
-        $(document).ready(function() {
-          $("#sut").click(function() {
-            document.getElementById('addArea').style.display = 'block'
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              width: '100%',
-              top: '50px'
-                //width: '150px'
-            }, 2000);
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              padding: '10px',
-              height: '30px'
-                //width: '150px'
-            }, 500);
-          })
-          $("#finishAdd").click(function() {
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              height: '0px',
-              padding: '0px'
-                //width:'150px'
-            }, 1000);
-            $("#addArea").animate({
-              // left: '250px',
-              //opacity: '0.5',
-              //top:100,
-              width: '0px',
-              top: '0px'
-                //width:'150px'
-            }, 2000);
-            setTimeout(function() {
-              document.getElementById('addArea').style.display = 'none'
-            }, 3000)
-        		var tempid = ''
-        		var i6 = 1
-        		
-        		
-        		while (tosplite.split('𐌃')[i6].split('𐌄')[0] != '') {
-        		  
-        		}
-            tosplite = tosplite + '' + document.getElementById('addname').value
-            tosplite = tosplite + '𐌁' + document.getElementById('addoption2').value
-            tosplite = tosplite + '𐌂' + document.getElementById('addoption3').value + '𐌃' + tempid + '𐌄'
-            tosplite = tosplite + '𐌀'
-            document.getElementById('addname').value = ''
-            document.getElementById('addoption2').value = ''
-            document.getElementById('addoption3').value = ''
-            loadData('add')
-          })
-          $("#changeOrder").click(function() {
-            console.log('ordered')
-            loadData('order')
-
-          })
-        })
-*/
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function setCookie(cname, val) {
-  document.cookie = cname + '=' + val + ';'
-  return ''
-}
-
 function setData(ID, Name, Option2, Option3) {
   if (Name == '') {
     Name = 'NAME:' + getData(ID, 'Name')
@@ -940,7 +355,6 @@ function setData(ID, Name, Option2, Option3) {
   setCookie(ID, Name + Option2 + Option3)
 	return 'set.'
 }
-
 function getData(Id, Data) {
   var Type = getCookie(Id)
   if (Data == 'Name') {
