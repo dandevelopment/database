@@ -120,7 +120,8 @@ function loadData() {
 	var i = 1
    while(getCookie(i) != ''){
 	 document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
-	 }
+      i++	 
+   }
   }
 }
 
