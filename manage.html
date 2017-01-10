@@ -79,7 +79,7 @@
     <div class="options" style="background-color:#777777;color:white;padding:10px">Option2</div>
     <div class="options" style="background-color:#777777;color:white;padding:10px">Option3</div>
 
-    <div class="person" id="addArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div class="person" id="addArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);bottom:0;position:absolute;background-color:white;">
       <div style="background-color:#e5e3e3">
         <div class="options">Name:
           <input class="add-input" type="text" placeholder="Name" id="addname" style="">
@@ -92,7 +92,7 @@
       </div>
       <div style="float:right;" class="button" id="finishAdd">add</div>
     </div>
-    <div class="person" id="deleteArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);"><b><span style="font-size:30px;"id="sels"></span></b>
+    <div class="person" id="deleteArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);bottom:0;position:absolute;background-color:white;"><b><span style="font-size:30px;"id="sels"></span></b>
       <input type="checkbox" id="selectAll" style="margin-left:20px;"><span id="selectAllText">Select All</span>
       <div style="float:right;background-color:red" class="button" id="finishDelete">Delete</div>
     </div>
@@ -100,7 +100,9 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://dandevelopment.github.io/database/tools.js"></script>
 </body>
+
 
 
 <script>
@@ -194,7 +196,7 @@ $("#sut").click(function() {
   document.getElementById('addArea').style.display = 'block'
   $("#addArea").animate({
     width: '100%',
-    top: '50px'
+    bottom: '0px'
   }, 1000);
   $("#addArea").animate({
     padding: '10px',
@@ -229,8 +231,8 @@ $("#finishAdd").click(function() {
 $("#deleteData").click(function() {
   document.getElementById('deleteArea').style.display = 'block'
   $("#deleteArea").animate({
-    width: '100%',
-    top: '50px'
+    width: '100%'//,
+   // top: '50px'
   }, 1000);
   $("#deleteArea").animate({
     padding: '10px',
@@ -429,79 +431,7 @@ $('#selectAll').click(function() {
           })
         })
 */
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
 
-function setCookie(cname, val) {
-  document.cookie = cname + '=' + val + ';'
-  return ''
-}
-
-function setData(ID, Name, Option2, Option3) {
-  if (Name == '') {
-    Name = 'NAME:' + getData(ID, 'Name') + '|'
-  } else {
-    Name = 'NAME:' + Name + '|'
-  }
-  if (Option2 == '') {
-    Option2 = 'OPTION2:' + getData(ID, 'Option2') + '|'
-  } else {
-    Option2 = 'OPTION2:' + Option2 + '|'
-  }
-  if (Option3 == '') {
-    Option3 = 'OPTION3:' + getData(ID, 'Option3') + '|'
-  } else {
-    Option3 = 'OPTION3:' + Option3 + '|'
-  }
-  setCookie(ID, Name + Option2 + Option3)
-  return 'set.'
-}
-
-function getData(Id, Data) {
-  var Type = getCookie(Id)
-  if (Data == 'Name') {
-    return Type.split('NAME:')[1].split('|')[0]
-  }
-  if (Data == 'Option2') {
-    return Type.split('OPTION2:')[1].split('|')[0]
-  }
-  if (Data == 'Option3') {
-    return Type.split('OPTION3:')[1].split('|')[0]
-  }
-  return ''
-}
-
-function newData(Name, Option2, Option3) {
-  var ID = '1'
-  var i2 = 1
-  while (getCookie(i2) != '') {
-    ID = i2 + 1
-    i2++
-  }
-  Name = 'NAME:' + Name + '|'
-  Option2 = 'OPTION2:' + Option2 + '|'
-  Option3 = 'OPTION3:' + Option3 + '|'
-  setCookie(ID, Name + Option2 + Option3)
-  return 'set.'
-}
-
-
-function deleteData(ID) {
-  setCookie(ID, 'deleted.' + getCookie(ID))
-  return 'deleted.'
-}
 /*
     var ie = 0
     $("#align").click(function() {
