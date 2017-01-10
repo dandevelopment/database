@@ -69,7 +69,7 @@
 </style>
 </head>
 <body style="font-family:Verdana">
-  <div style="position:absolute;top:0;width:100%;border-bottom:solid;padding:20px;background-color:white;"onclick="">Tools<img src="http://downloadicons.net/sites/default/files/plus-icon-27951.png" style="width:20px;padding-left:20px" onclick="" id="sut"><img src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png" style="padding-left:20px;width:20px;"
+  <div style="position:absolute;top:0;width:100%;border-bottom:solid;padding:20px;background-color:white;" onclick="">Tools<img src="http://downloadicons.net/sites/default/files/plus-icon-27951.png" style="width:20px;padding-left:20px" onclick="" id="sut"><img src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png" style="padding-left:20px;width:20px;"
     id="deleteData">
     <img src="https://image.freepik.com/free-icon/height-size-symbol-of-a-square-with-arrows_318-32351.jpg" style="padding-right:50px;width:20px;float:right" id="changeOrder"><img src="http://www.pixempire.com/images/preview/central-alignment-icon.jpg"
     style="padding-right:20px;width:20px;float:right;" onclick="" id="align"></div>
@@ -93,6 +93,7 @@
       <div style="float:right;" class="button" id="finishAdd">add</div>
     </div>
     <div class="person" id="deleteArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);"><b><span style="font-size:30px;"id="sels"></span></b>
+      <input type="checkbox" id="selectAll" style="margin-left:20px;"><span id="selectAllText">Select All</span>
       <div style="float:right;background-color:red" class="button" id="finishDelete">Delete</div>
     </div>
     <div id="peoplearea" style="margin-top:40px;">
@@ -100,6 +101,7 @@
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </body>
+
 
 <script>
 //𐌀
@@ -110,33 +112,67 @@
 var stpd = false;
 //setData('1', 'TestName', 'TestOption2', 'TestOption3', 'TestOption3')
 setInterval(function() {
-if(stpd != true){
-  loadData('none')
-	}
+  if (stpd != true) {
+    loadData('none')
+  } else {
+    var i4 = 1
+    var it = 0
+    while (getCookie(i4) != '') {
+      if (getCookie(i4).split('.')[0] != 'deleted') {
+        if (document.getElementById('chid:' + i4).checked) {
+          it++
+        }
+      }
+      document.getElementById('sels').innerHTML = it + ' <span style="font-size:10px;">Selected</span'
+      i4++
+    }
+
+    var i6 = 1
+      //var selectAll = false
+    var it2 = 0;
+    var at2 = 0;
+    while (getCookie(i6) != '') {
+      if (getCookie(i6).split('.')[0] != 'deleted') {
+        if (document.getElementById('chid:' + i6).checked) {
+          it2++
+        }
+        at2++
+      }
+      if (it2 == at2) {
+        document.getElementById('selectAllText').innerHTML = 'Deselect All'
+        document.getElementById('selectAll').checked = true;
+
+      } else {
+        document.getElementById('selectAllText').innerHTML = 'Select All'
+        document.getElementById('selectAll').checked = false;
+      }
+      i6++
+    }
+  }
 }, 100)
 
 function loadData(type) {
-document.getElementById('peoplearea').innerHTML = ''
-var i9 = 1;
-var continuation = true;
-while(getCookie(i9) != ''){
-  if(getCookie(i9).split('.')[0] != 'deleted'){
-	continuation = false;
-	}
-  i9++
-}
+  document.getElementById('peoplearea').innerHTML = ''
+  var i9 = 1;
+  var continuation = true;
+  while (getCookie(i9) != '') {
+    if (getCookie(i9).split('.')[0] != 'deleted') {
+      continuation = false;
+    }
+    i9++
+  }
   if (getCookie('1') == '' || continuation) {
     document.getElementById('peoplearea').innerHTML = '<h1 style="text-align:center;margin-top:50px">Add data by pressing the "+" icon above.</h1>'
   } else {
     var i = 1
     while (getCookie(i) != '') {
-		if(getCookie(i).split('.')[0] != 'deleted'){
-		if(type != 'delete'){
-      document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="alert('+"'"+'edit function available when optoins given.'+"'"+')"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
-			} else {
-			document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="chid:' + i + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
-			}
-			}
+      if (getCookie(i).split('.')[0] != 'deleted') {
+        if (type != 'delete') {
+          document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="alert(' + "'" + 'edit function available when optoins given.' + "'" + ')"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
+        } else {
+          document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="chid:' + i + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
+        }
+      }
       i++
     }
   }
@@ -154,7 +190,7 @@ $("#deleteArea").animate({
 }, 1);
 document.getElementById('deleteArea').style.display = 'none';
 $("#sut").click(function() {
-stpd = false;
+  stpd = false;
   document.getElementById('addArea').style.display = 'block'
   $("#addArea").animate({
     width: '100%',
@@ -164,17 +200,17 @@ stpd = false;
     padding: '10px',
     height: '30px'
   }, 500);
-	$("#deleteArea").animate({
-      height: '0px',
-      padding: '0px'
-    }, 1000);
-    $("#deleteArea").animate({
-      width: '0px',
-      top: '0px'
-    }, 2000);
-    setTimeout(function() {
-      document.getElementById('deleteArea').style.display = 'none'
-    }, 3000)
+  $("#deleteArea").animate({
+    height: '0px',
+    padding: '0px'
+  }, 1000);
+  $("#deleteArea").animate({
+    width: '0px',
+    top: '0px'
+  }, 2000);
+  setTimeout(function() {
+    document.getElementById('deleteArea').style.display = 'none'
+  }, 3000)
 })
 $("#finishAdd").click(function() {
   $("#addArea").animate({
@@ -186,9 +222,9 @@ $("#finishAdd").click(function() {
     top: '0px'
   }, 2000);
   setTimeout(function() {
-      document.getElementById('addArea').style.display = 'none'
-    }, 3000)
-    newData(document.getElementById('addname').value,document.getElementById('addoption2').value,document.getElementById('addoption3').value)
+    document.getElementById('addArea').style.display = 'none'
+  }, 3000)
+  newData(document.getElementById('addname').value, document.getElementById('addoption2').value, document.getElementById('addoption3').value)
 })
 $("#deleteData").click(function() {
   document.getElementById('deleteArea').style.display = 'block'
@@ -200,7 +236,7 @@ $("#deleteData").click(function() {
     padding: '10px',
     height: '30px'
   }, 500);
-	 $("#addArea").animate({
+  $("#addArea").animate({
     height: '0px',
     padding: '0px'
   }, 1000);
@@ -209,32 +245,56 @@ $("#deleteData").click(function() {
     top: '0px'
   }, 2000);
   setTimeout(function() {
-      document.getElementById('addArea').style.display = 'none'
-    }, 3000)
-	stpd = true;
+    document.getElementById('addArea').style.display = 'none'
+  }, 3000)
+  stpd = true;
   loadData('delete')
 })
 $("#finishDelete").click(function() {
-    $("#deleteArea").animate({
-      height: '0px',
-      padding: '0px'
-    }, 1000);
-    $("#deleteArea").animate({
-      width: '0px',
-      top: '0px'
-    }, 2000);
-    setTimeout(function() {
-      document.getElementById('deleteArea').style.display = 'none'
-    }, 3000)
-		var i3 = 1
-		while(getCookie(i3) != ''){
-		if(getCookie(i3).split('.')[0] != 'deleted'){
-		if(document.getElementById('chid:' + i3).checked){
-		deleteData(i3)
-		}}
-		i3++
+  $("#deleteArea").animate({
+    height: '0px',
+    padding: '0px'
+  }, 1000);
+  $("#deleteArea").animate({
+    width: '0px',
+    top: '0px'
+  }, 2000);
+  setTimeout(function() {
+    document.getElementById('deleteArea').style.display = 'none'
+  }, 3000)
+  var i3 = 1
+  while (getCookie(i3) != '') {
+    if (getCookie(i3).split('.')[0] != 'deleted') {
+      if (document.getElementById('chid:' + i3).checked) {
+        deleteData(i3)
+      }
+    }
+    i3++
+  }
+  stpd = false;
+})
+$('#selectAll').click(function() {
+    if (document.getElementById('selectAllText').innerHTML == 'Select All') {
+      var i9 = 1
+      while (getCookie(i9) != '') {
+        if (getCookie(i9).split('.')[0] != 'deleted') {
+          if (!document.getElementById('chid:' + i9).checked) {
+            document.getElementById('chid:' + i9).checked = true;
+          }
+        }
+        i9++
+      }
+    } else {
+		var i9 = 1
+      while (getCookie(i9) != '') {
+        if (getCookie(i9).split('.')[0] != 'deleted') {
+          if (document.getElementById('chid:' + i9).checked) {
+            document.getElementById('chid:' + i9).checked = false;
+          }
+        }
+        i9++
+      }
 		}
-		stpd = false;
   })
   /*
         var tosplite = 'Dan 𐌁 sopt 𐌂 topt 𐌃1𐌄  𐌀 And 𐌁 sopt 𐌂 topt 𐌃2𐌄  𐌀 The rest of them 𐌁 sopt 𐌂 topt 𐌃3𐌄  𐌀 ' //getCookie('users')
@@ -423,22 +483,22 @@ function getData(Id, Data) {
   return ''
 }
 
-function newData(Name, Option2, Option3){
-var ID = '1'
-var i2 = 1
-while(getCookie(i2) != ''){
-ID = i2 + 1
-i2++
-}
-    Name = 'NAME:' + Name + '|'
-    Option2 = 'OPTION2:' + Option2 + '|'
-    Option3 = 'OPTION3:' + Option3 + '|'
+function newData(Name, Option2, Option3) {
+  var ID = '1'
+  var i2 = 1
+  while (getCookie(i2) != '') {
+    ID = i2 + 1
+    i2++
+  }
+  Name = 'NAME:' + Name + '|'
+  Option2 = 'OPTION2:' + Option2 + '|'
+  Option3 = 'OPTION3:' + Option3 + '|'
   setCookie(ID, Name + Option2 + Option3)
   return 'set.'
 }
 
 
-function deleteData(ID){
+function deleteData(ID) {
   setCookie(ID, 'deleted.' + getCookie(ID))
   return 'deleted.'
 }
