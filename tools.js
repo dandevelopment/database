@@ -19,17 +19,17 @@ function setCookie(cname, val) {
 }
 
 function setData(ID, Name, Option2, Option3) {
-  if (Name == '') {
+  if (Name == '' || Name == undefined) {
     Name = 'NAME:' + getData(ID, 'Name') + '|'
   } else {
     Name = 'NAME:' + Name + '|'
   }
-  if (Option2 == '') {
+  if (Option2 == '' || Option2 == undefined) {
     Option2 = 'OPTION2:' + getData(ID, 'Option2') + '|'
   } else {
     Option2 = 'OPTION2:' + Option2 + '|'
   }
-  if (Option3 == '') {
+  if (Option3 == '' || Option3 == undefined) {
     Option3 = 'OPTION3:' + getData(ID, 'Option3') + '|'
   } else {
     Option3 = 'OPTION3:' + Option3 + '|'
