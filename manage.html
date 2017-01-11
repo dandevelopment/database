@@ -71,13 +71,13 @@
 <body style="font-family:Verdana">
   <div style="position:absolute;top:0;width:100%;border-bottom:solid;padding:20px;background-color:white;" onclick="">Tools<img src="http://downloadicons.net/sites/default/files/plus-icon-27951.png" style="width:20px;padding-left:20px" onclick="" id="sut"><img src="http://findicons.com/files/icons/1580/devine_icons_part_2/128/trash_recyclebin_empty_closed.png" style="padding-left:20px;width:20px;"
     id="deleteData">
-    <img src="https://image.freepik.com/free-icon/height-size-symbol-of-a-square-with-arrows_318-32351.jpg" style="padding-right:50px;width:20px;float:right" id="changeOrder"onclick="chmar()"><img src="http://www.pixempire.com/images/preview/central-alignment-icon.jpg"
+    <img src="https://image.freepik.com/free-icon/height-size-symbol-of-a-square-with-arrows_318-32351.jpg" style="padding-right:50px;width:20px;float:right" id="changeOrder" onclick="chmar()"><img src="http://www.pixempire.com/images/preview/central-alignment-icon.jpg"
     style="padding-right:20px;width:20px;float:right;" onclick="changeAlign()" id="align"></div>
   <div style="#efefef">
     <div style="height:70px;"></div>
-    <div class="options" style="background-color:#777777;color:white;padding:10px"id="NameA">Name</div>
-    <div class="options" style="background-color:#777777;color:white;padding:10px"id="Option2A">Option2</div>
-    <div class="options" style="background-color:#777777;color:white;padding:10px"id="Option3A">Option3</div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px" id="NameA">Name</div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px" id="Option2A">Option2</div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px" id="Option3A">Option3</div>
 
     <div class="person" id="addArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);bottom:0;position:absolute;background-color:white;">
       <div style="background-color:#e5e3e3">
@@ -115,7 +115,7 @@
       <div onclick="deleteData2(getCookie('choseEdit').split(':')[1]);setCookie('choseEdit','none');closeInfoBar();" class="button" style="background-color:red;margin:20px;">
         Delete
       </div>
-      <div onclick="setCookie('choseEdit','none');closeInfoBar()" class="button">
+      <div onclick="doneWithInfo();setCookie('choseEdit','none');closeInfoBar();" class="button">
         Done
       </div>
       <div onclick="setCookie('choseEdit','none');closeInfoBar()" class="button" style="background-color:grey;">
@@ -128,31 +128,37 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://dandevelopment.github.io/database/tools.js"></script>
 </body>
-
 <script>
 //𐌀
 //𐌁
 //𐌂
 //𐌃
 //𐌄
+function doneWithInfo(){
+setData(getCookie('choseEdit').split(':')[1],
+document.getElementById('infoHead').innerHTML,
+document.getElementById('infoOption2').innerHTML,
+document.getElementById('infoOption3').innerHTML
+)}
 var chmargin = '30px'
-function chmar(){
- if(chmargin == '30px'){
- chmargin = '10px'
- } else {
- chmargin = '30px'
- }
+function chmar() {
+  if (chmargin == '30px') {
+    chmargin = '10px'
+  } else {
+    chmargin = '30px'
+  }
 }
-var textAlignment = 'center'
-function changeAlign() {		
-if(textAlignment != 'center'){
-		textAlignment = 'center'
-		} else {
-		textAlignment = 'left'
-		}
-		document.getElementById('NameA').style.textAlign = textAlignment;
-				document.getElementById('Option2A').style.textAlign = textAlignment;
-						document.getElementById('Option3A').style.textAlign = textAlignment;
+var textAlignment = 'left'
+
+function changeAlign() {
+  if (textAlignment != 'center') {
+    textAlignment = 'center'
+  } else {
+    textAlignment = 'left'
+  }
+  document.getElementById('NameA').style.textAlign = textAlignment;
+  document.getElementById('Option2A').style.textAlign = textAlignment;
+  document.getElementById('Option3A').style.textAlign = textAlignment;
   var i12 = 1
   while (getCookie(i12) != '') {
     if (getCookie(i12).split('.')[0] != 'deleted') {
@@ -249,7 +255,7 @@ function loadData(type) {
     while (getCookie(i) != '') {
       if (getCookie(i).split('.')[0] != 'deleted') {
         if (type != 'delete') {
-          document.getElementById('peoplearea').innerHTML += '<div class="person"id="cat:' + i + '"style="text-align:' + textAlignment + ';height:'+chmargin+';"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="setCookie(' + "'choseEdit','edi:" + i + "');loadInfoBar()" + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
+          document.getElementById('peoplearea').innerHTML += '<div class="person"id="cat:' + i + '"style="text-align:' + textAlignment + ';height:' + chmargin + ';"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="setCookie(' + "'choseEdit','edi:" + i + "');loadInfoBar()" + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
         } else {
           document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="chid:' + i + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
         }
