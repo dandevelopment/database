@@ -96,21 +96,39 @@
       <input type="checkbox" id="selectAll" style="margin-left:20px;"><span id="selectAllText">Select All</span>
       <div style="float:right;background-color:red" class="button" id="finishDelete">Delete</div>
     </div>
+    <div style="position:absolute;left:0;width:30%;border-right:solid;float:left;background-color:#efefef;height:100%" id="infobar">
+      <h1 style="margin-left:10px;" id="infoHead">
+		
+		</h1>
+      <p>
+        Option2:
+        <b><span id="infoOption2"></span></b>
+      </p>
+      <p>
+        Option3: <b>
+		<span id="infoOption3"></span></b>
+      </p>
+      <div onclick="document.cookie = 'choseEdit=none;'" class="button">
+        Done
+      </div>
+    </div>
     <div id="peoplearea" style="margin-top:40px;">
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://dandevelopment.github.io/database/tools.js"></script>
+  <script src="https://dandevelopment.github.io/database/tools.js"></script>
 </body>
-
-
-
 <script>
-//𐌀
+	//𐌀
 //𐌁
 //𐌂
 //𐌃
 //𐌄
+if (getCookie('choseEdit').split(':')[0] == 'edi') {
+  setCookie('choseEdit', 'none')
+}
+var ifd = false
+var infoOpen = false;
 var stpd = false;
 //setData('1', 'TestName', 'TestOption2', 'TestOption3', 'TestOption3')
 setInterval(function() {
@@ -151,7 +169,42 @@ setInterval(function() {
       i6++
     }
   }
-}, 100)
+  if (getCookie('choseEdit').split(':')[0] == 'edi') {
+    loadInfoBar()
+      //	infoOpen = true;
+  } else {
+    if (!ifd) {
+      ifd = true;
+      closeInfoBar()
+      setTimeout(function() {
+        ifd = false
+      }, 1000)
+    }
+  }
+}, 500)
+
+function loadInfoBar() {
+  document.getElementById('infoHead').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Name')
+  document.getElementById('infoOption2').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Option2')
+  document.getElementById('infoOption3').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Option3')
+  document.getElementById('infobar').style.display = 'block'
+  $("#infobar").animate({
+    width: '30%'
+  }, 1000);
+}
+
+function closeInfoBar() {
+  setTimeout(function() {
+    document.getElementById('infobar').style.display = 'none'
+  }, 1000)
+  $("#infobar").animate({
+    width: '0%'
+  }, 1000);
+}
+document.getElementById('infobar').style.display = 'none'
+$("#infobar").animate({
+  width: '0%'
+}, 1);
 
 function loadData(type) {
   document.getElementById('peoplearea').innerHTML = ''
@@ -170,7 +223,7 @@ function loadData(type) {
     while (getCookie(i) != '') {
       if (getCookie(i).split('.')[0] != 'deleted') {
         if (type != 'delete') {
-          document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="alert(' + "'" + 'edit function available when optoins given.' + "'" + ')"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
+          document.getElementById('peoplearea').innerHTML += '<div class="person"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="document.cookie = ' + "'choseEdit=edi:" + i + ";'" + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
         } else {
           document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="chid:' + i + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
         }
@@ -231,8 +284,8 @@ $("#finishAdd").click(function() {
 $("#deleteData").click(function() {
   document.getElementById('deleteArea').style.display = 'block'
   $("#deleteArea").animate({
-    width: '100%'//,
-   // top: '50px'
+    width: '100%' //,
+      // top: '50px'
   }, 1000);
   $("#deleteArea").animate({
     padding: '10px',
@@ -287,7 +340,7 @@ $('#selectAll').click(function() {
         i9++
       }
     } else {
-		var i9 = 1
+      var i9 = 1
       while (getCookie(i9) != '') {
         if (getCookie(i9).split('.')[0] != 'deleted') {
           if (document.getElementById('chid:' + i9).checked) {
@@ -296,7 +349,7 @@ $('#selectAll').click(function() {
         }
         i9++
       }
-		}
+    }
   })
   /*
         var tosplite = 'Dan 𐌁 sopt 𐌂 topt 𐌃1𐌄  𐌀 And 𐌁 sopt 𐌂 topt 𐌃2𐌄  𐌀 The rest of them 𐌁 sopt 𐌂 topt 𐌃3𐌄  𐌀 ' //getCookie('users')
