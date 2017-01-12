@@ -127,7 +127,7 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
   Cell = 'CELL:' + Cell + '|'
   Home = 'HOME:' + Home + '|'
   Email = 'EMAIL:' + Email + '|'
-  setCookie(ID, Name + Option2 + Option3, Dob, Address, Town, Cell, Home, Email)
+  setCookie(ID, Name + Option2 + Option3+ Dob+ Address+ Town+ Cell+ Home+ Email)
   return 'set.'
 }
 
