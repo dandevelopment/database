@@ -1,3 +1,14 @@
+/*
+Name > FirstName
+Option2 > LastName
+Option3 > JoinDate
+DOB
+Address
+Town
+Cell
+Home
+Email
+*/
 function getCookie(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
@@ -18,7 +29,7 @@ function setCookie(cname, val) {
   return ''
 }
 
-function setData(ID, Name, Option2, Option3) {
+function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) {
   if (Name == '' || Name == undefined) {
     Name = 'NAME:' + getData(ID, 'Name') + '|'
   } else {
@@ -34,7 +45,37 @@ function setData(ID, Name, Option2, Option3) {
   } else {
     Option3 = 'OPTION3:' + Option3 + '|'
   }
-  setCookie(ID, Name + Option2 + Option3)
+  if (Dob == '' || Dob == undefined) {
+    Dob = 'DOB:' + getData(ID, 'Dob') + '|'
+  } else {
+    Dob = 'DOB:' + Dob + '|'
+  }
+  if (Address == '' || Address == undefined) {
+    Address = 'ADDRESS:' + getData(ID, 'Address') + '|'
+  } else {
+    Address = 'ADDRESS:' + Address + '|'
+  }
+  if (Town == '' || Town == undefined) {
+    Town = 'TOWN:' + getData(ID, 'Town') + '|'
+  } else {
+    Town = 'TOWN:' + Town + '|'
+  }
+  if (Cell == '' || Cell == undefined) {
+    Cell = 'CELL:' + getData(ID, 'Cell') + '|'
+  } else {
+    Cell = 'CELL:' + Cell + '|'
+  }
+  if (Home == '' || Home == undefined) {
+    Home = 'HOME:' + getData(ID, 'Home') + '|'
+  } else {
+    Home = 'HOME:' + Home + '|'
+  }
+  if (Email == '' || Email == undefined) {
+    Email = 'EMAIL:' + getData(ID, 'Email') + '|'
+  } else {
+    Email = 'EMAIL:' + Email + '|'
+  }
+  setCookie(ID, Name + Option2 + Option3 + Dob + Address + Town + Cell + Home + Email)
   return 'set.'
 }
 
@@ -49,10 +90,28 @@ function getData(Id, Data) {
   if (Data == 'Option3') {
     return Type.split('OPTION3:')[1].split('|')[0]
   }
+  if (Data == 'Dob') {
+    return Type.split('DOB:')[1].split('|')[0]
+  }
+  if (Data == 'Address') {
+    return Type.split('ADDRESS:')[1].split('|')[0]
+  }
+  if (Data == 'Town') {
+    return Type.split('TOWN:')[1].split('|')[0]
+  }
+  if (Data == 'Cell') {
+    return Type.split('CELL:')[1].split('|')[0]
+  }
+  if (Data == 'Home') {
+    return Type.split('HOME:')[1].split('|')[0]
+  }
+  if (Data == 'Email') {
+    return Type.split('EMAIL:')[1].split('|')[0]
+  }
   return ''
 }
 
-function newData(Name, Option2, Option3) {
+function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) {
   var ID = '1'
   var i2 = 1
   while (getCookie(i2) != '') {
@@ -62,7 +121,13 @@ function newData(Name, Option2, Option3) {
   Name = 'NAME:' + Name + '|'
   Option2 = 'OPTION2:' + Option2 + '|'
   Option3 = 'OPTION3:' + Option3 + '|'
-  setCookie(ID, Name + Option2 + Option3)
+  Dob = 'DOB:' + Dob + '|'
+  Address = 'ADDRESS:' + Address + '|'
+  Town = 'TOWN:' + Town + '|'
+  Cell = 'CELL:' + Cell + '|'
+  Home = 'HOME:' + Home + '|'
+  Email = 'EMAIL:' + Email + '|'
+  setCookie(ID, Name + Option2 + Option3, Dob, Address, Town, Cell, Home, Email)
   return 'set.'
 }
 
