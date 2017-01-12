@@ -13,7 +13,13 @@
   transition-duration: 1s;
   text-decoration: none;
 }
-
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+.editable:focus {
+    outline: none;
+}
 .button:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px
@@ -60,10 +66,22 @@
 }
 
 .options {
-  width: 30%;
+  width: 25%;
   float: left;
   overflow: hidden;
   height: 20px;
+}
+
+.editable {
+  border-bottom: solid;
+  border-width: 1px;
+  transition-duration: 1s;
+  padding-right: 0px;
+	margin-bottom:10px;
+}
+
+.editable:hover {
+  padding-right: 20px;
 }
 
 </style>
@@ -75,19 +93,19 @@
     style="padding-right:20px;width:20px;float:right;" onclick="changeAlign()" id="align"></div>
   <div style="#efefef">
     <div style="height:70px;"></div>
-    <div class="options" style="background-color:#777777;color:white;padding:10px" id="NameA">Name</div>
-    <div class="options" style="background-color:#777777;color:white;padding:10px" id="Option2A">Option2</div>
-    <div class="options" style="background-color:#777777;color:white;padding:10px" id="Option3A">Option3</div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px" id="NameA">Id</div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px" id="Option2A">Name</div>
+    <div class="options" style="background-color:#777777;color:white;padding:10px" id="Option3A">Join Date</div>
 
     <div class="person" id="addArea" style="border-width:2px;margin-top:50px;border-right:solid;box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2), 0 2px 20px 0 rgba(0, 0, 0, 0.19);bottom:0;position:absolute;background-color:white;">
       <div style="background-color:#e5e3e3">
-        <div class="options">Name:
+        <div class="options">First:
           <input class="add-input" type="text" placeholder="Name" id="addname" style="">
         </div>
       </div>
-      <div class="options">Option2:
-        <input class="add-input" type="text" placeholder="Option2" id="addoption2"> </div>
-      <div class="options">Option3:
+      <div class="options">Last:
+        <input class="add-input" type="text" placeholder="Name" id="addoption2"> </div>
+      <div class="options">Join Date:
         <input class="add-input" type="text" placeholder="Option3" id="addoption3">
       </div>
       <div style="float:right;" class="button" id="finishAdd">add</div>
@@ -105,12 +123,36 @@
         <b><span id="infoId"></span></b>
       </p>
       <p>
-        Option2:
+        Last Name:
         <b><span id="infoOption2"class="editable"contenteditable="true"></span></b>
       </p>
       <p>
-        Option3: <b>
+        Join Date: <b>
 		<span id="infoOption3"class="editable"contenteditable="true"></span></b>
+      </p>
+			<p>
+        DOB:
+        <b><span id="infoDob"class="editable"contenteditable="true"></span></b>
+      </p>
+			<p>
+        Address:
+        <b><span id="infoAddress"class="editable"contenteditable="true"></span></b>
+      </p>
+			<p>
+        Town:
+        <b><span id="infoTown"class="editable"contenteditable="true"></span></b>
+      </p>
+			<p>
+        Cell Phone:
+        <b><span id="infoCell"class="editable"contenteditable="true"></span></b>
+      </p>
+			<p>
+        Home:
+        <b><span id="infoHome"class="editable"contenteditable="true"></span></b>
+      </p>
+			<p>
+        Email:
+        <b><span id="infoEmail"class="editable"contenteditable="true"></span></b>
       </p>
       <div onclick="deleteData2(getCookie('choseEdit').split(':')[1]);setCookie('choseEdit','none');closeInfoBar();" class="button" style="background-color:red;margin:20px;">
         Delete
@@ -128,6 +170,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://dandevelopment.github.io/database/tools.js"></script>
 </body>
+
 <script>
 //𐌀
 //𐌁
@@ -138,7 +181,13 @@ function doneWithInfo(){
 setData(getCookie('choseEdit').split(':')[1],
 document.getElementById('infoHead').innerHTML,
 document.getElementById('infoOption2').innerHTML,
-document.getElementById('infoOption3').innerHTML
+document.getElementById('infoOption3').innerHTML,
+document.getElementById('infoDob').innerHTML,
+document.getElementById('infoAddress').innerHTML,
+document.getElementById('infoTown').innerHTML,
+document.getElementById('infoCell').innerHTML,
+document.getElementById('infoHome').innerHTML,
+document.getElementById('infoEmail').innerHTML
 )}
 var chmargin = '30px'
 function chmar() {
@@ -218,6 +267,13 @@ function loadInfoBar() {
   document.getElementById('infoHead').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Name')
   document.getElementById('infoOption2').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Option2')
   document.getElementById('infoOption3').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Option3')
+	document.getElementById('infoDob').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Dob')
+	document.getElementById('infoAddress').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Address')
+	document.getElementById('infoTown').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Town')
+	document.getElementById('infoCell').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Cell')
+	document.getElementById('infoHome').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Home')
+	document.getElementById('infoEmail').innerHTML = getData(getCookie('choseEdit').split(':')[1], 'Email')
+	
   document.getElementById('infoId').innerHTML = getCookie('choseEdit').split(':')[1]
   document.getElementById('infobar').style.display = 'block'
   $("#infobar").animate({
@@ -255,9 +311,9 @@ function loadData(type) {
     while (getCookie(i) != '') {
       if (getCookie(i).split('.')[0] != 'deleted') {
         if (type != 'delete') {
-          document.getElementById('peoplearea').innerHTML += '<div class="person"id="cat:' + i + '"style="text-align:' + textAlignment + ';height:' + chmargin + ';"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="setCookie(' + "'choseEdit','edi:" + i + "');loadInfoBar()" + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
+          document.getElementById('peoplearea').innerHTML += '<div class="person"id="cat:' + i + '"style="text-align:' + textAlignment + ';height:' + chmargin + ';"><img src="https://openclipart.org/image/2400px/svg_to_png/24821/Anonymous-Pencil-icon.png" style="height:20px;float:left"onclick="setCookie(' + "'choseEdit','edi:" + i + "');loadInfoBar()" + '"><div class="options" >' + i + '</div><div class="options">' + getData(i, 'Name') + ' ' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
         } else {
-          document.getElementById('peoplearea').innerHTML += '<div class="person"><input type="checkbox"style="float:left;"id="chid:' + i + '"><div class="options" >' + getData(i, 'Name') + '</div><div class="options">' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
+          document.getElementById('peoplearea').innerHTML += '<div class="person"id="cat:' + i + '"style="text-align:' + textAlignment + ';height:' + chmargin + ';"><input type="checkbox"style="float:left;"id="chid:' + i + '"><div class="options" >' + i + '</div><div class="options">' + getData(i, 'Name') + ' ' + getData(i, 'Option2') + '</div><div class="options">' + getData(i, 'Option3') + '</div></div>'
         }
       }
       i++
@@ -277,6 +333,16 @@ $("#deleteArea").animate({
 }, 1);
 document.getElementById('deleteArea').style.display = 'none';
 $("#sut").click(function() {
+        var d = new Date();
+var year = d.getFullYear();//2017
+        var months = ["January","February","March","April","May","June","July","August","September","October",'November','December'];
+        var month = months[d.getMonth()];
+        var day = d.getUTCDate();
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var dayweek = days[d.getDay()];
+        var time = d.toLocaleTimeString();
+        var fulltime = year+', '+month+' '+day+', '+dayweek+' '+time;
+				document.getElementById('addoption3').value = fulltime
   stpd = false;
   document.getElementById('addArea').style.display = 'block'
   $("#addArea").animate({
@@ -311,7 +377,7 @@ $("#finishAdd").click(function() {
   setTimeout(function() {
     document.getElementById('addArea').style.display = 'none'
   }, 3000)
-  newData(document.getElementById('addname').value, document.getElementById('addoption2').value, document.getElementById('addoption3').value)
+  newData(document.getElementById('addname').value, document.getElementById('addoption2').value, document.getElementById('addoption3').value,'none','none','none','none','none','none')
 })
 $("#deleteData").click(function() {
   document.getElementById('deleteArea').style.display = 'block'
