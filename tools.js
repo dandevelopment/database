@@ -29,8 +29,12 @@ function getCookie2(cname) {
 }
 
 function setCookie(cname, val) {
- // document.cookie = cname + '=' + val + ';'
   return localStorage.setItem(cname, val)
+}
+
+function setCookie2(cname, val) {
+ document.cookie = cname + '=' + val + ';'
+  return 'set.'
 }
 
 function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) {
