@@ -10,7 +10,7 @@ Home
 Email
 */
 function getCookie(cname) {
-  if(localStorage.getItem(cname) != 'null'){
+  if(localStorage.getItem(cname) != null){
   return localStorage.getItem(cname);
   } else {
   return ''
