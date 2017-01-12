@@ -10,6 +10,10 @@ Home
 Email
 */
 function getCookie(cname) {
+  return localStorage.getItem(cname);
+}
+
+function getCookie2(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -25,8 +29,8 @@ function getCookie(cname) {
 }
 
 function setCookie(cname, val) {
-  document.cookie = cname + '=' + val + ';'
-  return ''
+ // document.cookie = cname + '=' + val + ';'
+  return localStorage.setItem(cname, val)
 }
 
 function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) {
