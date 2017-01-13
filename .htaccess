@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{login.php} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
