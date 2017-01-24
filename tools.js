@@ -9,6 +9,34 @@ Cell
 Home
 Email
 */
+function setHours(user, hours){
+  setCookie('hours.'+user, hours)  
+}
+
+function addHours(user){
+  setCookie('hours.'+user, hours) 
+}
+
+function getHours(){
+
+}
+
+function subtractHours(){
+
+}
+
+function setPoints(){
+
+}
+
+function getPoints(){
+
+}
+
+function subtractPoints(){
+
+}
+
 function getCookie(cname) {
   if(localStorage.getItem(cname) != null){
   return localStorage.getItem(cname);
