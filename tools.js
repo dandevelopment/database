@@ -13,16 +13,16 @@ function setHours(user, hours){
   setCookie('hours.'+user, hours)  
 }
 
-function addHours(user){
-  setCookie('hours.'+user, hours) 
+function addHours(user, hours){
+  setCookie('hours.'+user, Number(getCookie('hours.' + user)) + Number(hours)) 
 }
 
-function getHours(){
-
+function getHours(user){
+return getCookie('hours.' + user)
 }
 
-function subtractHours(){
-
+function subtractHours(user, hours){
+setCookie('hours.'+user, Number(getCookie('hours.' + user)) - Number(hours)) 
 }
 
 function setPoints(){
