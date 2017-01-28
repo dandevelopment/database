@@ -11,30 +11,37 @@ Email
 */
 function setHours(user, hours){
   setCookie('hours.'+user, hours)  
+return ''
 }
 
 function addHours(user, hours){
   setCookie('hours.'+user, Number(getCookie('hours.' + user)) + Number(hours)) 
+return ''
 }
 
 function getHours(user){
 return getCookie('hours.' + user)
+return ''
 }
 
 function subtractHours(user, hours){
 setCookie('hours.'+user, Number(getCookie('hours.' + user)) - Number(hours)) 
+  return ''
 }
 
-function setPoints(){
-
+function setPoints(user, points){
+setCookie('points.' + user, points)  
+  return ''
 }
 
-function getPoints(){
-
+function getPoints(user){
+return getCookie('points.' + user)
+return ''
 }
 
-function subtractPoints(){
-
+function subtractPoints(user, points){
+setCookie('points.'+user, Number(getCookie('points.' + user)) - Number(points)) 
+  return ''
 }
 
 function getCookie(cname) {
