@@ -239,6 +239,14 @@ return false
 }
 }
 
+function isNotArchivedOrDeleted(ID){
+if(getCookie(ID).split('.')[1] != 'archived' && getCookie(ID).split('.')[0] != 'deleted'){
+return true
+} else {
+return false
+}
+}
+
 function deleteData(ID) {
   setCookie(ID, 'deleted.' + getCookie(ID))
   return 'deleted.'
