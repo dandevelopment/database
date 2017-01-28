@@ -203,6 +203,41 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
   return 'set.'
 }
 
+function archiveData(ID) {
+  setCookie(ID, 'deleted.archived.' + getCookie(ID))
+  return 'archived.'
+}
+
+function unarchiveData(ID) {
+  if(getCookie(ID).split('.')[1] == 'archived'){
+  setCookie(ID, getCookie(ID).split('.')[2])
+  return 'unarchived.'
+}
+}
+
+function isArchived(ID){
+if(getCookie(ID).split('.')[1] == 'archived'){
+return true
+} else {
+return false
+}
+}
+
+function isDeleted(ID){
+if(getCookie(ID).split('.')[0] == 'deleted'){
+return true
+} else {
+return false
+}
+}
+
+function isDeletedNotArchived(ID){
+if(getCookie(ID).split('.')[1] != 'archived' && getCookie(ID).split('.')[0] == 'deleted'){
+return true
+} else {
+return false
+}
+}
 
 function deleteData(ID) {
   setCookie(ID, 'deleted.' + getCookie(ID))
