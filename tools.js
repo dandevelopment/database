@@ -44,6 +44,11 @@ setCookie('points.'+user, Number(getCookie('points.' + user)) - Number(points))
   return ''
 }
 
+function addPoints(user, points){
+  setCookie('points.'+user, Number(getCookie('points.' + user)) + Number(points)) 
+return ''
+}
+
 function getCookie(cname) {
   if(localStorage.getItem(cname) != null){
   return localStorage.getItem(cname);
