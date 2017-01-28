@@ -10,7 +10,7 @@ Home
 Email
 */
 function setMeetings(user, meetings){
-  setCookie('meetings.'+user, meetings)  
+  setCookie('meetings.' + user, meetings)  
 return ''
 }
 
@@ -29,8 +29,8 @@ setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) - Number(meeti
   return ''
 }
 
-function setHours(user, meetings){
-  setCookie('meetings.'+user, meetings)  
+function setHours(user, hours){
+  setCookie('hours.'+user, hours)  
 return ''
 }
 
@@ -232,6 +232,14 @@ return false
 }
 
 function isDeletedNotArchived(ID){
+if(getCookie(ID).split('.')[1] != 'archived' && getCookie(ID).split('.')[0] == 'deleted'){
+return true
+} else {
+return false
+}
+}
+
+function isArchivedNotDeleted(ID){
 if(getCookie(ID).split('.')[1] != 'archived' && getCookie(ID).split('.')[0] == 'deleted'){
 return true
 } else {
