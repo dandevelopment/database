@@ -9,8 +9,28 @@ Cell
 Home
 Email
 */
-function setHours(user, hours){
-  setCookie('hours.'+user, hours)  
+function setMeetings(user, meetings){
+  setCookie('meetings.'+user, meetings)  
+return ''
+}
+
+function addMeetings(user, meetings){
+  setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) + Number(meetings)) 
+return ''
+}
+
+function getMeetings(user){
+return getCookie('meetings.' + user)
+return ''
+}
+
+function subtractMeetings(user, meetings){
+setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) - Number(meetings)) 
+  return ''
+}
+
+function setHours(user, meetings){
+  setCookie('meetings.'+user, meetings)  
 return ''
 }
 
