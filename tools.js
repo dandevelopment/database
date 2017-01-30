@@ -58,6 +58,10 @@ function getPoints(user){
 return getCookie('points.' + user)
 return ''
 }
+function getPointsPercent(user){
+return Math.floor((getPoints(user) / getMeetings(user)) * 100)
+return ''
+}
 
 function subtractPoints(user, points){
 setCookie('points.'+user, Number(getCookie('points.' + user)) - Number(points)) 
