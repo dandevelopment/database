@@ -9,13 +9,23 @@ Cell
 Home
 Email
 */
+function addMeetingRecord(user, meetings, type){
+  var i = 0;
+  while (getcookie(user + 'MeetingRecord' + i) != ''){
+    i++ 
+  }
+  setCookie(user + 'MeetingRecord' + Math.floor(i + 1), type + ':' + meetings)
+}
+//REMEMBER A ":" IS ADDED BETWEEN TYPE AND MEETINGS
 function setMeetings(user, meetings){
   setCookie('meetings.' + user, meetings)  
-return ''
+  addMeetingRecord(user, meetings, 'SET')
+  return ''
 }
 
 function addMeetings(user, meetings){
-  setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) + Number(meetings)) 
+  setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) + Number(meetings));
+  addMeetingRecord(user, meetings, 'ADDED')
 return ''
 }
 
