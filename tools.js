@@ -15,71 +15,101 @@ function addMeetingRecord(user, meetings, type){
     i++ 
   }
   setCookie(user + 'MeetingRecord' + Math.floor(i + 1), type + ':' + meetings)
+  return ''
 }
 //REMEMBER A ":" IS ADDED BETWEEN TYPE AND MEETINGS
-function setMeetings(user, meetings){
-  setCookie('meetings.' + user, meetings)  
+function setMeetings(user, meetings){ 
   addMeetingRecord(user, meetings, 'SET')
+  setCookie('meetings.' + user, meetings) 
   return ''
 }
 
 function addMeetings(user, meetings){
-  setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) + Number(meetings));
   addMeetingRecord(user, meetings, 'ADDED')
+  setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) + Number(meetings));
 return ''
 }
 
 function getMeetings(user){
+  addMeetingRecord(user, getCookie('meetings.' + user), 'GET')
 return getCookie('meetings.' + user)
 return ''
 }
 
 function subtractMeetings(user, meetings){
+  addMeetingRecord(user, meetings, 'SUBTRACT')
 setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) - Number(meetings)) 
   return ''
 }
 
+function addHourRecord(user, hour, type){
+  var i = 0;
+  while (getcookie(user + 'HourRecord' + i) != ''){
+    i++ 
+  }
+  setCookie(user + 'HourRecord' + Math.floor(i + 1), type + ':' + hour)
+  return ''
+}
+
 function setHours(user, hours){
+  addHourRecord(user, hours, 'SET')
   setCookie('hours.'+user, hours)  
 return ''
 }
 
 function addHours(user, hours){
+  addHourRecord(user, hours, 'ADD')
   setCookie('hours.'+user, Number(getCookie('hours.' + user)) + Number(hours)) 
 return ''
 }
 
 function getHours(user){
+  addHourRecord(user, getCookie('hours.' + user), 'GET')
 return getCookie('hours.' + user)
 return ''
 }
 
 function subtractHours(user, hours){
+  addHourRecord(user, hours, 'SUBTRACT')
 setCookie('hours.'+user, Number(getCookie('hours.' + user)) - Number(hours)) 
   return ''
 }
 
+function addPointRecord(user, point, type){
+  var i = 0;
+  while (getcookie(user + 'PointRecord' + i) != ''){
+    i++ 
+  }
+  setCookie(user + 'PointRecord' + Math.floor(i + 1), type + ':' + point)
+  return ''
+}
+
 function setPoints(user, points){
+  addPointRecord(user, points, 'SET')
 setCookie('points.' + user, points)  
   return ''
 }
 
 function getPoints(user){
+  addPointRecord(user, points, 'GET')
 return getCookie('points.' + user)
 return ''
 }
 function getPointsPercent(user){
+  addPointRecord(user, points, 'GETpercent')
   if(getPoints(user) != ''){
 return Math.floor((getPoints(user) / getMeetings(user)) * 100)
   } else {return '0'}
 }
 
 function subtractPoints(user, points){
+  addPointRecord(user, points, 'SUBTRACT')
 setCookie('points.'+user, Number(getCookie('points.' + user)) - Number(points)) 
   return ''
 }
 
 function addPoints(user, points){
+  addPointRecord(user, points, 'ADD')
   setCookie('points.'+user, Number(getCookie('points.' + user)) + Number(points)) 
 return ''
 }
