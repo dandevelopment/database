@@ -96,7 +96,7 @@ return getCookie('points.' + user)
 return ''
 }
 function getPointsPercent(user){
-  addPointRecord(user, points, 'GETpercent')
+  addPointRecord(user, '%', 'GETpercent')
   if(getPoints(user) != ''){
 return Math.floor((getPoints(user) / getMeetings(user)) * 100)
   } else {return '0'}
