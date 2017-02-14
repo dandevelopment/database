@@ -11,7 +11,7 @@ Email
 */
 function addMeetingRecord(user, meetings, type){
   var i = 0;
-  while (getcookie(user + 'MeetingRecord' + i) != ''){
+  while (getCookie(user + 'MeetingRecord' + i) != ''){
     i++ 
   }
   setCookie(user + 'MeetingRecord' + Math.floor(i + 1), type + ':' + meetings)
@@ -44,7 +44,7 @@ setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) - Number(meeti
 
 function addHourRecord(user, hour, type){
   var i = 0;
-  while (getcookie(user + 'HourRecord' + i) != ''){
+  while (getCookie(user + 'HourRecord' + i) != ''){
     i++ 
   }
   setCookie(user + 'HourRecord' + Math.floor(i + 1), type + ':' + hour)
@@ -77,7 +77,7 @@ setCookie('hours.'+user, Number(getCookie('hours.' + user)) - Number(hours))
 
 function addPointRecord(user, point, type){
   var i = 0;
-  while (getcookie(user + 'PointRecord' + i) != ''){
+  while (getCookie(user + 'PointRecord' + i) != ''){
     i++ 
   }
   setCookie(user + 'PointRecord' + Math.floor(i + 1), type + ':' + point)
