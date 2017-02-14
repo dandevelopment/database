@@ -91,7 +91,7 @@ setCookie('points.' + user, points)
 }
 
 function getPoints(user){
-  addPointRecord(user, points, 'GET')
+  addPointRecord(user, getCookie('points.' + user), 'GET')
 return getCookie('points.' + user)
 return ''
 }
