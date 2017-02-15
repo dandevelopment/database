@@ -9,6 +9,15 @@ Cell
 Home
 Email
 */
+function addEventRecord(Name, Hours, Achievments){
+  var i = 0;
+  while (getCookie('EventRecord' + i) != ''){
+    i++ 
+  }
+  setCookie('EventRecord' + Math.floor(i + 1), Name + '|' + Hours + '|' + Achievments)
+  return ''
+}
+
 function addMeetingRecord(user, meetings, type){
   var i = 0;
   while (getCookie(user + 'MeetingRecord' + i) != ''){
