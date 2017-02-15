@@ -9,7 +9,16 @@ Cell
 Home
 Email
 */
-function addEventRecord(Name, Hours, Achievments){
+function addEventRecord(Name, Hours, Achievments, User){
+  var i = 0;
+  while (getCookie('EventRecord' + i) != ''){
+    i++ 
+  }
+  setCookie('EventRecord' + Math.floor(i + 1), Name + '|' + User + '|' + Hours + '|' + Achievments)
+  return ''
+}
+/*
+function getEventRecordHours(user, event){
   var i = 0;
   while (getCookie('EventRecord' + i) != ''){
     i++ 
@@ -17,7 +26,7 @@ function addEventRecord(Name, Hours, Achievments){
   setCookie('EventRecord' + Math.floor(i + 1), Name + '|' + Hours + '|' + Achievments)
   return ''
 }
-
+*/
 function addMeetingRecord(user, meetings, type){
   var i = 0;
   while (getCookie(user + 'MeetingRecord' + i) != ''){
