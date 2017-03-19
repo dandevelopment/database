@@ -10,7 +10,7 @@ Home
 Email
 */
 function addEventRecord(Name, Hours, Achievments, User){
-  var i = 1;
+  var i = 0;
   while (getCookie('EventRecord' + i) != ''){
     i++ 
   }
@@ -28,7 +28,7 @@ function getEventRecordHours(user, event){
 }
 */
 function addMeetingRecord(user, meetings, type){
-  var i = 1;
+  var i = 0;
   while (getCookie(user + 'MeetingRecord' + i) != ''){
     i++ 
   }
@@ -61,7 +61,7 @@ setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) - Number(meeti
 }
 
 function addHourRecord(user, hour, type){
-  var i = 1;
+  var i = 0;
   while (getCookie(user + 'HourRecord' + i) != ''){
     i++ 
   }
@@ -94,7 +94,7 @@ setCookie('hours.'+user, Number(getCookie('hours.' + user)) - Number(hours))
 }
 
 function addPointRecord(user, point, type){
-  var i = 1;
+  var i = 0;
   while (getCookie(user + 'PointRecord' + i) != ''){
     i++ 
   }
