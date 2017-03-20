@@ -14,10 +14,7 @@ function addEventRecord(Name, Hours, Achievments, User){
   while (getCookie('EventRecord' + i) != ''){
     i++ 
   }
-  if(i == 0){
-   i = 0 - 1 
-  }
-  setCookie('EventRecord' + Math.floor(i + 1), Name + '|' + User + '|' + Hours + '|' + Achievments)
+  setCookie('EventRecord' + Math.floor(i), Name + '|' + User + '|' + Hours + '|' + Achievments)
   return ''
 }
 /*
@@ -35,11 +32,7 @@ function addMeetingRecord(user, meetings, type){
   while (getCookie(user + 'MeetingRecord' + i) != ''){
     i++ 
   }
-  
-  if(i == 0){
-   i = 0 - 1 
-  }
-  setCookie(user + 'MeetingRecord' + Math.floor(i + 1), type + ':' + meetings)
+  setCookie(user + 'MeetingRecord' + Math.floor(i), type + ':' + meetings)
   return ''
 }
 //REMEMBER A ":" IS ADDED BETWEEN TYPE AND MEETINGS
@@ -72,10 +65,7 @@ function addHourRecord(user, hour, type){
   while (getCookie(user + 'HourRecord' + i + 1) != ''){
     i++ 
   }
-  if(i == 0){
-   i = 0 - 1 
-  }
-  setCookie(user + 'HourRecord' + Math.floor(i + 1), type + ':' + hour)
+  setCookie(user + 'HourRecord' + Math.floor(i), type + ':' + hour)
   return ''
 }
 
@@ -108,10 +98,7 @@ function addPointRecord(user, point, type){
   while (getCookie(user + 'PointRecord' + i + 1) != ''){
     i++ 
   }
-  if(i == 0){
-   i = 0 - 1 
-  }
-  setCookie(user + 'PointRecord' + Math.floor(i + 1), type + ':' + point)
+  setCookie(user + 'PointRecord' + Math.floor(i), type + ':' + point)
   return ''
 }
 
