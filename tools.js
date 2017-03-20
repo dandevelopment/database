@@ -49,7 +49,7 @@ return ''
 }
 
 function getMeetings(user){
-  addMeetingRecord(user, getCookie('meetings.' + user), 'GET')
+ // addMeetingRecord(user, getCookie('meetings.' + user), 'GET')
 return getCookie('meetings.' + user)
 return ''
 }
@@ -82,7 +82,7 @@ return ''
 }
 
 function getHours(user){
-  addHourRecord(user, getCookie('hours.' + user), 'GET')
+  //addHourRecord(user, getCookie('hours.' + user), 'GET')
 return getCookie('hours.' + user)
 return ''
 }
@@ -109,7 +109,7 @@ setCookie('points.' + user, points)
 }
 
 function getPoints(user){
-  addPointRecord(user, getCookie('points.' + user), 'GET')
+ // addPointRecord(user, getCookie('points.' + user), 'GET')
 return getCookie('points.' + user)
 return ''
 }
