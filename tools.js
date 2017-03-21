@@ -9,7 +9,7 @@ Cell
 Home
 Email
 */
-function addAchievements(Name, User, Achievments, Hours){
+function addAchievement(Name, User, Achievments, Hours){
   var i = 0;
   while (getCookie(User + 'AchievementRecord' + i) != ''){
     i++ 
