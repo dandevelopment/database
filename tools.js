@@ -9,12 +9,12 @@ Cell
 Home
 Email
 */
-function addEventRecord(Name, Hours, Achievments, User){
+function addAchievements(Name, User, Achievments, Hours){
   var i = 0;
-  while (getCookie('EventRecord' + i) != ''){
+  while (getCookie(User + 'AchievementRecord' + i) != ''){
     i++ 
   }
-  setCookie('EventRecord' + Math.floor(i), Name + '|' + User + '|' + Hours + '|' + Achievments)
+  setCookie(User + 'AchievementRecord' + i, Name + '|' + User + '|' + Achievments + '|' + Hours)
   return ''
 }
 /*
@@ -114,7 +114,7 @@ return getCookie('points.' + user)
 return ''
 }
 function getPointsPercent(user){
-  addPointRecord(user, '%', 'GETpercent')
+//  addPointRecord(user, '%', 'GETpercent')
   if(getPoints(user) != ''){
 return Math.floor((getPoints(user) / getMeetings(user)) * 100)
   } else {return '0'}
