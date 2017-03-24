@@ -9,6 +9,17 @@ Cell
 Home
 Email
 */
+function getAchievements(user){
+  var i = 0;
+  var toReturn = '|'
+  while(getCookie(user + 'AchievementRecord' + i) != ''){
+        toReturn = ',' + getCookie(user + 'AchievementRecord' + i) + toReturn
+    i++
+  }
+  
+  return toReturn
+}
+
 function addAchievement(Name, User, Achievments, Hours){
   var i = 0;
   while (getCookie(User + 'AchievementRecord' + i) != ''){
