@@ -11,9 +11,14 @@ Email
 */
 function getAchievements(user){
   var i = 0;
-  var toReturn = '|'
+  var toReturn = [];
   while(getCookie(user + 'AchievementRecord' + i) != ''){
-        toReturn = ',' + getCookie(user + 'AchievementRecord' + i) + toReturn
+    var currentAchievment = getCookie(user + 'AchievementRecord' + i).split('|')
+        toReturn.push({name:currentAchievment[0], 
+                      user:currentAchievment[1],
+                       achievments:currentAchievment[2],
+                       hours:currentAchievment[3]
+                      })
     i++
   }
   
