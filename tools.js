@@ -9,6 +9,31 @@ Cell
 Home
 Email
 */
+
+//AWARD NAME, HOURS | description
+setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.')
+setCookie('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd trafficcontrol, parking service, community events, etc. Service must bepreapproved and logged by the Advisor.')
+setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.')
+setCookie('AWARD_law enforcement service', '100|Includes assistance to the department in areas such as records, communications, data processing, etc. It recognizes an accumulation of 100 hours of service.')
+setCookie('AWARD_emergency preparedness', '1|Certifies that the Explorer has received training in advanced first aid and CPR; has received training in how the post would assist in a disaster, such as flood, tornado, hurricane, etc.; and has participated in at least one civil defense or community-wide disaster training exercise.')
+setCookie('AWARD_tenure', '1|Awarded to those Explorers who complete one year of satisfactory service to the post.')
+setCookie('AWARD_perfect attendance', '1|Recognizes attendance at each scheduled meeting of the post during thepreceding year. ')
+setCookie('AWARD_drug abuse prevention', '6|Acknowledges proficiency in drug abuse prevention training and service. Requires 6 hours of advanced training. ')
+setCookie('AWARD_eagle or gold award recognition', '1|May be worn by an Explorer who has achieved the Boy Scouts of America or Girl Scouts of the U.S.A. highest award and honor (the BSA Eagle or GSUSA Gold).')
+setCookie('AWARD_explorer of the year', '1|This Explorer is selected based on dependability, attitude, attendance, and contributions to the post, department, and community. Explorers of the Year are obviously recognized for their outstanding performances and personal attributes.')
+
+
+function getFractionCompleted(user, achievment){
+  var i = 0;
+  var nmb = '';
+  var outOf = '';
+  
+  while(getCookie(user + 'AchievementRecord' + i) != ''){
+   var currentAchievment = getCookie(user + 'AchievementRecord' + i).split('|')
+    i++
+  }
+  return nmb "/" outOf
+}
 function getAchievements(user){
   var i = 0;
   var toReturn = [];
