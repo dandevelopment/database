@@ -22,6 +22,27 @@ setCookie('AWARD_drug abuse prevention', '6|Acknowledges proficiency in drug abu
 setCookie('AWARD_eagle or gold award recognition', '1|May be worn by an Explorer who has achieved the Boy Scouts of America or Girl Scouts of the U.S.A. highest award and honor (the BSA Eagle or GSUSA Gold).')
 setCookie('AWARD_explorer of the year', '1|This Explorer is selected based on dependability, attitude, attendance, and contributions to the post, department, and community. Explorers of the Year are obviously recognized for their outstanding performances and personal attributes.')
 
+setCookie('AWARD_history of law enforcement', '1|Part of Law Enforcement Training.')
+setCookie('AWARD_the contemporary law enforcement', '2|Part of Law Enforcement Training.')
+setCookie('AWARD_the criminal justice system', '2|Part of Law Enforcement Training.')
+setCookie('AWARD_radio procedures', '2|Part of Law Enforcement Training.')
+setCookie('AWARD_basic patrol procedures', '3|Part of Law Enforcement Training.')
+setCookie('AWARD_report wrighting', '4|Part of Law Enforcement Training.')
+setCookie('AWARD_criminal law', '6|Part of Law Enforcement Training.')
+setCookie('AWARD_junevel law', '2|Part of Law Enforcement Training.')
+setCookie('AWARD_traffic law', '2|Part of Law Enforcement Training.')
+setCookie('AWARD_procedures of investigation', '6|Part of Law Enforcement Training.')
+setCookie('AWARD_human relations', '4|Part of Law Enforcement Training.')
+setCookie('AWARD_crime prevention', '8|Part of Law Enforcement Training.')
+setCookie('AWARD_accident investigation', '4|Part of Law Enforcement Training.')
+setCookie('AWARD_crime scene investigation', '4|Part of Law Enforcement Training.')
+setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement Training.')
+setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.')
+setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.')
+
+
+
+
 
 function getFractionCompleted(user, achievment){
   var i = 0;
