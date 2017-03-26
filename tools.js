@@ -79,8 +79,9 @@ function getAchievments(user){
                        'hours':currentAchievment[3]
                       })
     } else {
-    toReturn[i34].hours += currentAchievment[i]; 
+    toReturn[cont].hours += currentAchievment[i]; 
     }
+    
     i++
   }
   
