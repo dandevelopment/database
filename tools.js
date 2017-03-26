@@ -59,7 +59,7 @@ function getFractionCompleted(user, achievment){
   }
   return nmb "/" outOf
 }
-function getAchievements(user){
+function getAchievments(user){
   var i = 0;
   var toReturn = [];
   while(getCookie(user + 'AchievementRecord' + i) != ''){
