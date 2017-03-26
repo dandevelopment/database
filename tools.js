@@ -40,12 +40,16 @@ setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement 
 setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.')
 setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.')
 
-var achl = ''
-while(getCookie()){
-
+var achl = 0;
+var i45 = 0;
+while(getCookies() > i45){
+     if(getCookies()[i45].split('_')[0] == 'AWARD'){
+     achl += 1
+     }
+  i45++
 }
 var achievments = {
-                   'leng':
+                   'leng': achl
 }
 
 
@@ -73,9 +77,10 @@ function getAchievments(user){
     var cont = true;
     var i34 = 0;
     while(i34 < toReturn.length){
-     // alert('CURRENT ACHIVEMENT name:' + currentAchievment[0] + '  TORETURN name')
+      alert('CURRENT ACHIVEMENT name:' + currentAchievment[0] + '  TORETURN name:' + toReturn[i34].name)
           if(currentAchievment[0] == toReturn[i34].name){
           cont = i34;
+            console.log('TAGGED.')
           }
       i34++
     }
