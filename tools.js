@@ -77,10 +77,10 @@ function getAchievments(user){
     var cont = true;
     var i34 = 0;
     while(i34 < toReturn.length){
-      alert('CURRENT ACHIVEMENT name:' + currentAchievment[0] + '  TORETURN name:' + toReturn[i34].name)
+      console.log(i34 + ':  CURRENT ACHIVEMENT name:' + currentAchievment[0] + '  TORETURN name:' + toReturn[i34].name)
           if(currentAchievment[0] == toReturn[i34].name){
           cont = i34;
-            console.log('TAGGED.')
+            console.log('TAGGED ' + i34)
           }
       i34++
     }
