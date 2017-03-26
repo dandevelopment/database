@@ -57,7 +57,7 @@ function getFractionCompleted(user, achievment){
    }
     i++
   }
-  return nmb "/" outOf
+  return nmb + "/" + outOf
 }
 function getAchievments(user){
   var i = 0;
