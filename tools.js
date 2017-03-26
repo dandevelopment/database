@@ -46,11 +46,15 @@ setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.')
 
 function getFractionCompleted(user, achievment){
   var i = 0;
-  var nmb = '';
-  var outOf = '';
+  var nmb = 0;
+  var outOf = getCookie('AWARD_' + achievment).split('|')[0];
   
   while(getCookie(user + 'AchievementRecord' + i) != ''){
    var currentAchievment = getCookie(user + 'AchievementRecord' + i).split('|')
+   var hoursOfCurrentAchievment = Number(currentAchievment[3])
+   if(currentAchievment[0] == achievment){
+   nmb += hoursOfCurrentAchievment;
+   }
     i++
   }
   return nmb "/" outOf
