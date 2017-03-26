@@ -64,11 +64,23 @@ function getAchievments(user){
   var toReturn = [];
   while(getCookie(user + 'AchievementRecord' + i) != ''){
     var currentAchievment = getCookie(user + 'AchievementRecord' + i).split('|')
-        toReturn.push({name:currentAchievment[0], 
-                      user:currentAchievment[1],
-                       achievments:currentAchievment[2],
-                       hours:currentAchievment[3]
+    var cont = true;
+    var i34 = 0;
+    while(i34 < toReturn.length){
+          if(currentAchievment[0] == toReturn[i34]){
+          cont = i34;
+          }
+      i34++
+    }
+    if(cont){
+        toReturn.push({'name':currentAchievment[0], 
+                      'user':currentAchievment[1],
+                       'achievments':currentAchievment[2],
+                       'hours':currentAchievment[3]
                       })
+    } else {
+    toReturn[i34].hours += currentAchievment[i]; 
+    }
     i++
   }
   
