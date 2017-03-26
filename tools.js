@@ -67,7 +67,8 @@ function getAchievments(user){
     var cont = true;
     var i34 = 0;
     while(i34 < toReturn.length){
-          if(currentAchievment[0] == toReturn[i34]){
+     // alert('CURRENT ACHIVEMENT name:' + currentAchievment[0] + '  TORETURN name')
+          if(currentAchievment[0] == toReturn[i34].name){
           cont = i34;
           }
       i34++
