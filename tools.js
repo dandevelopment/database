@@ -47,7 +47,7 @@ var achl = [];
 
 
 var i45 = 0;
-while(getCookies() > i45){
+while(getCookies().length > i45){
      if(getCookies()[i45].split('_')[0] == 'AWARD'){
      achl.push(getCookies()[i45].split('_')[1])
      }
