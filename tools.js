@@ -41,17 +41,11 @@ setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Trai
 setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.')
 
 var achl = [];
-var values = [],
-        keys = Object.keys(localStorage),
-        i43 = keys.length;
 
-    while ( i43-- ) {
-        values.push( localStorage.getItem(keys[i43]) );
-    }
 
-    achl =  values;
+    //achl =  values;
 
-/*
+
 var i45 = 0;
 while(getCookies() > i45){
      if(getCookies()[i45].split('_')[0] == 'AWARD'){
@@ -59,7 +53,7 @@ while(getCookies() > i45){
      }
   i45++
 }
-*/
+
 console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
 var achievments = achl;
@@ -253,7 +247,14 @@ function getCookie(cname) {
 
 function getCookies() {
   //if(localStorage.getItem(cname) != null){
-  return localStorage;
+  var values = [],
+        keys = Object.keys(localStorage),
+        i43 = keys.length;
+
+    while ( i43-- ) {
+        values.push( localStorage.getItem(keys[i43]) );
+    }
+        return values;
   //} else {
   return ''
   //}
