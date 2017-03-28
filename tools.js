@@ -40,7 +40,7 @@ setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement 
 setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.')
 setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.')
 
-var achl = 0;
+var achl = [];
 var i45 = 0;
 while(getCookies() > i45){
      if(getCookies()[i45].split('_')[0] == 'AWARD'){
@@ -48,6 +48,7 @@ while(getCookies() > i45){
      }
   i45++
 }
+console.log('Achievments: '+ achl.length)
 var achievments = achl;
 
 
