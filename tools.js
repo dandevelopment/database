@@ -46,7 +46,7 @@ var values = [],
         i43 = keys.length;
 
     while ( i43-- ) {
-        values.push( localStorage.getItem(keys[i34]) );
+        values.push( localStorage.getItem(keys[i43]) );
     }
 
     achl =  values;
