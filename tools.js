@@ -246,13 +246,14 @@ function getCookie(cname) {
 }
 
 function getCookies() {
+    var i   = 0;
   //if(localStorage.getItem(cname) != null){
   var values = [],
         keys = Object.keys(localStorage),
-        i43 = keys.length;
+        i = keys.length;
 
-    while ( i43-- ) {
-        values.push( localStorage.getItem(keys[i43]) );
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
     }
         return values;
   //} else {
