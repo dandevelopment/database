@@ -43,10 +43,10 @@ setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.')
 var achl = [];
 var values = [],
         keys = Object.keys(localStorage),
-        i = keys.length;
+        i43 = keys.length;
 
-    while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
+    while ( i43-- ) {
+        values.push( localStorage.getItem(keys[i34]) );
     }
 
     achl =  values;
