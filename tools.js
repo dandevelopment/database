@@ -44,13 +44,11 @@ var achl = 0;
 var i45 = 0;
 while(getCookies() > i45){
      if(getCookies()[i45].split('_')[0] == 'AWARD'){
-     achl += 1
+     achl.push(getCookies()[i45].split('_')[1])
      }
   i45++
 }
-var achievments = {
-                   'leng': achl
-}
+var achievments = achl;
 
 
 
@@ -69,6 +67,11 @@ function getFractionCompleted(user, achievment){
   }
   return nmb + "/" + outOf
 }
+function getAward(award){
+return getCookie('AWARD_' + award)
+     return 'none found'
+}
+
 function getAchievments(user){
      return 'Please dont use this method. It is depreciated.'
      var i = 0;
