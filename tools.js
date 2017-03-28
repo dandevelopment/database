@@ -73,12 +73,7 @@ return getCookie('AWARD_' + award)
 }
 
 function getAchievments(user){
-     return 'Please dont use this method. It is depreciated.'
-     var i = 0;
-  while (achievments.leng > i){
-       getFractionCompleted('','')
-       i++ 
-  }
+     return achievments;
      /*
   var i = 0;
   var toReturn = [];
