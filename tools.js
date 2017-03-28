@@ -48,6 +48,8 @@ while(getCookies() > i45){
      }
   i45++
 }
+
+console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
 var achievments = achl;
 
