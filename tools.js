@@ -70,6 +70,13 @@ function getFractionCompleted(user, achievment){
   return nmb + "/" + outOf
 }
 function getAchievments(user){
+     return 'Please dont use this method. It is depreciated.'
+     var i = 0;
+  while (achievments.leng > i){
+       getFractionCompleted('','')
+       i++ 
+  }
+     /*
   var i = 0;
   var toReturn = [];
   while(getCookie(user + 'AchievementRecord' + i) != ''){
@@ -80,7 +87,7 @@ function getAchievments(user){
       console.log(i34 + ':  CURRENT ACHIVEMENT achievments:' + currentAchievment[2] + '  TORETURN name:' + toReturn[i34].achievments)
           if(currentAchievment[2] == toReturn[i34].achievments){
           cont = i34;
-            console.log('TAGGED ' + i34)
+         //   console.log('TAGGED ' + i34)
           }
       i34++
     }
@@ -98,6 +105,7 @@ function getAchievments(user){
   }
   
   return toReturn
+  */
 }
 
 function addAchievement(Name, User, Achievments, Hours){
