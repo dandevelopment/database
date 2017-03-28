@@ -72,7 +72,7 @@ return getCookie('AWARD_' + award)
      return 'none found'
 }
 
-function getAchievments(user){
+function getAchievments(){
      return achievments;
      /*
   var i = 0;
