@@ -283,7 +283,11 @@ function setCookie(cname, val) {
                
                i++
                }
+        if(getCookie(cname) != ''){
+        
+        } else {
     setCookie('TITLE_' + i, cname)
+    }
     }
   return localStorage.setItem(cname, val)
 }
