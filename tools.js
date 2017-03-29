@@ -277,6 +277,9 @@ function getCookie2(cname) {
 }
 
 function setCookie(cname, val) {
+    if(cname.split('_')[0] == 'AWARD'){
+    setCookie('TITLE_', val)
+    }
   return localStorage.setItem(cname, val)
 }
 
