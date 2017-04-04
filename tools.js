@@ -58,7 +58,26 @@ console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
 var achievments = achl;
 
-
+function getCompletedAchievments(user){
+    var i = user;
+var doneAchievments = '';
+                    var i62 = 0;
+                    //for each achievment
+      
+                    while(getAchievments().length > i62){
+                   // console.log(Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[0]) + '/' + Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[1]))
+                    if(Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[0]) >= Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[1])){
+                      doneAchievments = doneAchievments + getAchievments()[i62] + ', ';
+                      //console.log('Added ' + getAchievments()[i62])
+                    }
+                    i62++
+                    }
+                    if (doneAchievments == '') {
+                        doneAchievments = 'none'
+                    }
+                    return doneAchievments
+                
+}
 
 function getFractionCompleted(user, achievment){
   var i = 0;
