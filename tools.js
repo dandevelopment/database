@@ -296,7 +296,7 @@ function getCookie2(cname) {
 }
 
 function setCookie(cname, val) {
-    if(cname.split('_')[0] == 'AWARD'){
+    if(cname.charAt(5) == '_'){
         var i = 0;
         while (getCookie('TITLE_' + i) != ''){
                
