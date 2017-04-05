@@ -296,7 +296,7 @@ function getCookie2(cname) {
 }
 
 function setCookie(cname, val) {
-    if(cname.charAt(5) == '_'){
+    /*if(cname.charAt(5) == '_'){
         var i = 0;
         while (getCookie('TITLE_' + i) != ''){
                
@@ -308,6 +308,7 @@ function setCookie(cname, val) {
     setCookie('TITLE_' + i, cname)
     }
     }
+    */
   return localStorage.setItem(cname, val)
 }
 
