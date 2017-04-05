@@ -54,8 +54,8 @@ while(getCookies().length > i45){
   i45++
 }
 
-console.log('getCookies: ' + getCookies().length)
-console.log('Achievments: '+ achl.length)
+//console.log('getCookies: ' + getCookies().length)
+//console.log('Achievments: '+ achl.length)
 var achievments = achl;
 
 function getCompletedAchievments(user){
