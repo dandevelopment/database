@@ -48,8 +48,8 @@ var achl = [];
 
 var i45 = 0;
 while(getCookies().length > i45){
-     if(getCookies()[i45].split('|')[2] == 'AWARD'){
-     achl.push(getCookies()[i45].split('_')[1])
+     if(getCookies2()[i45].split('#$')[1].split('_')[0] == 'AWARD'){
+     achl.push(getCookies2()[i45].split('#$')[1].split('_')[1])
      }
   i45++
 }
@@ -59,13 +59,13 @@ console.log('Achievments: '+ achl.length)
 var achievments = achl;
 
 function getCompletedAchievments(user){
-    var i = user;
-var doneAchievments = '';
+         var i = user;
+                    var doneAchievments = '';
                     var i62 = 0;
                     //for each achievment
       
                     while(getAchievments().length > i62){
-                   // console.log(Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[0]) + '/' + Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[1]))
+                    // console.log(Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[0]) + '/' + Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[1]))
                     if(Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[0]) >= Number(getFractionCompleted(i, getAchievments()[i62]).split('/')[1])){
                       doneAchievments = doneAchievments + getAchievments()[i62] + ', ';
                       //console.log('Added ' + getAchievments()[i62])
@@ -262,11 +262,28 @@ return ''
 }
 
 function getCookie(cname) {
+    cname = cname.split('#$')[0]
   if(localStorage.getItem(cname) != null){
   return localStorage.getItem(cname);
   } else {
   return ''
   }
+}
+
+function getCookies2() {
+    var i   = 0;
+  //if(localStorage.getItem(cname) != null){
+  var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push( localStorage.getItem(keys[i]) );
+    }
+        return values;
+  //} else {
+  return ''
+  //}
 }
 
 function getCookies() {
@@ -277,7 +294,7 @@ function getCookies() {
         i = keys.length;
 
     while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
+        values.push(getCookie(keys[i]));
     }
         return values;
   //} else {
@@ -316,7 +333,7 @@ function setCookie(cname, val) {
     }
     }
 }*/
-  return localStorage.setItem(cname, val)
+  return localStorage.setItem(cname, val + '#$' + cname)
 }
 
 function setCookie2(cname, val) {
