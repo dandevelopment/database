@@ -262,9 +262,9 @@ return ''
 }
 
 function getCookie(cname) {
-    cname = cname.split('#$')[0]
+  //  cname = cname
   if(localStorage.getItem(cname) != null){
-  return localStorage.getItem(cname);
+  return localStorage.getItem(cname).split('#$')[0];
   } else {
   return ''
   }
