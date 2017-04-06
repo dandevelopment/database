@@ -94,16 +94,9 @@ var i = 0;
 function getFractionCompleted(user, achievment){
   var i = 0;
   var nmb = 0;
-  var outOf = getCookie('AWARD_' + achievment).split('|')[0];
+  var outOf = getAward(achievment).split('|')[0];
   
-  while(getCookie(user + 'AchievementRecord' + i) != ''){
-   var currentAchievment = getCookie(user + 'AchievementRecord' + i).split('|')
-   var hoursOfCurrentAchievment = Number(currentAchievment[3])
-   if(currentAchievment[2] == achievment){
-   nmb += hoursOfCurrentAchievment;
-   }
-    i++
-  }
+  nmb = getAchievmentCompletedHours(user, achievment)
   return nmb + "/" + outOf
 }
 function getAward(award){
