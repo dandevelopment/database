@@ -286,7 +286,7 @@ function getCookies() {
     while ( i-- ) {
         values.push( localStorage.getItem(keys[i]) );
     }
-        return values;
+        return values.split('ᴪ')[0];
   //} else {
   return ''
   //}
@@ -308,6 +308,7 @@ function getCookie2(cname) {
 }
 
 function setCookie(cname, val) {
+   // var bnm = 0;
     if(cname.length >= 5){
     if(cname.charAt(5) == '_'){
         var i = 0;
@@ -322,7 +323,15 @@ function setCookie(cname, val) {
     }
     }
 }
-  return localStorage.setItem(cname, val)
+  return localStorage.setItem(cname, val + 'ᴪ' + cname)
+}
+
+function getNextStorageIte(){
+    var fgh = 0;
+    while(localstorage.getItem(fgh)){
+          
+          }
+return fgh
 }
 
 function setCookie2(cname, val) {
