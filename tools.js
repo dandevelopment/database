@@ -138,6 +138,51 @@ function getAchievments(){
   */
 }
 
+function setShirtSize(user, data){
+   setCookie('ShirtSize.' + user, data)
+}
+function getShirtSize(user){
+    getCookie('ShirtSize.' + user)
+}
+function setPantSize(user, data){
+     setCookie('PantSize.' + user, data)
+}
+function getPantSize(user){
+    getCookie('PantSize.' + user)
+}
+function setHatSize(user, data){
+     setCookie('HatSize.' + user, data)
+}
+function getHatSize(user){
+    getCookie('HatSize.' + user)
+}
+
+
+function setCollege(user, data){
+ setCookie('College.' + user, data)
+}
+function getCollege(user){
+    getCookie('College.' + user)
+}
+function setOccupation(user, data){
+     setCookie('Occupation.' + user, data)
+}
+function getOccupation(user){
+    getCookie('Occupation.' + user)
+}
+function setDateTerminated(user, data){
+       setCookie('DateTerminated.' + user, data)
+}
+function getDateTerminated(user){
+      getCookie('DateTerminated.' + user)
+}
+function setNoteTerminated(user, data){
+       setCookie('NoteTerminated.' + user, data)
+}
+function getNoteTerminated(user){
+      getCookie('NoteTerminated.' + user)
+}
+
 function addAchievement(Name, User, Achievments, Hours){
   var i = 0;
   while (getCookie(User + 'AchievementRecord' + i) != ''){
