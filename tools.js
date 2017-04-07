@@ -57,7 +57,9 @@ while(getCookies().length > i45){
 console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
 var achievments = achl;
-
+function getit(place){
+return document.getElementById(place)
+}
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
