@@ -182,6 +182,12 @@ function setNoteTerminated(user, data){
 function getNoteTerminated(user){
       getCookie('NoteTerminated.' + user)
 }
+function setReasonTerminated(user, data){
+       setCookie('ReasonTerminated.' + user, data)
+}
+function getReasonTerminated(user){
+      getCookie('ReasonTerminated.' + user)
+}
 
 function addAchievement(Name, User, Achievments, Hours){
   var i = 0;
