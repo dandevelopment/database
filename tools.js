@@ -150,6 +150,9 @@ function getShirtSize(user){
      return 'none'   
     }
 }
+function getShirtSizeOptions(){
+    return ['Option1','Option2','Option3']
+}
 function setPantSize(user, data){
      return setCookie('PantSize.' + user, data)
 }
@@ -160,6 +163,9 @@ function getPantSize(user){
      return 'none'   
     }
 }
+function getPantSizeOptions(){
+    return ['Option1','Option2','Option3']
+}
 function setHatSize(user, data){
      setCookie('HatSize.' + user, data)
 }
@@ -169,6 +175,9 @@ function getHatSize(user){
     } else {
      return 'none'   
     }
+}
+function getHatSizeOptions(){
+    return ['Option1','Option2','Option3']
 }
 
 
