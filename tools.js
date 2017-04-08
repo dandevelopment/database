@@ -144,19 +144,31 @@ function setShirtSize(user, data){
    setCookie('ShirtSize.' + user, data)
 }
 function getShirtSize(user){
-    getCookie('ShirtSize.' + user)
+    if(getCookie('ShirtSize.' + user) != ''){
+    return getCookie('ShirtSize.' + user)
+    } else {
+     return 'none'   
+    }
 }
 function setPantSize(user, data){
-     setCookie('PantSize.' + user, data)
+     return setCookie('PantSize.' + user, data)
 }
 function getPantSize(user){
-    getCookie('PantSize.' + user)
+    if(getCookie('PantSize.' + user) != ''){
+    return getCookie('PantSize.' + user)
+    } else {
+     return 'none'   
+    }
 }
 function setHatSize(user, data){
      setCookie('HatSize.' + user, data)
 }
 function getHatSize(user){
-    getCookie('HatSize.' + user)
+    if(getCookie('HatSize.' + user) != ''){
+    return getCookie('HatSize.' + user)
+    } else {
+     return 'none'   
+    }
 }
 
 
@@ -164,31 +176,51 @@ function setCollege(user, data){
  setCookie('College.' + user, data)
 }
 function getCollege(user){
-    getCookie('College.' + user)
+    if(getCookie('College.' + user) != ''){
+    return getCookie('College.' + user)
+    } else {
+     return 'none'   
+    }
 }
 function setOccupation(user, data){
      setCookie('Occupation.' + user, data)
 }
 function getOccupation(user){
-    getCookie('Occupation.' + user)
+    if(getCookie('Occupation.' + user) != ''){
+    return getCookie('Occupation.' + user)
+    } else {
+     return 'none'   
+    }
 }
 function setDateTerminated(user, data){
        setCookie('DateTerminated.' + user, data)
 }
 function getDateTerminated(user){
-      getCookie('DateTerminated.' + user)
+    if(getCookie('DateTerminated.' + user) != ''){
+     return getCookie('DateTerminated.' + user)
+    } else {
+     return 'none'   
+    }
 }
 function setNoteTerminated(user, data){
        setCookie('NoteTerminated.' + user, data)
 }
 function getNoteTerminated(user){
-      getCookie('NoteTerminated.' + user)
+    if(getCookie('NoteTerminated.' + user) != ''){
+      return getCookie('NoteTerminated.' + user)
+    } else {
+     return 'none'   
+    }
 }
 function setReasonTerminated(user, data){
        setCookie('ReasonTerminated.' + user, data)
 }
 function getReasonTerminated(user){
-      getCookie('ReasonTerminated.' + user)
+    if(getCookie('ReasonTerminated.' + user) != ''){
+      return getCookie('ReasonTerminated.' + user)
+    } else {
+     return 'none'   
+    }
 }
 
 function addAchievement(Name, User, Achievments, Hours){
