@@ -83,7 +83,9 @@ function notify(message){
     $("#messageNow").fadeOut(900);
     },6000)
 }
-
+function addEventRecord(eventName){
+  
+}
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
