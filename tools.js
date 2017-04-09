@@ -64,6 +64,20 @@ if(getCollegeOptions() == ''){
 addCollegeOption('none')
 }
 
+function notify(message){
+    var newE = document.createElement('div');
+    newE.style.width = '30%';
+    newE.style.backgroundColor = '#4f4f4f';
+    newE.style.borderRadius = '10px';
+    newE.style.color = 'white';
+    newE.style.boxShadow = '0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
+    newE.style.position = 'fixed';
+    newE.style.bottom = '10px';
+    newE.style.right = '10px';
+    newE.innerHTML = message;
+    document.insertBefore(newE, document.body.childNodes[0])
+}
+
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
