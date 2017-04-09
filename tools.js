@@ -75,7 +75,8 @@ function notify(message){
     newE.style.bottom = '10px';
     newE.style.right = '10px';
     newE.innerHTML = message;
-    document.insertBefore(newE, document.body.childNodes[0])
+    //document.insertBefore(newE, document.body.childNodes[0])
+    document.body.innerHTML = '<div>TEST</div>' + document.body.innerHTML
 }
 
 function getCompletedAchievments(user){
