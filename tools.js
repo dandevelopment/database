@@ -76,7 +76,7 @@ function notify(message){
     newE.style.right = '10px';
     newE.innerHTML = message;
     //document.insertBefore(newE, document.body.childNodes[0])
-    document.body.innerHTML = '<div style="position:absolute;bottom:0px;right:0px;"><p style="width:30%;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:30px;margin-bottom:30px;"><p style="">' + message + '</p></p></div>' + document.body.innerHTML
+    document.body.innerHTML = '<div style="position:absolute;bottom:0px;right:0px;"><div style="width:30%;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:30px;margin-bottom:30px;"><p style="">' + message + '</p></div></div>' + document.body.innerHTML
 }
 
 function getCompletedAchievments(user){
