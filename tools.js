@@ -45,7 +45,6 @@ var achl = [];
 
     //achl =  values;
 
-
 var i45 = 0;
 while(getCookies().length > i45){
      if(getCookies2()[i45].split('#$')[1].split('_')[0] == 'AWARD'){
@@ -60,6 +59,11 @@ var achievments = achl;
 function getit(place){
 return document.getElementById(place)
 }
+
+if(getCollegeOptions() == ''){
+addCollegeOption('none')
+}
+
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
@@ -178,6 +182,14 @@ function getHatSize(user){
 }
 function getHatSizeOptions(){
     return ['Option1','Option2','Option3']
+}
+
+
+function getCollegeOptions(){
+    return getCookie('COLLEGE_OPTIONS');
+}
+function addCollegeOption(college){
+    setCookie('COLLEGE_OPTIONS', getCollegeOptions() + '|' + college)
 }
 
 
