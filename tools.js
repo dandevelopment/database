@@ -76,7 +76,7 @@ function notify(message){
     newE.style.right = '10px';
     newE.innerHTML = message;
     //document.insertBefore(newE, document.body.childNodes[0])
-    document.body.innerHTML = '<div style="width:30%;background-color:4f4f4f;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position:fixed;bottom:10px;right:0px;">TEST</div>' + document.body.innerHTML
+    document.body.innerHTML = '<h1>test</h1>' //'<div style="width:30%;background-color:4f4f4f;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);position:fixed;bottom:10px;right:0px;">TEST</div>' + document.body.innerHTML
 }
 
 function getCompletedAchievments(user){
