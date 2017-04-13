@@ -177,7 +177,7 @@ function getShirtSize(user){
     }
 }
 function getShirtSizeOptions(){
-    return ['Option1','Option2','Option3']
+    return ['Small','Large','Extra Large','Extra Extra Large']
 }
 function setPantSize(user, data){
      return setCookie('PantSize.' + user, data)
@@ -190,7 +190,7 @@ function getPantSize(user){
     }
 }
 function getPantSizeOptions(){
-    return ['Option1','Option2','Option3']
+    return ['28','30','32','34','36',38','40','42']
 }
 function setHatSize(user, data){
      setCookie('HatSize.' + user, data)
