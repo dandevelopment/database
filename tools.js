@@ -349,7 +349,7 @@ function getHourRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('HourRecord')[0] != ''rRecord){
+  if(getCookies2()[i].split('#$')[1].split('HourRecord')[0] != ''){
   toReturn.push(getCookies2()[i])
   }
       i++
