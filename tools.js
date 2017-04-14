@@ -190,7 +190,7 @@ function getPantSize(user){
     }
 }
 function getPantSizeOptions(){
-    return ['28','30','32','34','36',38','40','42']
+    return ['28','30','32','34','36','38','40','42']
 }
 function setHatSize(user, data){
      setCookie('HatSize.' + user, data)
