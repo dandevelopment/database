@@ -305,7 +305,7 @@ function getMeetingRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('Meet')[1].split('Record')[0] == 'ing'){
+  if(getCookies2()[i].split('#$')[1].split('MeetingRecord')[0] != ''){
   toReturn.push(getCookies2()[i])
   }
       i++
@@ -349,7 +349,7 @@ function getHourRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('Hou')[1].split('Record')[0] == 'r'){
+  if(getCookies2()[i].split('#$')[1].split('HourRecord')[0] != ''rRecord){
   toReturn.push(getCookies2()[i])
   }
       i++
@@ -392,7 +392,7 @@ function getPointRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('Poin')[1].split('Record')[0] == 't'){
+  if(getCookies2()[i].split('#$')[1].split('PointRecord')[0] != ''){
   toReturn.push(getCookies2()[i])
   }
       i++
