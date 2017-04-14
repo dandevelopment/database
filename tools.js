@@ -461,7 +461,16 @@ function setCookie(cname, val) {
     }
     }
 }*/
-  return localStorage.setItem(cname, val + '#$' + cname)
+     var d = new Date();
+var year = d.getFullYear();//2017
+        var months = ["January","February","March","April","May","June","July","August","September","October",'November','December'];
+        var month = months[d.getMonth()];
+        var day = d.getUTCDate();
+        var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var dayweek = days[d.getDay()];
+        var time = d.toLocaleTimeString();
+        var fulltime = year+', '+month+' '+day+', '+dayweek+' '+time;
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime)
 }
 
 function setCookie2(cname, val) {
