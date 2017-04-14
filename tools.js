@@ -398,6 +398,15 @@ function getCookie(cname) {
   }
 }
 
+function getCookieTime(cname){
+   getLitteralItem(cname).split('#$')[2]
+}
+
+function getLitteralItem(nameZ){
+ localStorage.getItem(nameZ)
+}
+
+
 function getCookies2() {
     var i   = 0;
   //if(localStorage.getItem(cname) != null){
@@ -406,7 +415,7 @@ function getCookies2() {
         i = keys.length;
 
     while ( i-- ) {
-        values.push( localStorage.getItem(keys[i]) );
+        values.push(getLitteralItem(keys[i]) );
     }
         return values;
   //} else {
@@ -415,7 +424,7 @@ function getCookies2() {
 }
 
 function getCookies() {
-    var i   = 0;
+    var i = 0;
   //if(localStorage.getItem(cname) != null){
   var values = [],
         keys = Object.keys(localStorage),
