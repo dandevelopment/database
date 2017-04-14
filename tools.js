@@ -295,17 +295,17 @@ function getEventRecordHours(user, event){
 */
 function addMeetingRecord(user, meetings, type){
   var i = 0;
-  while (getCookie(user + 'MeetingRecord' + i) != ''){
+  while (getCookie(user + '|MeetingRecord|' + i) != ''){
     i++ 
   }
-  setCookie(user + 'MeetingRecord' + Math.floor(i), type + ':' + meetings)
+  setCookie(user + '|MeetingRecord|' + Math.floor(i), type + ':' + meetings)
   return ''
 }
 function getMeetingRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('MeetingRecord')[0] != ''){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord'){
   toReturn.push(getCookies2()[i])
   }
       i++
@@ -339,17 +339,17 @@ setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) - Number(meeti
 
 function addHourRecord(user, hour, type){
   var i = 0;
-  while (getCookie(user + 'HourRecord' + i + 1) != ''){
+  while (getCookie(user + '|HourRecord|' + i + 1) != ''){
     i++ 
   }
-  setCookie(user + 'HourRecord' + Math.floor(i), type + ':' + hour)
+  setCookie(user + '|HourRecord|' + Math.floor(i), type + ':' + hour)
   return ''
 }
 function getHourRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('HourRecord')[0] != ''){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] != 'HourRecord'){
   toReturn.push(getCookies2()[i])
   }
       i++
@@ -382,17 +382,17 @@ setCookie('hours.'+user, Number(getCookie('hours.' + user)) - Number(hours))
 
 function addPointRecord(user, point, type){
   var i = 0;
-  while (getCookie(user + 'PointRecord' + i + 1) != ''){
+  while (getCookie(user + '|PointRecord|' + i + 1) != ''){
     i++ 
   }
-  setCookie(user + 'PointRecord' + Math.floor(i), type + ':' + point)
+  setCookie(user + '|PointRecord|' + Math.floor(i), type + ':' + point)
   return ''
 }
 function getPointRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('PointRecord')[0] != ''){
+  if(getCookies2()[i].split('#$')[1].split('|')[0] != 'PointRecord'){
   toReturn.push(getCookies2()[i])
   }
       i++
