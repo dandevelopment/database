@@ -399,11 +399,11 @@ function getCookie(cname) {
 }
 
 function getCookieTime(cname){
-   getLitteralItem(cname).split('#$')[2]
+   return getLitteralItem(cname).split('#$')[2]
 }
 
 function getLitteralItem(nameZ){
- localStorage.getItem(nameZ)
+ return localStorage.getItem(nameZ)
 }
 
 
