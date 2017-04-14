@@ -86,6 +86,15 @@ function notify(message){
 function addEventRecord(eventName){
   
 }
+
+function getAllRecords(){
+    var toReturn = [];
+    toReturn.push(getMeetingRecords())
+    toReturn.push(getPointRecords())
+    toReturn.push(getHourRecords())
+    return toReturn
+}
+console.log(getAllRecords())
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
@@ -292,6 +301,17 @@ function addMeetingRecord(user, meetings, type){
   setCookie(user + 'MeetingRecord' + Math.floor(i), type + ':' + meetings)
   return ''
 }
+function getMeetingRecords(){
+var i = 0;
+    var toReturn = []
+  while(getCookies2().length > i){
+  if(getCookies2()[i].split('#$')[1].split('Meet')[1].split('Record')[0] == 'ing'){
+  toReturn.push(getCookies2()[i])
+  }
+      i++
+  }
+  return toReturn
+}
 //REMEMBER A ":" IS ADDED BETWEEN TYPE AND MEETINGS
 function setMeetings(user, meetings){ 
   addMeetingRecord(user, meetings, 'SET')
@@ -325,7 +345,17 @@ function addHourRecord(user, hour, type){
   setCookie(user + 'HourRecord' + Math.floor(i), type + ':' + hour)
   return ''
 }
-
+function getHourRecords(){
+var i = 0;
+    var toReturn = []
+  while(getCookies2().length > i){
+  if(getCookies2()[i].split('#$')[1].split('Hou')[1].split('Record')[0] == 'r'){
+  toReturn.push(getCookies2()[i])
+  }
+      i++
+  }
+  return toReturn
+}
 function setHours(user, hours){
   addHourRecord(user, hours, 'SET')
   setCookie('hours.'+user, hours)  
@@ -358,7 +388,17 @@ function addPointRecord(user, point, type){
   setCookie(user + 'PointRecord' + Math.floor(i), type + ':' + point)
   return ''
 }
-
+function getPointRecords(){
+var i = 0;
+    var toReturn = []
+  while(getCookies2().length > i){
+  if(getCookies2()[i].split('#$')[1].split('Poin')[1].split('Record')[0] == 't'){
+  toReturn.push(getCookies2()[i])
+  }
+      i++
+  }
+  return toReturn
+}
 function setPoints(user, points){
   addPointRecord(user, points, 'SET')
 setCookie('points.' + user, points)  
