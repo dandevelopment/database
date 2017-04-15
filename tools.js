@@ -91,7 +91,7 @@ function getAllRecords(){
     var toReturn = [];
 var i = 0;
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord'){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'HourRecord'){
   toReturn.push(getCookies2()[i])
   }
   i++
@@ -408,7 +408,7 @@ function addPointRecord(user, point, type){
 function getPointRecords(){
 var i = 0;
     var toReturn = []
-  while(getCookies2().length > i){
+  while(getCookies2().length > i) {
   if(getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord'){
   toReturn.push(getCookies2()[i])
   }
