@@ -366,7 +366,7 @@ function getHourRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('|')[1] != 'HourRecord'){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'HourRecord'){
   toReturn.push(getCookies2()[i])
   }
       i++
@@ -409,7 +409,7 @@ function getPointRecords(){
 var i = 0;
     var toReturn = []
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('|')[0] != 'PointRecord'){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord'){
   toReturn.push(getCookies2()[i])
   }
       i++
