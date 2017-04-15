@@ -222,7 +222,19 @@ function getCollegeOptions(){
 function addCollegeOption(college){
     setCookie('COLLEGE_OPTIONS', getCollegeOptions() + '|' + college)
 }
-
+function removeCollegeOption(option){
+    var toset = '';
+    var i = 0;
+    while(i < getCollegeOptions().split('|').length){
+        if(i == option){
+        
+        } else {
+        toset += '|' + getCollegeOptions().split('|')[i]
+        }
+        i++
+          }
+    setCookie('COLLEGE_OPTIONS', toset)
+}
 
 function setCollege(user, data){
  setCookie('College.' + user, data)
