@@ -226,7 +226,7 @@ function removeCollegeOption(option){
     var toset = '';
     var i = 0;
     while(i < getCollegeOptions().split('|').length){
-        if(i == option){
+        if(i == option || getCollegeOptions().split('|')[i] == ''){
         
         } else {
         toset += '|' + getCollegeOptions().split('|')[i]
