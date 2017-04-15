@@ -89,12 +89,17 @@ function addEventRecord(eventName){
 
 function getAllRecords(){
     var toReturn = [];
-    toReturn.push(getMeetingRecords())
-    toReturn.push(getPointRecords())
-    toReturn.push(getHourRecords())
+var i = 0;
+  while(getCookies2().length > i){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord'){
+  toReturn.push(getCookies2()[i])
+  }
+  i++
+  }
     return toReturn
 }
-console.log(getAllRecords())
+//console.log(getAllRecords())
+console.log('POINT RECORDS: ' + rgetPointRecords())
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
