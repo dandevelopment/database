@@ -99,7 +99,7 @@ var i = 0;
     return toReturn
 }
 //console.log(getAllRecords())
-console.log('POINT RECORDS: ' + rgetPointRecords())
+console.log('POINT RECORDS: ' + getPointRecords())
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
