@@ -105,8 +105,10 @@ function resetAllData(){
     setCookie(getCookies2()[i].split('#$')[1], '')
         i++
     }
+    setTimeout(function(){
     document.location.href = document.location.href;
-}
+    },1200)
+    }
 //console.log(getAllRecords())
 console.log('POINT RECORDS: ' + getPointRecords())
 function getCompletedAchievments(user){
