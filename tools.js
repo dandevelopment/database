@@ -101,7 +101,7 @@ var i = 0;
 function resetAllData(){
     notify('Reseting...')
     var i = 0;
-    while (i < getCookies2.length){
+    while (i < getCookies2().length){
     setCookie(getCookies2()[i].split('#$')[1], '')
         i++
     }
