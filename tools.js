@@ -101,13 +101,13 @@ var i = 0;
 function resetAllData(){
     notify('Reseting...')
     var i = 0;
+    setTimeout(function(){
+    document.location.href = document.location.href;
+    },1200)
     while (i < getCookies2().length){
     setCookie(getCookies2()[i].split('#$')[1], '')
         i++
     }
-    setTimeout(function(){
-    document.location.href = document.location.href;
-    },1200)
     }
 //console.log(getAllRecords())
 console.log('POINT RECORDS: ' + getPointRecords())
