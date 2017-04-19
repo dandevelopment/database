@@ -558,7 +558,14 @@ function setCookie(cname, val) {
     }
     }
 }*/
-     var d = new Date();
+     var fulltime = getFullTime();
+    //if(getCookie(cname) != ''){
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime)
+    //}
+    
+    }
+function getFullTime(){
+var d = new Date();
 var year = d.getFullYear();//2017
         var months = ["January","February","March","April","May","June","July","August","September","October",'November','December'];
         var month = months[d.getMonth()];
@@ -567,12 +574,19 @@ var year = d.getFullYear();//2017
         var dayweek = days[d.getDay()];
         var time = d.toLocaleTimeString();
         var fulltime = year+', '+month+' '+day+', '+dayweek+' '+time;
-    //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime)
-    //}
-    
-    }
+    return fulltime;
+}
+function getSlashTime(){
+var d = new Date();
+    var day = d.getUTCDate();
+    return day;
+}
 
+function getClockTime(){
+var d = new Date();
+    var time = d.toLocaleTimeString();
+    return time;
+}
 function setCookie2(cname, val) {
  document.cookie = cname + '=' + val + ';'
   return 'set.'
