@@ -556,8 +556,11 @@ var year = d.getFullYear();//2017
         var dayweek = days[d.getDay()];
         var time = d.toLocaleTimeString();
         var fulltime = year+', '+month+' '+day+', '+dayweek+' '+time;
+    //if(getCookie(cname) != ''){
   return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime)
-}
+    //}
+    
+    }
 
 function setCookie2(cname, val) {
  document.cookie = cname + '=' + val + ';'
