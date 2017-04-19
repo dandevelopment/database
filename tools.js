@@ -115,7 +115,7 @@ function getAllDataAsString(){
 var i = 0;
     var toReturn = '';
     while (i < getCookies2().length){
-    toReturn += getCookies2()[i]
+    toReturn += getCookies2()[i] + 'Ｏ';
         i++
     }
     return toReturn;
