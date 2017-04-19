@@ -110,7 +110,16 @@ function resetAllData(){
     }
     }
 //console.log(getAllRecords())
-console.log('POINT RECORDS: ' + getPointRecords())
+console.log('POINT RECORDS: ' + getPointRecords());
+function getAllDataAsString(){
+var i = 0;
+    var toReturn = '';
+    while (i < getCookies2().length){
+    toReturn += getCookies2()[i]
+        i++
+    }
+    return toReturn;
+}
 function getCompletedAchievments(user){
          var i = user;
                     var doneAchievments = '';
