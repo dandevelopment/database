@@ -352,7 +352,7 @@ function getReasonTerminated(user){
 }
 
 function addAchievement(Name, User, Achievments, Hours){
-    addOtherRecord(User, 'from ' Name + ', ' + Achievments + ', Hours: ' + Hours, 'ADDED ACHIEVMENT')
+    addOtherRecord(User, 'from ' + Name + ', ' + Achievments + ', Hours: ' + Hours, 'ADDED ACHIEVMENT')
   var i = 0;
   while (getCookie(User + 'AchievementRecord' + i) != ''){
     i++ 
