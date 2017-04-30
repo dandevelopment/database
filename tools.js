@@ -72,8 +72,16 @@ function download(filename, text) {
   document.body.appendChild(element);
 
   element.click();
-
+  addDownloadRecord(filename, text, 'DOWNLOADED')
   document.body.removeChild(element);
+}
+function addDownloadRecord(filename, text, type){
+  var i = 0;
+  while (getCookie('0' + '|DownloadRecord|' + i) != ''){
+    i++ 
+  }
+  setCookie('0' + '|DownloadRecord|' + Math.floor(i), type + ':' + filename)
+  return ''
 }
 function notify(message){
     var newE = document.createElement('div');
@@ -211,9 +219,17 @@ function getAchievments(){
   return toReturn
   */
 }
-
+function addOtherRecord(user, to, type){
+  var i = 0;
+  while (getCookie(user + '|OtherRecord|' + i) != ''){
+    i++ 
+  }
+  setCookie(user + '|OtherRecord|' + Math.floor(i), type + ':' + to)
+  return ''
+}
 function setShirtSize(user, data){
    setCookie('ShirtSize.' + user, data)
+    addOtherRecord(user, data, 'SET SHIRT SIZE')
 }
 function getShirtSize(user){
     if(getCookie('ShirtSize.' + user) != ''){
@@ -226,7 +242,9 @@ function getShirtSizeOptions(){
     return ['Small','Large','Extra Large','Extra Extra Large']
 }
 function setPantSize(user, data){
+    addOtherRecord(user, data, 'SET PANT SIZE')
      return setCookie('PantSize.' + user, data)
+    
 }
 function getPantSize(user){
     if(getCookie('PantSize.' + user) != ''){
@@ -239,6 +257,7 @@ function getPantSizeOptions(){
     return ['28','30','32','34','36','38','40','42']
 }
 function setHatSize(user, data){
+    addOtherRecord(user, data, 'SET HAT SIZE')
      setCookie('HatSize.' + user, data)
 }
 function getHatSize(user){
@@ -254,9 +273,11 @@ function getHatSizeOptions(){
 
 
 function getCollegeOptions(){
+   
     return getCookie('COLLEGE_OPTIONS');
 }
 function addCollegeOption(college){
+    addOtherRecord('0', college, 'ADDED COLLEGE')
     setCookie('COLLEGE_OPTIONS', getCollegeOptions() + '|' + college)
 }
 function removeCollegeOption(option){
@@ -270,10 +291,12 @@ function removeCollegeOption(option){
         }
         i++
           }
+    addOtherRecord('0', option, 'REMOVED COLLEGE OPTION')
     setCookie('COLLEGE_OPTIONS', toset)
 }
 
 function setCollege(user, data){
+    addOtherRecord(user, data, 'SET COLLEGE')
  setCookie('College.' + user, data)
 }
 function getCollege(user){
@@ -284,6 +307,7 @@ function getCollege(user){
     }
 }
 function setOccupation(user, data){
+    addOtherRecord(user, data, 'SET OCCUPATION')
      setCookie('Occupation.' + user, data)
 }
 function getOccupation(user){
@@ -294,6 +318,7 @@ function getOccupation(user){
     }
 }
 function setDateTerminated(user, data){
+    addOtherRecord(user, data, 'SET DATE TERMINATED')
        setCookie('DateTerminated.' + user, data)
 }
 function getDateTerminated(user){
@@ -304,6 +329,7 @@ function getDateTerminated(user){
     }
 }
 function setNoteTerminated(user, data){
+    addOtherRecord(user, data, 'SET NOTE TERMINATED')
        setCookie('NoteTerminated.' + user, data)
 }
 function getNoteTerminated(user){
@@ -314,6 +340,7 @@ function getNoteTerminated(user){
     }
 }
 function setReasonTerminated(user, data){
+    addOtherRecord(user, data, 'SET REASON TERMINATED')
        setCookie('ReasonTerminated.' + user, data)
 }
 function getReasonTerminated(user){
@@ -325,6 +352,7 @@ function getReasonTerminated(user){
 }
 
 function addAchievement(Name, User, Achievments, Hours){
+    addOtherRecord(User, 'from ' Name + ', ' + Achievments + ', Hours: ' + Hours, 'ADDED ACHIEVMENT')
   var i = 0;
   while (getCookie(User + 'AchievementRecord' + i) != ''){
     i++ 
