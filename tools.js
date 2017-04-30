@@ -640,6 +640,7 @@ function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Ema
     Email = 'EMAIL:' + Email + '|'
   }
   setCookie(ID, Name + Option2 + Option3 + Dob + Address + Town + Cell + Home + Email)
+    addUserRecord(ID, Name + Option2 + Option3 + Dob+ Address + Town + Cell + Home + Email, 'EDITED')
   return 'set.'
 }
 
@@ -674,8 +675,16 @@ function getData(Id, Data) {
   }
   return ''
 }
-
+function addUserRecord(user, dts, type){
+  var i = 0;
+  while (getCookie(user + '|UserRecord|' + i) != ''){
+    i++ 
+  }
+  setCookie(user + '|UserRecord|' + Math.floor(i), type + ':' + dts)
+  return ''
+}
 function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) {
+   // addUserRecord()
   var ID = '1'
   var i2 = 1
   while (getCookie(i2) != '') {
@@ -692,17 +701,27 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
   Home = 'HOME:' + Home + '|'
   Email = 'EMAIL:' + Email + '|'
   setCookie(ID, Name + Option2 + Option3+ Dob+ Address+ Town+ Cell+ Home+ Email)
+    addUserRecord(ID, Name + Option2 + Option3 + Dob + Address + Town + Home + Email, 'ADDED')
   return 'set.'
 }
 
 function archiveData(ID) {
   setCookie(ID, 'deleted.archived.' + getCookie(ID))
+    addArchiveRecord(ID, 'ARCHIVED')
   return 'archived.'
 }
-
+function addArchiveRecord(user, type){
+  var i = 0;
+  while (getCookie(user + '|ArchiveRecord|' + i) != ''){
+    i++ 
+  }
+  setCookie(user + '|ArchiveRecord|' + Math.floor(i), type + ':' + 'usr')
+  return ''
+}
 function unarchiveData(ID) {
   if(getCookie(ID).split('.')[1] == 'archived'){
   setCookie(ID, getCookie(ID).split('.')[2])
+      addArchiveRecord(ID, 'UN-ARCHIVED')
   return 'unarchived.'
 }
 }
