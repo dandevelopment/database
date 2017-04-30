@@ -110,7 +110,7 @@ function getAllRecords(){
     var toReturn = [];
 var i = 0;
   while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'HourRecord'){
+  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'HourRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'DownloadRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'OtherRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'UserRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'ArchiveRecord'){
   toReturn.push(getCookies2()[i])
       //alert(getCookies2()[i])
   }
