@@ -412,7 +412,7 @@ return ''
 }
 
 function addHours(user, hours){
-  addHourRecord(user, hours, 'ADD')
+  addHourRecord(user, hours, 'ADDED')
   setCookie('hours.'+user, Number(getCookie('hours.' + user)) + Number(hours)) 
 return ''
 }
@@ -473,7 +473,7 @@ setCookie('points.'+user, Number(getCookie('points.' + user)) - Number(points))
 }
 
 function addPoints(user, points){
-  addPointRecord(user, points, 'ADD')
+  addPointRecord(user, points, 'ADDED')
   setCookie('points.'+user, Number(getCookie('points.' + user)) + Number(points)) 
 return ''
 }
