@@ -570,7 +570,9 @@ function getCookie2(cname) {
   }
   return "";
 }
-
+function setLitteralItem(cname, val){
+ return localStorage.setItem(cname, val)
+}
 function setCookie(cname, val) {
     /*
     if(cname.length >= 5){
