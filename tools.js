@@ -91,6 +91,7 @@ function readAfile(evt) {
       var r = new FileReader();
       r.onload = function(e) { 
 	      var contents = e.target.result;
+	      alert(contents)
       return contents;
       }
       r.readAsText(f);
