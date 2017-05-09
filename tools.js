@@ -122,7 +122,7 @@ function resetAllData(){
     notify('Reseting...')
     var i = 0;
     setTimeout(function(){
-    document.location.href = document.location.href;
+    //document.location.href = document.location.href;
     },1200)
     while (i < getCookies2().length){
     setCookie(getCookies2()[i].split('#$')[1], '')
