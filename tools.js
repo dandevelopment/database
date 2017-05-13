@@ -108,9 +108,9 @@ var toReturn = ''
     } else {
       alert("Failed to load file");
     }
-	  setTimeout(function(){
+	//  setTimeout(function(){
 	  return getit('elementF').innerHTML
-	  },1000)
+	//  },1000)
 	  }
 
 function notify(message){
