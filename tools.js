@@ -87,7 +87,7 @@ function addDownloadRecord(filename, text, type){
  //   alert('worked')
     //Retrieve the first (and only!) File from the FileList object
     var f = evt.target.files[0];
-
+var toReturn = ''
     if (f) {
       var r = new FileReader();
       r.onload = function (e) {
@@ -99,12 +99,13 @@ function addDownloadRecord(filename, text, type){
               +"size: " + f.size + " bytesn"
               + "starts with: " + contents//.substr(1, contents.indexOf("n"))
         */
-	      return contents;
+	      toReturn = contents;
       }
       r.readAsText(f);
     } else {
       alert("Failed to load file");
     }
+	  return toReturn
   }
 
 function notify(message){
