@@ -84,12 +84,14 @@ function addDownloadRecord(filename, text, type){
   return ''
 }
   function readSingleFile(evt) {
+    alert('worked')
     //Retrieve the first (and only!) File from the FileList object
     var f = evt.target.files[0];
 
     if (f) {
       var r = new FileReader();
-      r.onload = function(e) {
+      r.onload = function (e) {
+          alert('really worked.')
 	      var contents = e.target.result;
         document.getElementById('todisplay').innerHTML =  "Got the file.n"
               +"name: " + f.name + "n"
