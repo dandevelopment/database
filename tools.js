@@ -92,7 +92,8 @@ var toReturn = ''
       var r = new FileReader();
       r.onload = function (e) {
 	      var elementF = document.createElement('div')
-	      
+	      elementF.id = 'elementF'
+	      elementF.style.display = 'none'
       //    alert('really worked.')
 	      var contents = e.target.result;
         elementF.innerHTML = "Got the file.n"
@@ -107,7 +108,7 @@ var toReturn = ''
     } else {
       alert("Failed to load file");
     }
-	  return toReturn
+	  return document.getElementById('elementF').innerHTML
   }
 
 function notify(message){
