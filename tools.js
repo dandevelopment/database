@@ -103,6 +103,8 @@ var toReturn = ''
               +"size: " + f.size + " bytesn"
               + "starts with: " + contents//.substr(1, contents.indexOf("n"))
         setCookie('fileToken',contents)
+	      alert(contents)
+	      alert(getCookie('fileToken'))
 		  toReturn = contents;
       }
       r.readAsText(f);
