@@ -105,6 +105,7 @@ var toReturn = ''
         //setCookie('fileToken',contents)
 	      //alert(contents)
 	      //alert(getCookie('fileToken'))
+	      alert(contents)
 		  toReturn = contents;
       }
       r.readAsText(f);
