@@ -105,16 +105,18 @@ var toReturn = ''
         //setCookie('fileToken',contents)
 	      //alert(contents)
 	      //alert(getCookie('fileToken'))
-	      alert(contents)
-		  toReturn = contents;
+	      //alert(contents)
+		
+	      toReturn = contents;
+              document.body.insertBefore(elementF, document.body.childNodes[0])
       }
       r.readAsText(f);
     } else {
       alert("Failed to load file");
     }
 	  
-	  alert(toReturn)
-	  return toReturn//getCookie('fileToken')
+	  
+	 // return toReturn//getCookie('fileToken')
 	//  setTimeout(function(){
 	  //return getit('elementF').innerHTML
 	//  },1000)
