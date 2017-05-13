@@ -102,9 +102,9 @@ var toReturn = ''
               +"type: " + f.type + "n"
               +"size: " + f.size + " bytesn"
               + "starts with: " + contents//.substr(1, contents.indexOf("n"))
-        setCookie('fileToken',contents)
-	      alert(contents)
-	      alert(getCookie('fileToken'))
+        //setCookie('fileToken',contents)
+	      //alert(contents)
+	      //alert(getCookie('fileToken'))
 		  toReturn = contents;
       }
       r.readAsText(f);
@@ -112,8 +112,8 @@ var toReturn = ''
       alert("Failed to load file");
     }
 	  
-	  
-	  return getCookie('fileToken')
+	  alert(toReturn)
+	  return toReturn//getCookie('fileToken')
 	//  setTimeout(function(){
 	  //return getit('elementF').innerHTML
 	//  },1000)
