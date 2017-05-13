@@ -109,6 +109,11 @@ var toReturn = ''
     } else {
       alert("Failed to load file");
     }
+	  
+	  while(getit('elementF') == null){
+	    
+	  }
+	  return getit('elementF')
 	//  setTimeout(function(){
 	  //return getit('elementF').innerHTML
 	//  },1000)
