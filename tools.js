@@ -93,7 +93,7 @@ var toReturn = ''
       r.onload = function (e) {
 	      var elementF = document.createElement('div')
 	      elementF.id = 'elementF'
-	    //  elementF.style.display = 'none'
+	      elementF.style.display = 'none'
       //    alert('really worked.')
 	      var contents = e.target.result;
         elementF.innerHTML = contents
