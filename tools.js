@@ -83,22 +83,25 @@ function addDownloadRecord(filename, text, type){
   setCookie('0' + '|DownloadRecord|' + Math.floor(i), type + ':' + filename)
   return ''
 }
-function readAfile(evt) {
+  function readSingleFile(evt) {
     //Retrieve the first (and only!) File from the FileList object
-    var f = evt.target.files[0]; 
+    var f = evt.target.files[0];
 
     if (f) {
       var r = new FileReader();
-      r.onload = function(e) { 
+      r.onload = function(e) {
 	      var contents = e.target.result;
-	      alert(contents)
-      return contents;
+        document.getElementById('todisplay').innerHTML =  "Got the file.n"
+              +"name: " + f.name + "n"
+              +"type: " + f.type + "n"
+              +"size: " + f.size + " bytesn"
+              + "starts with: " + contents//.substr(1, contents.indexOf("n"))
+        
       }
       r.readAsText(f);
-    } else { 
-      notify("Failed to load file");
+    } else {
+      alert("Failed to load file");
     }
-    //http://www.htmlgoodies.com/beyond/javascript/read-text-files-using-the-javascript-filereader.html
   }
 
 function notify(message){
