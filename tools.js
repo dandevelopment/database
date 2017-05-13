@@ -102,18 +102,16 @@ var toReturn = ''
               +"type: " + f.type + "n"
               +"size: " + f.size + " bytesn"
               + "starts with: " + contents//.substr(1, contents.indexOf("n"))
-        document.body.insertBefore(elementF, document.body.childNodes[0]);
-	      toReturn = contents;
+        setCookie('fileToken',contents)
+		  toReturn = contents;
       }
       r.readAsText(f);
     } else {
       alert("Failed to load file");
     }
 	  
-	  while(getit('elementF') == null){
-	    
-	  }
-	  return getit('elementF')
+	  
+	  return getCookie('fileToken')
 	//  setTimeout(function(){
 	  //return getit('elementF').innerHTML
 	//  },1000)
