@@ -91,14 +91,16 @@ var toReturn = ''
     if (f) {
       var r = new FileReader();
       r.onload = function (e) {
+	      var elementF = document.createElement('div')
+	      
       //    alert('really worked.')
 	      var contents = e.target.result;
-       /* "Got the file.n"
+        elementF.innerHTML = "Got the file.n"
               +"name: " + f.name + "n"
               +"type: " + f.type + "n"
               +"size: " + f.size + " bytesn"
               + "starts with: " + contents//.substr(1, contents.indexOf("n"))
-        */
+        document.body.insertBefore(elementF, document.body.childNodes[0]);
 	      toReturn = contents;
       }
       r.readAsText(f);
