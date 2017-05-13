@@ -109,7 +109,7 @@ var toReturn = ''
       alert("Failed to load file");
     }
 	//  setTimeout(function(){
-	  return getit('elementF').innerHTML
+	  //return getit('elementF').innerHTML
 	//  },1000)
 	  }
 
