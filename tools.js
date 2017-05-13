@@ -93,10 +93,11 @@ var toReturn = ''
       r.onload = function (e) {
 	      var elementF = document.createElement('div')
 	      elementF.id = 'elementF'
-	      elementF.style.display = 'none'
+	    //  elementF.style.display = 'none'
       //    alert('really worked.')
 	      var contents = e.target.result;
-        elementF.innerHTML = "Got the file.n"
+        elementF.innerHTML = contents
+		toReturn = "Got the file.n"
               +"name: " + f.name + "n"
               +"type: " + f.type + "n"
               +"size: " + f.size + " bytesn"
