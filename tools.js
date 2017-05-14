@@ -158,7 +158,7 @@ var i = 0;
     return toReturn
 }
 function resetAllData(){
-    notify('Reseting...')
+   // notify('Reseting...')
     var i = 0;
     setTimeout(function(){
     //document.location.href = document.location.href;
