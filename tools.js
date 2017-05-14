@@ -174,7 +174,7 @@ function getAllDataAsString(){
 var i = 0;
     var toReturn = '';
     while (i < getCookies2().length){
-    toReturn += getCookies2()[i] + 'Ｏ';
+    toReturn += getCookies2()[i] + '¼¯';
         i++
     }
     return toReturn;
