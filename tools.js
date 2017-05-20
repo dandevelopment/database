@@ -579,6 +579,25 @@ function getCookies2() {
   //}
 }
 
+function getCookieKeyCode(cookie) {
+    var i = 0;
+  //if(localStorage.getItem(cname) != null){
+  var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+	    if(getLitteralItem(keys[i]).split('#$')[1] == cookie){
+	    return keys[i]
+	    }
+       
+    }
+        return values;
+  //} else {
+  return ''
+  //}
+}
+
 function getCookies() {
     var i = 0;
   //if(localStorage.getItem(cname) != null){
