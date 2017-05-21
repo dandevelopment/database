@@ -603,6 +603,23 @@ function getCookieKeyCode(cookie) {
 }
 
 function getCookies() {
+	var i = 0;
+  //if(localStorage.getItem(cname) != null){
+  var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+	    //console.log(getLitteralItem(keys[i]).split('#$')[1])
+	    //console.log(keys[i])
+	    if(getLitteralItem(keys[i]).split('#$')[1] == cookie){
+		    //console.log('found')
+		    
+	    return keys[i]
+	    }
+    }
+	
+	/*
 	var values2 = [];
 	var i2 = 0;
 	var nextNumberToPut = ''
@@ -621,6 +638,7 @@ function getCookies() {
 	}
 	alert('ended loop.')
 	return values2;
+	*/
 }
 
 function getDisorganzedCookies(){
@@ -676,16 +694,16 @@ function setCookie(cname, val) {
 	var i = 0;
 	 var values = [],
         keys = Object.keys(localStorage),
-        i = keys.length;
+        kl = keys.length;
     //alert('starting loop.')
-    while ( i-- ) {
-	  cnumber = Number(getLitteralItem(keys[i]).split('#$')[3]) + 1
-       
+    while (kl + 1 > i) {
+	
+	    i++
     }
 	//alert('ending toop.')
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + cnumber)
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i)
     //}
     
     }
