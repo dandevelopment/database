@@ -588,9 +588,9 @@ function getCookieKeyCode(cookie) {
 
     while ( i-- ) {
 	    //console.log(getLitteralItem(keys[i]).split('#$')[1])
-	    console.log(keys[i])
+	    //console.log(keys[i])
 	    if(getLitteralItem(keys[i]).split('#$')[1] == cookie){
-		    console.log('found')
+		    //console.log('found')
 		    
 	    return keys[i]
 	    }
