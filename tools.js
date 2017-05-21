@@ -606,6 +606,7 @@ function getCookies() {
 	var values2 = [];
 	var i2 = 0;
 	var nextNumberToPut = ''
+	alert('starting loop')
 	while(values2.length != getDisorganzedCookies().length){
 		nextNumberToPut = values2.length
 		i2 = 0;
@@ -616,6 +617,7 @@ function getCookies() {
 		i2++
 	}
 	}
+	alert('ended loop.')
 	return values2;
 }
 
@@ -673,12 +675,12 @@ function setCookie(cname, val) {
 	 var values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
-    alert('starting loop.')
+    //alert('starting loop.')
     while ( i-- ) {
 	  cnumber = Number(getLitteralItem(keys[i]).split('#$')[3]) + 1
        
     }
-	alert('ending toop.')
+	//alert('ending toop.')
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
   return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + cnumber)
