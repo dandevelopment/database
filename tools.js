@@ -603,46 +603,7 @@ function getCookieKeyCode(cookie) {
 }
 
 function getCookies() {
-	var i = 0;
-  //if(localStorage.getItem(cname) != null){
-  var values = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
-
-    while ( i-- ) {
-	    //console.log(getLitteralItem(keys[i]).split('#$')[1])
-	    //console.log(keys[i])
-	    if(getLitteralItem(keys[i]).split('#$')[1] == cookie){
-		    //console.log('found')
-		    
-	    return keys[i]
-	    }
-    }
-	
-	/*
-	var values2 = [];
-	var i2 = 0;
-	var nextNumberToPut = ''
-	alert('starting loop')
-	while(values2.length != getDisorganzedCookies().length){
-		nextNumberToPut = values2.length
-		i2 = 0;
-		alert('started loop')
-	while (i2 < getDisorganzedCookies().length){
-	if(getDisorganzedCookies()[i2].split('#$')[3] == nextNumberToPut){
-		values2.push(getDisorganzedCookies()[i2])
-	}
-		i2++
-	}
-		alert('ended loop')
-	}
-	alert('ended loop.')
-	return values2;
-	*/
-}
-
-function getDisorganzedCookies(){
-var i = 0;
+    var i = 0;
   //if(localStorage.getItem(cname) != null){
   var values = [],
         keys = Object.keys(localStorage),
@@ -694,16 +655,15 @@ function setCookie(cname, val) {
 	var i = 0;
 	 var values = [],
         keys = Object.keys(localStorage),
-        kl = keys.length;
-    //alert('starting loop.')
-    while (kl + 1 > i) {
-	
-	    i++
+        i = keys.length;
+
+    while ( i-- ) {
+	  cnumber = Number(getLitteralItem(keys[i]).split('#$')[3]) + 1
+       
     }
-	//alert('ending toop.')
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i)
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + cnumber)
     //}
     
     }
