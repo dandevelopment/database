@@ -655,15 +655,14 @@ function setCookie(cname, val) {
 	var i = 0;
 	 var values = [],
         keys = Object.keys(localStorage),
-        i = keys.length;
+        kl = keys.length;
 
-    while ( i-- ) {
-	  cnumber = Number(getLitteralItem(keys[i]).split('#$')[3]) + 1
-       
+    while (kl + 1 > i) {
+	  i++
     }
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + cnumber)
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i)
     //}
     
     }
