@@ -566,6 +566,49 @@ function getLitteralItem(nameZ){
 function getCookies2() {
     var i   = 0;
   //if(localStorage.getItem(cname) != null){
+  var values = getDisorganisedCookies2();
+	var sortedValues = []
+	while(i < values){
+	      var i2 = 0;
+		var nextTarget = sortedValues.length
+	while(values.length > i2){
+	if(values[i].split('#$')[3] == nextTarget){
+	   sortedValues.push(values[i])
+	   }
+		i2++
+	}
+	i++
+        }
+	
+	
+        return sortedValues;
+
+	
+}
+function getCookies() {
+    var i = 0;
+  //if(localStorage.getItem(cname) != null){
+  var values = getDisorganisedCookies();
+       // return values;
+	
+}
+function getDisorganisedCookies(){
+ var i = 0;
+  //if(localStorage.getItem(cname) != null){
+  var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
+
+    while ( i-- ) {
+        values.push(getCookie(keys[i]));
+    }
+        return values;
+  //} else {
+  return ''
+}
+function getDisorganisedCookies2(){
+ var i   = 0;
+  //if(localStorage.getItem(cname) != null){
   var values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
@@ -578,7 +621,6 @@ function getCookies2() {
   return ''
   //}
 }
-
 function getCookieKeyCode(cookie) {
     var i = 0;
   //if(localStorage.getItem(cname) != null){
@@ -597,22 +639,6 @@ function getCookieKeyCode(cookie) {
        
     }
         return 'Not Found.';
-  //} else {
-  return ''
-  //}
-}
-
-function getCookies() {
-    var i = 0;
-  //if(localStorage.getItem(cname) != null){
-  var values = [],
-        keys = Object.keys(localStorage),
-        i = keys.length;
-
-    while ( i-- ) {
-        values.push(getCookie(keys[i]));
-    }
-        return values;
   //} else {
   return ''
   //}
