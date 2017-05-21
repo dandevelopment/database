@@ -673,11 +673,12 @@ function setCookie(cname, val) {
 	 var values = [],
         keys = Object.keys(localStorage),
         i = keys.length;
-
+    alert('starting loop.')
     while ( i-- ) {
 	  cnumber = Number(getLitteralItem(keys[i]).split('#$')[3]) + 1
        
     }
+	alert('ending toop.')
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
   return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + cnumber)
