@@ -603,7 +603,24 @@ function getCookieKeyCode(cookie) {
 }
 
 function getCookies() {
-    var i = 0;
+	var values2 = [];
+	var i2 = 0;
+	var nextNumberToPut = ''
+	while(values2.length != getDisorganzedCookies().length){
+		nextNumberToPut = values2.length
+		i2 = 0;
+	while (i2 < getDisorganzedCookies().length){
+	if(getDisorganzedCookies()[i2].split('#$')[3] == nextNumberToPut){
+		values2.push(getDisorganzedCookies()[i2])
+	}
+		i2++
+	}
+	}
+	return values2;
+}
+
+function getDisorganzedCookies(){
+var i = 0;
   //if(localStorage.getItem(cname) != null){
   var values = [],
         keys = Object.keys(localStorage),
