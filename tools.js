@@ -579,11 +579,7 @@ function getCookies2() {
 	}
 	i++
         }
-	
-	
         return sortedValues;
-
-	
 }
 function getCookies() {
     var i = 0;
