@@ -564,27 +564,40 @@ function getLitteralItem(nameZ){
 
 
 function getCookies2() {
-    var i   = 0;
+    var i = 0;
+	var i2 = 0;
   //if(localStorage.getItem(cname) != null){
-  var values = getDisorganisedCookies2();
-	var sortedValues = []
-	while(i < values){
-	      var i2 = 0;
-		var nextTarget = sortedValues.length
-	while(values.length > i2){
-	if(values[i].split('#$')[3] == nextTarget){
-	   sortedValues.push(values[i])
-	   }
-		i2++
+  var values = getDisorganisedCookies();
+	var organizedValues = [];
+	while(values > i){
+		i2 = 0;
+	       while(values > i2){
+		   if(Number(values[i2].split('#$')[3]) == organizedValues.length){
+		     organizedValues.push(values[i2])
+		   }
+               i2++
+	       }
+		i++
 	}
-	i++
-        }
-        return sortedValues;
+	return organizedValues;
 }
 function getCookies() {
     var i = 0;
+	var i2 = 0;
   //if(localStorage.getItem(cname) != null){
   var values = getDisorganisedCookies();
+	var organizedValues = [];
+	while(values > i){
+		i2 = 0;
+	       while(values > i2){
+		   if(Number(values[i2].split('#$')[3]) == organizedValues.length){
+		     organizedValues.push(values[i2])
+		   }
+               i2++
+	       }
+		i++
+	}
+	return organizedValues;
        // return values;
 	
 }
