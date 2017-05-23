@@ -570,8 +570,10 @@ function getCookies2() {
   var values = getDisorganisedCookies();
 	var organizedValues = [];
 	while(values > i){
+		console.log('searching values ' + i + 'th time')
 		i2 = 0;
 	       while(values > i2){
+		       console.log('hmmmm... does ')
 		   if(Number(values[i2].split('#$')[3]) == organizedValues.length){
 		     organizedValues.push(values[i2])
 		   }
