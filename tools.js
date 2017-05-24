@@ -573,8 +573,8 @@ function getCookies2() {
 		console.log('searching values ' + i + 'th time')
 		i2 = 0;
 	       while(values > i2){
-		       console.log('hmmmm... does ')
-		   if(Number(values[i2].split('#$')[3]) == organizedValues.length){
+		       console.log('hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + organizedValues.length - 1)
+		   if(Number(values[i2].split('#$')[3]) == organizedValues.length - 1){
 		     organizedValues.push(values[i2])
 		   }
                i2++
