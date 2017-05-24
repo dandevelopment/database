@@ -84,7 +84,7 @@ function addDownloadRecord(filename, text, type){
   return ''
 }
   function readSingleFile(evt) {
- //   alert('worked')
+ //   alert('worked')functiofu
     //Retrieve the first (and only!) File from the FileList object
     var f = evt.target.files[0];
 var toReturn = ''
@@ -568,9 +568,9 @@ function getCookies2() {
 	var i2 = 0;
   //if(localStorage.getItem(cname) != null){
   var values = getDisorganisedCookies();
-	console.log(values.length)
+	//console.log(values.length)
 	var organizedValues = [];
-	while(values > i){
+	while(values.length > i){
 		console.log('searching values ' + i + 'th time')
 		i2 = 0;
 	       while(values > i2){
