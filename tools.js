@@ -692,7 +692,7 @@ function setCookie(cname, val) {
 	var cnumber = '';
 	var i = 0;
 	 var values = [],
-        keys = Object.keys(localStorage),
+        keys = getCookies2(),//Object.keys(localStorage),
         kl = keys.length;
 
     while (kl + 1 > i) {
