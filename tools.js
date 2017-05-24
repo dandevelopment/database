@@ -562,7 +562,7 @@ function getLitteralItem(nameZ){
  return localStorage.getItem(nameZ)
 }
 
-
+getCookies2();
 function getCookies2() {
     var i = 0;
 	var i2 = 0;
