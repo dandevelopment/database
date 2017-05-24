@@ -568,6 +568,7 @@ function getCookies2() {
 	var i2 = 0;
   //if(localStorage.getItem(cname) != null){
   var values = getDisorganisedCookies();
+	console.log(values.length)
 	var organizedValues = [];
 	while(values > i){
 		console.log('searching values ' + i + 'th time')
