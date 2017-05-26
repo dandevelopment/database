@@ -584,7 +584,9 @@ function getCookies2() {
 	       }
 		i++
 	}
+	if(values.length == organizedValues.lenght){
 	console.log(organizedValues)
+	}
 	return organizedValues;
 }
 function getCookies() {
