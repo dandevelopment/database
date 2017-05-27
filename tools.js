@@ -583,6 +583,7 @@ function getCookies2() {
 		}
 		found = false;
 	       while(values.length > i2){
+		       console.log(values[i2].split('#$').length + ' + ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
 		       if(values[i2].split('#$').length != getLitteralItem('AWARD_law enforcement training').split('#$').length){
 			       if(undefined == values[i2].split('#$')[3]){
 		                 console.log('searching Disorganized values the ' + i2 + 'th time. hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + Number(organizedValues.length + 1))
