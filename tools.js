@@ -44,7 +44,7 @@ var achl = [];
 
 
     //achl =  values;
-
+var searchedForCookies = false;
 var i45 = 0;
 while(getCookies2().length > i45){
      if(getCookies2()[i45].split('#$')[1].split('_')[0] == 'AWARD'){
@@ -568,6 +568,10 @@ function getLitteralItem(nameZ){
 
 getCookies2();
 function getCookies2() {
+	if(searchedForCookies){
+	return ''
+	}
+	searchedForCookies = true;
     var i = 0;
 	var i2 = 0;
   //if(localStorage.getItem(cname) != null){
