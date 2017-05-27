@@ -591,6 +591,7 @@ function getCookies2() {
 			       if(Number(values[i2].split('#$')[3]) == organizedValues.length + 1){
 	          	     organizedValues.push(values[i2])
 				       found = true;
+				       console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
 				       console.log('found ' + i2 + ' at loop ' + i)
 		           }
 		       } else {
