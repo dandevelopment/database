@@ -585,16 +585,18 @@ function getCookies2() {
 	       while(values.length > i2){
 		       if(values[i2].split('#$')[1] != 'sync'){
 			       if(undefined == values[i2].split('#$')[3]){
-		           console.log('searching Disporganized values the ' + i2 + 'th time. hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + Number(organizedValues.length + 1))
+		                 console.log('searching Disporganized values the ' + i2 + 'th time. hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + Number(organizedValues.length + 1))
 			       console.log(values[i2])
 			       }
 			       if(Number(values[i2].split('#$')[3]) == organizedValues.length + 1){
 	          	     organizedValues.push(values[i2])
 				       found = true;
+				       console.log('found ' + i2 + ' at loop ' + i)
 		           }
 		       } else {
 		       organizedValues.push('sync#$sync#$sync#$' + values[i2])
 			       found = true;
+			       console.log('found a sync at ' + i2 + ' at loop ' + i)
 		       }
                i2++
 	       }
