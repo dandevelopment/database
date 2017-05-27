@@ -574,9 +574,14 @@ function getCookies2() {
   var values = getDisorganisedCookies2();
 	//console.log(values.length)
 	var organizedValues = [];
+	var found = ''
 	while(values.length > i){
 		//console.log('searching values ' + i + 'th time')
 		i2 = 0;
+		if(found == false){
+		console.log('did not find ' + i)
+		}
+		found = false;
 	       while(values.length > i2){
 		       if(values[i2].split('#$')[1] != 'sync'){
 			       if(undefined == values[i2].split('#$')[3]){
@@ -585,9 +590,11 @@ function getCookies2() {
 			       }
 			       if(Number(values[i2].split('#$')[3]) == organizedValues.length + 1){
 	          	     organizedValues.push(values[i2])
+				       found = true;
 		           }
 		       } else {
 		       organizedValues.push('sync#$sync#$sync#$' + values[i2])
+			       found = true;
 		       }
                i2++
 	       }
