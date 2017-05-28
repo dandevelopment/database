@@ -157,9 +157,10 @@ function getAllRecords(){
 	//console.log(getCookies2())
     var toReturn = [];
 var i = 0;
-  while(getCookies2().length > i){
-  if(getCookies2()[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'PointRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'HourRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'DownloadRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'OtherRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'UserRecord' || getCookies2()[i].split('#$')[1].split('|')[1] == 'ArchiveRecord'){
-  toReturn.push(getCookies2()[i])
+	var gtc = getCookies2()
+  while(gtc.length > i){
+  if(gtc[i].split('#$')[1].split('|')[1] == 'MeetingRecord' || gtc[i].split('#$')[1].split('|')[1] == 'PointRecord' || gtc[i].split('#$')[1].split('|')[1] == 'HourRecord' || gtc[i].split('#$')[1].split('|')[1] == 'DownloadRecord' || gtc[i].split('#$')[1].split('|')[1] == 'OtherRecord' || gtc[i].split('#$')[1].split('|')[1] == 'UserRecord' || gtc[i].split('#$')[1].split('|')[1] == 'ArchiveRecord'){
+  toReturn.push(gtc[i])
       //alert(getCookies2()[i])
   }
   i++
