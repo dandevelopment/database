@@ -600,9 +600,10 @@ function getCookies2() {
                     console.log('found ' + i2)
                 }
             } else {
-                organizedValues.push('sync#$sync#$sync#$' + values[i2])
+		    
+                organizedValues.push('sync#$sync#$sync#$' + values[i2].split('#$')[3])
                 found = true;
-                console.log('found a sync at ' + i2)
+                console.log('found a sync at ' + i2 + '. Excuse: ' + values[i2].split('#$').length + ' = ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
             }
             i2++
         }
