@@ -11,35 +11,41 @@ Email
 */
 
 //AWARD NAME, HOURS | description
+if(getCookie('AWARD_arrest and search') != ''){
+	
 setTimeout(function(){
-setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD')
-setCookie('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd trafficcontrol, parking service, community events, etc. Service must bepreapproved and logged by the Advisor.|AWARD')
-setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD')
-setCookie('AWARD_law enforcement service', '100|Includes assistance to the department in areas such as records, communications, data processing, etc. It recognizes an accumulation of 100 hours of service.|AWARD')
-setCookie('AWARD_emergency preparedness', '1|Certifies that the Explorer has received training in advanced first aid and CPR; has received training in how the post would assist in a disaster, such as flood, tornado, hurricane, etc.; and has participated in at least one civil defense or community-wide disaster training exercise.|AWARD')
-setCookie('AWARD_tenure', '1|Awarded to those Explorers who complete one year of satisfactory service to the post.|AWARD')
-setCookie('AWARD_perfect attendance', '1|Recognizes attendance at each scheduled meeting of the post during thepreceding year.|AWARD')
-setCookie('AWARD_drug abuse prevention', '6|Acknowledges proficiency in drug abuse prevention training and service. Requires 6 hours of advanced training.|AWARD')
-setCookie('AWARD_eagle or gold award recognition', '1|May be worn by an Explorer who has achieved the Boy Scouts of America or Girl Scouts of the U.S.A. highest award and honor (the BSA Eagle or GSUSA Gold).|AWARD')
-setCookie('AWARD_explorer of the year', '1|This Explorer is selected based on dependability, attitude, attendance, and contributions to the post, department, and community. Explorers of the Year are obviously recognized for their outstanding performances and personal attributes.|AWARD')
-
-setCookie('AWARD_history of law enforcement', '1|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_the contemporary law enforcement', '2|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_the criminal justice system', '2|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_radio procedures', '2|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_basic patrol procedures', '3|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_report wrighting', '4|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_criminal law', '6|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_junevel law', '2|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_traffic law', '2|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_procedures of investigation', '6|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_human relations', '4|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_crime prevention', '8|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_accident investigation', '4|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_crime scene investigation', '4|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.|AWARD')
+	setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD')
+},1);setTimeout(function(){
+	setCookie('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd trafficcontrol, parking service, community events, etc. Service must bepreapproved and logged by the Advisor.|AWARD')
+},2);setTimeout(function(){
+	setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD')
+},3);setTimeout(function(){setCookie('AWARD_law enforcement service', '100|Includes assistance to the department in areas such as records, communications, data processing, etc. It recognizes an accumulation of 100 hours of service.|AWARD')
+},4);setTimeout(function(){setCookie('AWARD_emergency preparedness', '1|Certifies that the Explorer has received training in advanced first aid and CPR; has received training in how the post would assist in a disaster, such as flood, tornado, hurricane, etc.; and has participated in at least one civil defense or community-wide disaster training exercise.|AWARD')
+},5);setTimeout(function(){setCookie('AWARD_tenure', '1|Awarded to those Explorers who complete one year of satisfactory service to the post.|AWARD')
+},6);setTimeout(function(){setCookie('AWARD_perfect attendance', '1|Recognizes attendance at each scheduled meeting of the post during thepreceding year.|AWARD')
+},7);setTimeout(function(){setCookie('AWARD_drug abuse prevention', '6|Acknowledges proficiency in drug abuse prevention training and service. Requires 6 hours of advanced training.|AWARD')
+},8);setTimeout(function(){setCookie('AWARD_eagle or gold award recognition', '1|May be worn by an Explorer who has achieved the Boy Scouts of America or Girl Scouts of the U.S.A. highest award and honor (the BSA Eagle or GSUSA Gold).|AWARD')
+},9);setTimeout(function(){setCookie('AWARD_explorer of the year', '1|This Explorer is selected based on dependability, attitude, attendance, and contributions to the post, department, and community. Explorers of the Year are obviously recognized for their outstanding performances and personal attributes.|AWARD')
+},10);setTimeout(function(){setCookie('AWARD_history of law enforcement', '1|Part of Law Enforcement Training.|AWARD')
+},11);setTimeout(function(){setCookie('AWARD_the contemporary law enforcement', '2|Part of Law Enforcement Training.|AWARD')
+},12);setTimeout(function(){setCookie('AWARD_the criminal justice system', '2|Part of Law Enforcement Training.|AWARD')
+},13);setTimeout(function(){setCookie('AWARD_radio procedures', '2|Part of Law Enforcement Training.|AWARD')
+},14);setTimeout(function(){setCookie('AWARD_basic patrol procedures', '3|Part of Law Enforcement Training.|AWARD')
+},15);setTimeout(function(){setCookie('AWARD_report wrighting', '4|Part of Law Enforcement Training.|AWARD')
+},16);setTimeout(function(){setCookie('AWARD_criminal law', '6|Part of Law Enforcement Training.|AWARD')
+},17);setTimeout(function(){setCookie('AWARD_junevel law', '2|Part of Law Enforcement Training.|AWARD')
+},18);setTimeout(function(){setCookie('AWARD_traffic law', '2|Part of Law Enforcement Training.|AWARD')
+},19);setTimeout(function(){setCookie('AWARD_procedures of investigation', '6|Part of Law Enforcement Training.|AWARD')
+},20);setTimeout(function(){setCookie('AWARD_human relations', '4|Part of Law Enforcement Training.|AWARD')
+},21);setTimeout(function(){setCookie('AWARD_crime prevention', '8|Part of Law Enforcement Training.|AWARD')
+},22);setTimeout(function(){setCookie('AWARD_accident investigation', '4|Part of Law Enforcement Training.|AWARD')
+},23);setTimeout(function(){setCookie('AWARD_crime scene investigation', '4|Part of Law Enforcement Training.|AWARD')
+},24);setTimeout(function(){setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement Training.|AWARD')
+},25);setTimeout(function(){setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.|AWARD')
+},26);setTimeout(function(){setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.|AWARD')
+},27);
+	setTimeout(function(){document.location.href = document.location.href},28)
+}
 
 var achl = [];
 
@@ -53,7 +59,6 @@ while(getCookies2().length > i45){
      }
   i45++
 }
-},10)
 
 console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
