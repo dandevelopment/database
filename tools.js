@@ -576,7 +576,7 @@ function getLitteralItem(nameZ){
 getCookies2();
 function getCookies2() {
     if (searchedForCookies) {
-        return ''
+       // return ''
     }
     searchedForCookies = true;
     var i = 0;
@@ -626,24 +626,55 @@ function getCookies2() {
     return organizedValues;
 }
 function getCookies() {
+     if (searchedForCookies) {
+       // return ''
+    }
+    searchedForCookies = true;
     var i = 0;
-	var i2 = 0;
-  //if(localStorage.getItem(cname) != null){
-  var values = getDisorganisedCookies();
-	var organizedValues = [];
-	while(values > i){
-		i2 = 0;
-	       while(values > i2){
-		   if(Number(values[i2].split('#$')[3]) == organizedValues.length){
-		     organizedValues.push(values[i2])
-		   }
-               i2++
-	       }
-		i++
-	}
-	return organizedValues;
-       // return values;
-	
+    var i2 = 0;
+    //if(localStorage.getItem(cname) != null){
+    var values = getDisorganisedCookies2();
+    //console.log(values.length)
+    var organizedValues = [];
+    var found = ''
+    var toPush = '';
+    while (values.length > i) {
+        console.log('searching values ' + i + 'th time.')
+	    console.log(organizedValues)
+        i2 = 0;
+        if (found == false) {
+            //console.log('did not find ' + i)
+        }
+        found = false;
+        while (values.length > i2) {
+            //console.log(values[i2].split('#$').length + ' + ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
+            if (undefined == values[i2].split('#$')[3]) {
+                console.log('found an undefined at ' + i2) //'searching Disorganized values the ' + i2 + 'th time. hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + Number(organizedValues.length + 1))
+                found = true;
+            } else if (values[i2].split('#$').length == getLitteralItem('AWARD_law enforcement training').split('#$').length) {
+                if (Number(values[i2].split('#$')[3]) == organizedValues.length + 1) {
+                    toPush = values[i2].split('#$')[0]
+                    found = true;
+                    //  console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
+                    console.log('found ' + i2)
+                }
+            } else {
+		    
+                organizedValues.push('sync#$sync#$sync#$' + values[i2].split('#$')[3])
+                found = true;
+                console.log('found a sync at ' + i2 + '. Excuse: ' + values[i2].split('#$').length + ' = ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
+            }
+            i2++
+        }
+	    organizedValues.push(toPush)
+        i++
+    }
+    if (values.length == organizedValues.length) {
+        console.log(organizedValues)
+    } else {
+     //   throw('Incomplete array.')
+    }
+    return organizedValues;
 }
 function getDisorganisedCookies(){
  var i = 0;
