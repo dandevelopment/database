@@ -11,6 +11,7 @@ Email
 */
 
 //AWARD NAME, HOURS | description
+setTimeout(function(){
 setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD')
 setCookie('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd trafficcontrol, parking service, community events, etc. Service must bepreapproved and logged by the Advisor.|AWARD')
 setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD')
@@ -52,6 +53,7 @@ while(getCookies2().length > i45){
      }
   i45++
 }
+},10)
 
 console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
@@ -728,14 +730,11 @@ function setCookie(cname, val) {
         kl = keys.length;
 var i2 = 0;
     while (kl + 1 > i) {
-	  if(kl - 1 != kl){
-	  i2++
-	  }
 	    i++
     }
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i2)
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i)
     //}
     
     }
