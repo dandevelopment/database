@@ -153,8 +153,8 @@ function addEventRecord(eventName){
 }
 
 function getAllRecords(){
-	console.log('getting everything including achievments.')
-	console.log(getCookies2())
+	//console.log('getting everything including achievments.')
+	//console.log(getCookies2())
     var toReturn = [];
 var i = 0;
   while(getCookies2().length > i){
@@ -164,8 +164,8 @@ var i = 0;
   }
   i++
   }
-	console.log('Records Are: ')
-	console.log(toReturn)
+	//console.log('Records Are: ')
+	//console.log(toReturn)
     return toReturn
 }
 function resetAllData(){
