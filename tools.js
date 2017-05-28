@@ -573,7 +573,7 @@ function getLitteralItem(nameZ){
  return localStorage.getItem(nameZ)
 }
 
-getCookies2();
+//getCookies2();
 function getCookies2() {
     if (searchedForCookies) {
        // return ''
@@ -588,8 +588,8 @@ function getCookies2() {
     var found = ''
     var toPush = '';
     while (values.length > i) {
-        console.log('searching values ' + i + 'th time.')
-	    console.log(organizedValues)
+        //console.log('searching values ' + i + 'th time.')
+	   // console.log(organizedValues)
         i2 = 0;
         if (found == false) {
             //console.log('did not find ' + i)
@@ -605,7 +605,7 @@ function getCookies2() {
                     toPush = values[i2]
                     found = true;
                     //  console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
-                    console.log('found ' + i2)
+                   // console.log('found ' + i2)
                 }
             } else {
 		    
@@ -619,7 +619,7 @@ function getCookies2() {
         i++
     }
     if (values.length == organizedValues.length) {
-        console.log(organizedValues)
+      //  console.log(organizedValues)
     } else {
      //   throw('Incomplete array.')
     }
