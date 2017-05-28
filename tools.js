@@ -619,9 +619,9 @@ function getCookies2() {
         i++
     }
     if (values.length == organizedValues.length) {
-      //  console.log(organizedValues)
+        console.log(organizedValues)
     } else {
-     //   throw('Incomplete array.')
+        throw('Incomplete array.')
     }
     return organizedValues;
 }
