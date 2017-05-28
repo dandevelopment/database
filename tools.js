@@ -586,6 +586,7 @@ function getCookies2() {
     //console.log(values.length)
     var organizedValues = [];
     var found = ''
+    var toPush = '';
     while (values.length > i) {
         console.log('searching values ' + i + 'th time.')
 	    console.log(organizedValues)
@@ -601,7 +602,7 @@ function getCookies2() {
                 found = true;
             } else if (values[i2].split('#$').length == getLitteralItem('AWARD_law enforcement training').split('#$').length) {
                 if (Number(values[i2].split('#$')[3]) == organizedValues.length + 1) {
-                    organizedValues.push(values[i2])
+                    toPush = values[i2]
                     found = true;
                     //  console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
                     console.log('found ' + i2)
@@ -612,6 +613,7 @@ function getCookies2() {
                 found = true;
                 console.log('found a sync at ' + i2 + '. Excuse: ' + values[i2].split('#$').length + ' = ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
             }
+		organizedValues.push(toPush)
             i2++
         }
         i++
