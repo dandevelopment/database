@@ -613,9 +613,9 @@ function getCookies2() {
                 found = true;
                 console.log('found a sync at ' + i2 + '. Excuse: ' + values[i2].split('#$').length + ' = ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
             }
-		organizedValues.push(toPush)
             i2++
         }
+	    organizedValues.push(toPush)
         i++
     }
     if (values.length == organizedValues.length) {
