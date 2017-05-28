@@ -11,7 +11,7 @@ Email
 */
 
 //AWARD NAME, HOURS | description
-if(getCookie('AWARD_arrest and search') != ''){
+if(getCookie('AWARD_arrest and search') == ''){
 	
 setTimeout(function(){
 	setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD')
