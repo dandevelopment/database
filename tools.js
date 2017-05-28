@@ -580,7 +580,8 @@ function getCookies2() {
     var organizedValues = [];
     var found = ''
     while (values.length > i) {
-        console.log('searching values ' + i + 'th time')
+        console.log('searching values ' + i + 'th time.')
+	    console.log(organizedValues)
         i2 = 0;
         if (found == false) {
             //console.log('did not find ' + i)
