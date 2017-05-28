@@ -726,13 +726,16 @@ function setCookie(cname, val) {
 	 var values = [],
         keys = getDisorganisedCookies2(),//Object.keys(localStorage),
         kl = keys.length;
-
+var i2 = 0;
     while (kl + 1 > i) {
-	  i++
+	  if(kl - 1 != kl){
+	  i2++
+	  }
+	    i++
     }
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i)
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i2)
     //}
     
     }
