@@ -619,7 +619,7 @@ function getCookies2() {
         i++
     }
     if (values.length == organizedValues.length) {
-        console.log(organizedValues)
+       // console.log(organizedValues)
     } else {
         throw('Incomplete array.')
     }
@@ -639,8 +639,8 @@ function getCookies() {
     var found = ''
     var toPush = '';
     while (values.length > i) {
-        console.log('searching values ' + i + 'th time.')
-	    console.log(organizedValues)
+     //   console.log('searching values ' + i + 'th time.')
+//	    console.log(organizedValues)
         i2 = 0;
         if (found == false) {
             //console.log('did not find ' + i)
@@ -656,7 +656,7 @@ function getCookies() {
                     toPush = values[i2].split('#$')[0]
                     found = true;
                     //  console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
-                    console.log('found ' + i2)
+    //                console.log('found ' + i2)
                 }
             } else {
 		    
@@ -670,9 +670,9 @@ function getCookies() {
         i++
     }
     if (values.length == organizedValues.length) {
-        console.log(organizedValues)
+  //      console.log(organizedValues)
     } else {
-     //   throw('Incomplete array.')
+        throw('Incomplete array.')
     }
     return organizedValues;
 }
