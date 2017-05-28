@@ -568,50 +568,49 @@ function getLitteralItem(nameZ){
 
 getCookies2();
 function getCookies2() {
-	if(searchedForCookies){
-	return ''
-	}
-	searchedForCookies = true;
+    if (searchedForCookies) {
+        return ''
+    }
+    searchedForCookies = true;
     var i = 0;
-	var i2 = 0;
-  //if(localStorage.getItem(cname) != null){
-  var values = getDisorganisedCookies2();
-	//console.log(values.length)
-	var organizedValues = [];
-	var found = ''
-	while(values.length > i){
-		//console.log('searching values ' + i + 'th time')
-		i2 = 0;
-		if(found == false){
-		console.log('did not find ' + i)
-		}
-		found = false;
-	       while(values.length > i2){
-		       console.log(values[i2].split('#$').length + ' + ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
-		       if(values[i2].split('#$').length == getLitteralItem('AWARD_law enforcement training').split('#$').length){
-			       if(undefined == values[i2].split('#$')[3]){
-		                 console.log('searching Disorganized values the ' + i2 + 'th time. hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + Number(organizedValues.length + 1))
-			       console.log(values[i2])
-			       }
-			       if(Number(values[i2].split('#$')[3]) == organizedValues.length + 1){
-	          	     organizedValues.push(values[i2])
-				       found = true;
-				       console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
-				       console.log('found ' + i2 + ' at loop ' + i)
-		           }
-		       } else {
-		       organizedValues.push('sync#$sync#$sync#$' + values[i2])
-			       found = true;
-			       console.log('found a sync at ' + i2 + ' at loop ' + i)
-		       }
-               i2++
-	       }
-		i++
-	}
-	if(values.length == organizedValues.length){
-	console.log(organizedValues)
-	}
-	return organizedValues;
+    var i2 = 0;
+    //if(localStorage.getItem(cname) != null){
+    var values = getDisorganisedCookies2();
+    //console.log(values.length)
+    var organizedValues = [];
+    var found = ''
+    while (values.length > i) {
+        console.log('searching values ' + i + 'th time')
+        i2 = 0;
+        if (found == false) {
+            //console.log('did not find ' + i)
+        }
+        found = false;
+        while (values.length > i2) {
+            //console.log(values[i2].split('#$').length + ' + ' + getLitteralItem('AWARD_law enforcement training').split('#$').length)
+            if (undefined == values[i2].split('#$')[3]) {
+                console.log('found an undefined at ' + i2) //'searching Disorganized values the ' + i2 + 'th time. hmmmm... does ' + values[i2].split('#$')[3] + ' = ' + Number(organizedValues.length + 1))
+                found = true;
+            } else if (values[i2].split('#$').length == getLitteralItem('AWARD_law enforcement training').split('#$').length) {
+                if (Number(values[i2].split('#$')[3]) == organizedValues.length + 1) {
+                    organizedValues.push(values[i2])
+                    found = true;
+                    //  console.log('apparently, now ' + Number(values[i2].split('#$')[3]) + ' = ' + organizedValues.length + 1)
+                    console.log('found ' + i2)
+                }
+            } else {
+                organizedValues.push('sync#$sync#$sync#$' + values[i2])
+                found = true;
+                console.log('found a sync at ' + i2)
+            }
+            i2++
+        }
+        i++
+    }
+    if (values.length == organizedValues.length) {
+        console.log(organizedValues)
+    }
+    return organizedValues;
 }
 function getCookies() {
     var i = 0;
