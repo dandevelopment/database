@@ -121,7 +121,13 @@ var toReturn = ''
     } else {
       alert("Failed to load file");
     }
-	  
+	  function getAllUsersNumber(){
+	      var i = 0;
+		  while(getCookie(i) != ''){
+		i++	  
+		  }
+		  return i;
+	  }
 	  
 	 // return toReturn//getCookie('fileToken')
 	//  setTimeout(function(){
@@ -280,7 +286,9 @@ function addOtherRecord(user, to, type){
 }
 function setShirtSize(user, data){
    setCookie('ShirtSize.' + user, data)
+	if(getCookie('ShirtSize.' + user) != data){
     addOtherRecord(user, data, 'SET SHIRT SIZE')
+	}
 }
 function getShirtSize(user){
     if(getCookie('ShirtSize.' + user) != ''){
@@ -293,7 +301,9 @@ function getShirtSizeOptions(){
     return ['Small','Large','Extra Large','Extra Extra Large']
 }
 function setPantSize(user, data){
+	if(getCookie('PantSize.' + user) != data){
     addOtherRecord(user, data, 'SET PANT SIZE')
+	}
      return setCookie('PantSize.' + user, data)
     
 }
@@ -308,7 +318,9 @@ function getPantSizeOptions(){
     return ['28','30','32','34','36','38','40','42']
 }
 function setHatSize(user, data){
+	if(getCookie('HatSize.' + user) != data){
     addOtherRecord(user, data, 'SET HAT SIZE')
+	}
      setCookie('HatSize.' + user, data)
 }
 function getHatSize(user){
@@ -347,7 +359,9 @@ function removeCollegeOption(option){
 }
 
 function setCollege(user, data){
+	if(getCookie('College.' + user) != data){
     addOtherRecord(user, data, 'SET COLLEGE')
+	}
  setCookie('College.' + user, data)
 }
 function getCollege(user){
@@ -358,7 +372,9 @@ function getCollege(user){
     }
 }
 function setOccupation(user, data){
+	if(getCookie('Occupation.' + user) != data){
     addOtherRecord(user, data, 'SET OCCUPATION')
+	}
      setCookie('Occupation.' + user, data)
 }
 function getOccupation(user){
@@ -369,7 +385,9 @@ function getOccupation(user){
     }
 }
 function setDateTerminated(user, data){
+	if(getCookie('DateTerminated.' + user) != data){
     addOtherRecord(user, data, 'SET DATE TERMINATED')
+	}
        setCookie('DateTerminated.' + user, data)
 }
 function getDateTerminated(user){
@@ -380,7 +398,9 @@ function getDateTerminated(user){
     }
 }
 function setNoteTerminated(user, data){
+	if(getCookie('NoteTerminated.' + user) != data){
     addOtherRecord(user, data, 'SET NOTE TERMINATED')
+	}
        setCookie('NoteTerminated.' + user, data)
 }
 function getNoteTerminated(user){
@@ -391,7 +411,9 @@ function getNoteTerminated(user){
     }
 }
 function setReasonTerminated(user, data){
+	if(getCookie('ReasonTerminated.' + user) != data){
     addOtherRecord(user, data, 'SET REASON TERMINATED')
+	}
        setCookie('ReasonTerminated.' + user, data)
 }
 function getReasonTerminated(user){
@@ -442,13 +464,17 @@ var i = 0;
 }
 //REMEMBER A ":" IS ADDED BETWEEN TYPE AND MEETINGS
 function setMeetings(user, meetings){ 
+	if(getCookie('meetings.' + user) != meetings){
   addMeetingRecord(user, meetings, 'SET')
+	}
   setCookie('meetings.' + user, meetings) 
   return ''
 }
 
 function addMeetings(user, meetings){
+	//if(getCookie('meetings.' + user) != meetings){
   addMeetingRecord(user, meetings, 'ADDED')
+	//}
   setCookie('meetings.'+user, Number(getCookie('meetings.' + user)) + Number(meetings));
 return ''
 }
@@ -485,7 +511,9 @@ var i = 0;
   return toReturn
 }
 function setHours(user, hours){
+	if(getCookie('hours.' + user) != hours){
   addHourRecord(user, hours, 'SET')
+	}
   setCookie('hours.'+user, hours)  
 return ''
 }
@@ -528,7 +556,9 @@ var i = 0;
   return toReturn
 }
 function setPoints(user, points){
+	if(getCookie('points.' + user) != points){
   addPointRecord(user, points, 'SET')
+	}
 setCookie('points.' + user, points)  
   return ''
 }
