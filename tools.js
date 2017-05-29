@@ -123,18 +123,18 @@ var toReturn = ''
     }
   }
 	  function getAllUsersNumber(){
-	      var i = 0;
+	      var i = 1;
 		  while(getCookie(i) != ''){
 		i++	  
 		  }
 		  return i;
-	          
+	  }
 	  
 	 // return toReturn//getCookie('fileToken')
 	//  setTimeout(function(){
 	  //return getit('elementF').innerHTML
 	//  },1000)
-	  }
+	  
 
 function notify(message){
     var newE = document.createElement('div');
