@@ -121,13 +121,14 @@ var toReturn = ''
     } else {
       alert("Failed to load file");
     }
+  }
 	  function getAllUsersNumber(){
 	      var i = 0;
 		  while(getCookie(i) != ''){
 		i++	  
 		  }
 		  return i;
-	  }
+	          
 	  
 	 // return toReturn//getCookie('fileToken')
 	//  setTimeout(function(){
