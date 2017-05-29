@@ -238,6 +238,13 @@ function getFractionCompleted(user, achievment){
   nmb = getAchievmentCompletedHours(user, achievment)
   return nmb + "/" + outOf
 }
+function didCompleteAchievment(user, achievment){
+if(Number(getFractionCompleted(user, achievment).split('/')[0]) >= Number(getFractionCompleted(user, achievment).split('/')[1])){
+	return true;
+} else {
+return false;	
+}
+}
 function getAward(award){
 return getCookie('AWARD_' + award)
      return 'none found'
@@ -586,6 +593,131 @@ function addPoints(user, points){
   setCookie('points.'+user, Number(getCookie('points.' + user)) + Number(points)) 
 return ''
 }
+function getNumberUsersAchievment(achievment){
+var i = 0;
+var toReturn = 0;
+while(i < getAllUsersNumber()){
+if(didCompleteAchievment(i, achievment)){
+  toReturn++
+}
+i++
+}
+return toReturn;
+}
+function getPercentUsersAchievment(achievment){
+return getNumberUsersAchievment(achievment) * Number(100/getAllUsersNumber());
+}
+function getNumberUsersGraduated(college){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+if(getCollege(i) == college){
+i2++
+}
+i++
+}
+return i2;
+}
+function getPercentUsersGraduated(college){
+return getNumberUsersGraduated(college) * Number(100/getAllUsersNumber());
+}
+function getNumberUsersOccupation(occupation){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+if(getOccupation(i) == occupation){
+i2++
+}
+i++
+}
+return i2;
+}
+function getPercentUsersOccupation(occupation){
+return getNumberUsersOccupation(occupation) * Number(100/getAllUsersNumber());
+}
+function getNumberUsersShirtSize(shirtSize){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+if(getShirtSize(i) == shirtSize){
+i2++
+}
+i++
+}
+return i2;
+}
+function getPercentUsersShirtSize(shirtSize){
+  return getNumberUsersShirtSize(shirtSize) * Number(100/getAllUsersNumber());
+}
+function getNumberUsersPantSize(pantSize){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+if(getPantSize(i) == pantSize){
+i2++
+}
+i++
+}
+return i2;
+}
+function getPercentUsersPantSize(pantSize){
+ return getNumberUsersPantSize(pantSize) * Number(100/getAllUsersNumber());
+}
+function getNumberUsersHatSize(hatSize){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+if(getHatSize(i) == hatSize){
+i2++
+}
+i++
+}
+return i2;
+}
+function getPercentUsersHatSize(hatSize){
+ return getNumberUsersHatSize(hatSize) * Number(100/getAllUsersNumber());
+}
+function getNumberHoursintheProgram(){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+i2 += getHours(i)
+i++
+}
+return i2;
+}
+function getNumberUsersAttendedAKAPoints(){
+//THE TOTAL AMMOUNT OF MEETINGS ATTENDED FOR EACH PERSON
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+i2 += getPoints(i)
+i++
+}
+return i2;
+}
+
+
+
+/*
+
+function getNumberUsers(){
+var i = 0;
+var i2 = 0;
+while(i < getAllUsersNumber()){
+if(){
+i2++
+}
+i++
+}
+return i2;
+}
+function getPercentUsers(){
+return getNumberUsers() * Number(100/getAllUsersNumber());
+}
+
+
+*/
 
 function getCookie(cname) {
   //  cname = cname
