@@ -229,7 +229,7 @@ function resetAllData(){
     //document.location.href = document.location.href;
     },1200)
     while (i < getCookies2().length){
-    setCookie(getCookies2()[i].split('#$')[1], '')
+    setLitteralItem(getCookies2()[i].split('#$')[1], '')
         i++
     }
     }
