@@ -293,10 +293,11 @@ function addOtherRecord(user, to, type){
   return ''
 }
 function setShirtSize(user, data){
-   setCookie('ShirtSize.' + user, data)
 	if(getCookie('ShirtSize.' + user) != data){
     addOtherRecord(user, data, 'SET SHIRT SIZE')
 	}
+   setCookie('ShirtSize.' + user, data)
+	
 }
 function getShirtSize(user){
     if(getCookie('ShirtSize.' + user) != ''){
