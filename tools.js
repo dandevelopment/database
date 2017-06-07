@@ -85,7 +85,7 @@ window.onload = function () {
 };
 window.scrollBy(0,0)
 */
-function addScroll(yc){
+function addScroll(yc){/*
 	var positionItWasAt = document.body.scrollTop;
 	window.scrollTo(0,0)
 	var top = document.body.scrollTop;
@@ -97,14 +97,14 @@ function addScroll(yc){
 	console.log('yc = ' + yc + ', difference in height = ' + height - positionItWasAt + ', changing yc to position it was at.')
 		yc = height - positionItWasAt
 	}
-var hva = setInterval(function(){
+        var hva = setInterval(function(){
 	var difference = positionItWasAt - document.body.scrollTop;
 	window.scrollBy(0,yc/10)
 	console.log('difference = ' + difference + ', yc = ' + yc)
 	if(difference > yc){
 	clearInterval(hva)
 	}
-},90)
+},90)*/
 }
 //setTimeout(addScroll(1000))
 function download(filename, text) {
