@@ -1061,8 +1061,8 @@ function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Ema
   } else {
     Email = 'EMAIL:' + Email + '|'
   }
-  setCookie(ID, Name + Option2 + Option3 + Dob + Address + Town + Cell + Home + Email)
     addUserRecord(ID, Name + Option2 + Option3 + Dob+ Address + Town + Cell + Home + Email, 'EDITED')
+  setCookie(ID, Name + Option2 + Option3 + Dob + Address + Town + Cell + Home + Email)
   return 'set.'
 }
 
