@@ -1150,7 +1150,14 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
   Home = 'HOME:' + Home + '|'
   Email = 'EMAIL:' + Email + '|'
   setCookie(ID, Name + Option2 + Option3+ Dob+ Address+ Town+ Cell+ Home+ Email)
-    addUserRecord(ID, Name + Option2 + Option3 + Dob + Address + Town + Home + Email, 'ADDED')
+	var allOem = Name + Option2 + Option3 + Dob + Address + Town + Home + Email;
+	var toReturn = ''
+	var i = 0;
+	while(i < allOem.length){
+	toReturn = allOem[i] + ',  ' + toReturn
+		i++
+	}
+    addUserRecord(ID, toReturn, 'ADDED')
   return 'set.'
 }
 
