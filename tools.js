@@ -1016,6 +1016,33 @@ function setCookie2(cname, val) {
 }
 
 function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) {
+	if(getData(ID,'Name') != Name){
+	addUserRecord(ID, Name, 'EDITED NAME')
+	}
+	if(getData(ID,'Option2') != Option2){
+	addUserRecord(ID, Option2, 'EDITED LASTNAME')
+	}
+	if(getData(ID,'Option3') != Option3){
+	addUserRecord(ID, Option3, 'EDITED TIME')
+	}
+	if(getData(ID,'Dob') != Dob){
+	addUserRecord(ID, Dob, 'EDITED DOB')
+	}
+	if(getData(ID,'Address') != Address){
+	addUserRecord(ID, Address, 'EDITED ADDRESS')
+	}
+	if(getData(ID,'Town') != Town){
+	addUserRecord(ID, Town, 'EDITED TOWN')
+	}
+	if(getData(ID,'Cell') != Cell){
+	addUserRecord(ID, Cell, 'EDITED CELL')
+	}
+	if(getData(ID,'Home') != Home){
+	addUserRecord(ID, Home, 'EDITED HOME')
+	}
+	if(getData(ID,'Email') != Email){
+	addUserRecord(ID, Email, 'EDITED EMAIL')
+	}
   if (Name == '' || Name == undefined) {
     Name = 'NAME:' + getData(ID, 'Name') + '|'
   } else {
@@ -1061,7 +1088,7 @@ function setData(ID, Name, Option2, Option3, Dob, Address, Town, Cell, Home, Ema
   } else {
     Email = 'EMAIL:' + Email + '|'
   }
-    addUserRecord(ID, Name + Option2 + Option3 + Dob+ Address + Town + Cell + Home + Email, 'EDITED')
+    //addUserRecord(ID, Name + Option2 + Option3 + Dob+ Address + Town + Cell + Home + Email, 'EDITED')
   setCookie(ID, Name + Option2 + Option3 + Dob + Address + Town + Cell + Home + Email)
   return 'set.'
 }
