@@ -70,6 +70,31 @@ return document.getElementById(place)
 if(getCollegeOptions() == ''){
 addCollegeOption('none')
 }
+/*
+window.onload = function () { 
+  window.onscroll = function () { 
+    var doc = document.body, 
+    scrollPosition = doc.scrollTop,
+    pageSize = (doc.scrollHeight - doc.clientHeight),
+    percentageScrolled = Math.floor((scrollPosition / pageSize) * 100); 
+
+     if (percentageScrolled >= 50){ // if the percentage is >= 50, scroll to top
+       window.scrollTo(0,0); 
+     } 
+   }; 
+};
+window.scrollBy(0,0)
+*/
+function addScroll(yc){
+	var positionItWasAt = document.body.scrollTop
+var hva = setInterval(function(){
+	window.scrollBy(0,yc/10)
+	if(positionItWasAt - document.body.scrollTop > yc){
+	clearInterval(hva)
+	}
+},90)
+}
+setTimeout(addScroll(1000))
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
