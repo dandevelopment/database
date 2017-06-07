@@ -66,7 +66,16 @@ var achievments = achl;
 function getit(place){
 return document.getElementById(place)
 }
-
+setTimeout(function(){
+setCookie('firstTimeToken', 'true')
+},5000)
+function firstTime(){
+if(getCookie('firstTimeToken') != 'true'){
+return false;
+} else {
+return true;
+}
+}
 if(getCollegeOptions() == ''){
 addCollegeOption('none')
 }
