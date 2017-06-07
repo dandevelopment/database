@@ -94,7 +94,7 @@ var hva = setInterval(function(){
 	}
 },90)
 }
-setTimeout(addScroll(1000))
+//setTimeout(addScroll(1000))
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
