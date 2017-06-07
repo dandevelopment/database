@@ -93,12 +93,14 @@ function addScroll(yc){
 	var bottom = document.body.scrollTop;
 	window.scrollTo(0,positionItWasAt);
 	var height = bottom - top;
-	if(height - positionItWasAt < yc){
-	yc = height - positionItWasAt
+	if(height - positionItWasAt < yc + 1){
+	console.log('yc = ' + yc + ', difference in height = ' + height - positionItWasAt + ', changing yc to position it was at.')
+		yc = height - positionItWasAt
 	}
 var hva = setInterval(function(){
 	var difference = positionItWasAt - document.body.scrollTop;
 	window.scrollBy(0,yc/10)
+	console.log('difference = ' + difference + ', yc = ' + yc)
 	if(difference > yc){
 	clearInterval(hva)
 	}
