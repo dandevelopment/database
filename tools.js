@@ -86,10 +86,20 @@ window.onload = function () {
 window.scrollBy(0,0)
 */
 function addScroll(yc){
-	var positionItWasAt = document.body.scrollTop
+	var positionItWasAt = document.body.scrollTop;
+	window.scrollTo(0,0)
+	var top = document.body.scrollTop;
+	window.scrollTo(0,1000)
+	var bottom = document.body.scrollTop;
+	window.scrollTo(0,positionItWasAt);
+	var height = bottom - top;
+	if(height - positionItWasAt < yc){
+	yc = height - positionItWasAt
+	}
 var hva = setInterval(function(){
+	var difference = positionItWasAt - document.body.scrollTop;
 	window.scrollBy(0,yc/10)
-	if(positionItWasAt - document.body.scrollTop > yc){
+	if(difference > yc){
 	clearInterval(hva)
 	}
 },90)
