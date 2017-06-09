@@ -94,7 +94,18 @@ window.onload = function () {
 };
 window.scrollBy(0,0)
 */
-function addScroll(yc){/*
+
+function addScroll(yc){
+	var i = 1;
+	var hgh = setInterval(function(){
+	if(i > yc){
+		clearInterval(hgh);
+		  }
+		window.scrollBy(0,10)
+	},90)
+	
+	
+	/*
 	var positionItWasAt = document.body.scrollTop;
 	window.scrollTo(0,0)
 	var top = document.body.scrollTop;
@@ -387,6 +398,20 @@ function getHatSize(user){
 }
 function getHatSizeOptions(){
     return ['Option1','Option2','Option3']
+}
+function getActivityOptions(){
+    return ['User name','User id','Record type','Record action', 'Record difference', 'Record id']
+}
+function getActivityOption(){
+	if(getCookie('activityOption') == ''){
+		setCookie('activityOption', 'User name')
+	} 
+    return getCookie('activityOption')
+	
+}
+function setActivityOption(data){
+	addOtherRecord('N/A', data, 'SET ACTIVITY OPTION')
+return setCookie('activityOption', data)
 }
 
 
