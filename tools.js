@@ -97,11 +97,13 @@ window.scrollBy(0,0)
 
 function addScroll(yc){
 	var i = 1;
+	var scrolledBy = 0;
 	var hgh = setInterval(function(){
 	if(i > yc){
 		clearInterval(hgh);
 		  }
 		window.scrollBy(0,10)
+		i++
 	},90)
 	
 	
