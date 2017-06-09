@@ -96,6 +96,7 @@ window.scrollBy(0,0)
 */
 
 function addScroll(yc){
+	alert('called')
 	var i = 1;
 	var scrolledBy = 0;
 	var hgh = setInterval(function(){
