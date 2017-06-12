@@ -59,7 +59,13 @@ while(getCookies2().length > i45){
      }
   i45++
 }
-
+document.body.onload = function(){
+if(getit('loadingHider') != null){
+	setInterval(function(){
+	 getit('loadingHider').style.opacity = String(Number(getit('loadingHider').style.opacity) + 0.01)
+	},50
+	}
+}
 console.log('getCookies: ' + getCookies().length)
 console.log('Achievments: '+ achl.length)
 var achievments = achl;
