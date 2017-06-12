@@ -66,7 +66,7 @@ if(getit('loadingHider') != null){
 		clearInterval(clo)
 		}
 	 getit('loadingHider').style.opacity = String(Number(getit('loadingHider').style.opacity) + 0.01)
-	},50)
+	},5)
 	}
 }
 console.log('getCookies: ' + getCookies().length)
