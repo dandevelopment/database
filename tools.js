@@ -257,7 +257,7 @@ function resetAllData(){
     }
     }
 //console.log(getAllRecords())
-console.log('POINT RECORDS: ' + getPointRecords());
+//console.log('POINT RECORDS: ' + getPointRecords());
 function getAllDataAsString(){
 var i = 0;
     var toReturn = '';
