@@ -69,8 +69,8 @@ if(getit('loadingHider') != null){
 	},5)
 	}
 }
-console.log('getCookies: ' + getCookies().length)
-console.log('Achievments: '+ achl.length)
+//console.log('getCookies: ' + getCookies().length)
+//console.log('Achievments: '+ achl.length)
 var achievments = achl;
 function getit(place){
 return document.getElementById(place)
