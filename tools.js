@@ -61,7 +61,10 @@ while(getCookies2().length > i45){
 }
 document.body.onload = function(){
 if(getit('loadingHider') != null){
-	setInterval(function(){
+	var clo = setInterval(function(){
+		if(Number(getit('loadingHider').style.opacity) >= 1){
+		clearInterval(clo)
+		}
 	 getit('loadingHider').style.opacity = String(Number(getit('loadingHider').style.opacity) + 0.01)
 	},50)
 	}
