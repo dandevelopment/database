@@ -249,7 +249,7 @@ var i = 0;
 function resetAllData(){
    // notify('Reseting...')
     var i = 0;
-	var cook = getAllCookies2()
+	var cook = getCookies2()
     setTimeout(function(){
     //document.location.href = document.location.href;
     },1200)
