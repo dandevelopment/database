@@ -104,7 +104,9 @@ window.onload = function () {
 };
 window.scrollBy(0,0)
 */
-
+var ght = document.createElement('img')
+ght.src = 'hex-loader2.gif'
+document.body.insertBefore(ght, document.getElementById('loadingTag'))
 function addScroll(yc){
 	//alert('called')
 	var i = 1;
