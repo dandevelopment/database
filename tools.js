@@ -249,11 +249,14 @@ var i = 0;
 function resetAllData(){
    // notify('Reseting...')
     var i = 0;
+	var cook = getAllCookies2()
     setTimeout(function(){
     //document.location.href = document.location.href;
     },1200)
-    while (i < getCookies2().length){
-    setLitteralItem(getCookies2()[i].split('#$')[1], '')
+    while (i < cook.length){
+	    console.log('setting ' + cook[i].split('#$')[1])
+    setLitteralItem(cook[i].split('#$')[1], '')
+	    console.log('now ' + cook[i].split('#$')[1] + ' is ' + getLitteralItem(cook[i].split('#$')[1]))
         i++
     }
     }
@@ -262,8 +265,9 @@ function resetAllData(){
 function getAllDataAsString(){
 var i = 0;
     var toReturn = '';
-    while (i < getCookies2().length){
-    toReturn += getCookies2()[i] + '¼¯';
+	var cook = getCookies2()
+    while (i < cook.length){
+    toReturn += cook[i] + '¼¯';
         i++
     }
     return toReturn;
