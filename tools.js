@@ -64,6 +64,7 @@ console.log('ACHIEVMENTS: ' + achl)
 document.body.onload = function(){
 if(getit('loadingHider') != null){
 	getit('loadingTag').style.display = 'none'
+	getit('loaderH').style.display = 'none'
 	var clo = setInterval(function(){
 		if(Number(getit('loadingHider').style.opacity) >= 1){
 		clearInterval(clo)
@@ -108,6 +109,7 @@ window.scrollBy(0,0)
 */
 var ght = document.createElement('img')
 ght.src = 'hex-loader2.gif'
+ght.id = 'loaderH'
 document.body.insertBefore(ght, document.getElementById('loadingTag'))
 function addScroll(yc){
 	//alert('called')
