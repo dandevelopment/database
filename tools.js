@@ -53,12 +53,14 @@ var achl = [];
     //achl =  values;
 var searchedForCookies = false;
 var i45 = 0;
-while(getCookies2().length > i45){
-     if(getCookies2()[i45].split('#$')[1].split('_')[0] == 'AWARD'){
-     achl.push(getCookies2()[i45].split('#$')[1].split('_')[1])
+var coo = getCookies2()
+while(coo.length > i45){
+     if(coo[i45].split('#$')[1].split('_')[0] == 'AWARD'){
+     achl.push(coo[i45].split('#$')[1].split('_')[1])
      }
   i45++
 }
+console.log('ACHIEVMENTS: ' + achl)
 document.body.onload = function(){
 if(getit('loadingHider') != null){
 	getit('loadingTag').style.display = 'none'
