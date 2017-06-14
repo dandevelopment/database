@@ -110,7 +110,11 @@ window.scrollBy(0,0)
 var ght = document.createElement('img')
 ght.src = 'hex-loader2.gif'
 ght.id = 'loaderH'
+if(document.location.href.split('/')[document.location.href.split('/').length - 1] != 'sync.php'){
+
+
 document.body.insertBefore(ght, document.getElementById('loadingTag'))
+}
 function addScroll(yc){
 	//alert('called')
 	var i = 1;
