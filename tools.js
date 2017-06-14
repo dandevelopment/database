@@ -51,7 +51,7 @@ var searchedForCookies = false;
 var achl = [];
 var i45 = 1;
 var coo = getCookies2();
-console.log(coo)
+//console.log(coo)
 while(coo.length > i45){
 if(coo[i45] != ''){
 if(coo[i45].split('#$')[1].split('_')[0] == 'AWARD'){
