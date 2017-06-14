@@ -218,6 +218,7 @@ var toReturn = ''
 
 function notify(message){
     var newE = document.createElement('div');
+	/*
     newE.style.width = '30%';
     newE.style.backgroundColor = '#4f4f4f';
     newE.style.borderRadius = '10px';
@@ -225,10 +226,10 @@ function notify(message){
     newE.style.boxShadow = '0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
     newE.style.position = 'fixed';
     newE.style.bottom = '10px';
-    newE.style.right = '10px';
-    newE.innerHTML = message;
-    //document.insertBefore(newE, document.body.childNodes[0])
-    document.body.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>' + document.body.innerHTML;
+    newE.style.right = '10px';*/
+    newE.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>';
+    document.body.insertBefore(newE, document.body.childNodes[0])
+    //document.body.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>' + document.body.innerHTML;
     $("#messageNow").fadeOut(1);
     $("#messageNow").fadeIn(900);
     setTimeout(function(){
