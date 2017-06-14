@@ -265,11 +265,14 @@ function resetAllData(){
     },1200)
     while (i < cook.length){
 	    console.log('setting ' + cook[i].split('#$')[1])
-    setLitteralItem(cook[i].split('#$')[1], '')
+    removeLitteralItem(cook[i].split('#$')[1], '')
 	    console.log('now ' + cook[i].split('#$')[1] + ' is ' + getLitteralItem(cook[i].split('#$')[1]))
         i++
     }
     }
+function removeLitteralItem(item){
+localStorage.removeItem(item)
+}
 //console.log(getAllRecords())
 //console.log('POINT RECORDS: ' + getPointRecords());
 function getAllDataAsString(){
