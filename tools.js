@@ -269,6 +269,7 @@ function resetAllData(){
 	    console.log('now ' + cook[i].split('#$')[1] + ' is ' + getLitteralItem(cook[i].split('#$')[1]))
         i++
     }
+	localStorage.clear()
     }
 function removeLitteralItem(item){
 localStorage.removeItem(item)
