@@ -11,6 +11,7 @@ Email
 */
 
 //AWARD NAME, HOURS | description
+/*
 if(getCookie('AWARD_arrest and search') == ''){
 	
 setTimeout(function(){
@@ -46,6 +47,9 @@ setTimeout(function(){
 },27);
 	setTimeout(function(){document.location.href = document.location.href},28)
 }
+*/
+resetAchievments()
+
 
 var searchedForCookies = false;
 var achl = [];
@@ -1284,6 +1288,35 @@ function deleteData(ID) {
 }
 
 function resetAchievments(){
+	setLitteralItem('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD' + '#$AWARD_law enforcement training#$"2017, June 24, Friday 8:01:52 PM"#$1')
+setLitteralItem('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd traffic control, parking service, community events, etc. Service must be preapproved and logged by the Advisor.|AWARD' + '#$AWARD_community service#$"2017, June 24, Friday 8:01:52 PM"#$2')
+setLitteralItem('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD' + '#$AWARD_crime prevention#$"2017, June 24, Friday 8:01:52 PM"#$3')
+setLitteralItem('AWARD_law enforcement service', '100|Includes assistance to the department in areas such as records, communications, data processing, etc. It recognizes an accumulation of 100 hours of service.|AWARD' + '#$AWARD_law enforcement service#$"2017, June 24, Friday 8:01:52 PM"#$4')
+setLitteralItem('AWARD_emergency preparedness', '1|Certifies that the Explorer has received training in advanced first aid and CPR has received training in how the post would assist in a disaster, such as flood, tornado, hurricane, etc. and has participated in at least one civil defense or community-wide disaster training exercise.|AWARD' + '#$AWARD_emergency preparedness#$"2017, June 24, Friday 8:01:52 PM"#$5')
+setLitteralItem('AWARD_tenure', '1|Awarded to those Explorers who complete one year of satisfactory service to the post.|AWARD' + '#$AWARD_tenure#$"2017, June 24, Friday 8:01:52 PM"#$6')
+setLitteralItem('AWARD_perfect attendance', '1|Recognizes attendance at each scheduled meeting of the post during the preceding year.|AWARD' + '#$AWARD_perfect attendance#$"2017, June 24, Friday 8:01:52 PM"#$7')
+setLitteralItem('AWARD_drug abuse prevention', '6|Acknowledges proficiency in drug abuse prevention training and service. Requires 6 hours of advanced training.|AWARD' + '#$AWARD_drug abuse prevention#$"2017, June 24, Friday 8:01:52 PM"#$8')
+setLitteralItem('AWARD_eagle or gold award recognition', '1|May be worn by an Explorer who has achieved the Boy Scouts of America or Girl Scouts of the U.S.A. highest award and honor (the BSA Eagle or GSUSA Gold + '#$AWARD_law enforcement training#$"2017, June 24, Friday 8:01:52 PM"#$').|AWARD' + '#$AWARD_eagle or gold award recognition#$"2017, June 24, Friday 8:01:52 PM"#$9')
+setLitteralItem('AWARD_explorer of the year', '1|This Explorer is selected based on dependability, attitude, attendance, and contributions to the post, department, and community. Explorers of the Year are obviously recognized for their outstanding performances and personal attributes.|AWARD' + '#$AWARD_explorer of the year#$"2017, June 24, Friday 8:01:52 PM"#$10')
+setLitteralItem('AWARD_history of law enforcement', '1|Part of Law Enforcement Training.|AWARD' + '#$AWARD_history of law enforcement#$"2017, June 24, Friday 8:01:52 PM"#$11')
+setLitteralItem('AWARD_the contemporary law enforcement', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_the contemporary law enforcement#$"2017, June 24, Friday 8:01:52 PM"#$12')
+setLitteralItem('AWARD_the criminal justice system', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_the criminal justice system#$"2017, June 24, Friday 8:01:52 PM"#$13')
+setLitteralItem('AWARD_radio procedures', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_radio procedures#$"2017, June 24, Friday 8:01:52 PM"#$14')
+setLitteralItem('AWARD_basic patrol procedures', '3|Part of Law Enforcement Training.|AWARD' + '#$AWARD_basic patrol procedures#$"2017, June 24, Friday 8:01:52 PM"#$15')
+setLitteralItem('AWARD_report wrighting', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_report wrighting#$"2017, June 24, Friday 8:01:52 PM"#$16')
+setLitteralItem('AWARD_criminal law', '6|Part of Law Enforcement Training.|AWARD' + '#$AWARD_criminal law#$"2017, June 24, Friday 8:01:52 PM"#$17')
+setLitteralItem('AWARD_junevel law', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_junevel law#$"2017, June 24, Friday 8:01:52 PM"#$18')
+setLitteralItem('AWARD_traffic law', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_traffic law#$"2017, June 24, Friday 8:01:52 PM"#$19')
+setLitteralItem('AWARD_procedures of investigation', '6|Part of Law Enforcement Training.|AWARD' + '#$AWARD_procedures of investigation#$"2017, June 24, Friday 8:01:52 PM"#$20')
+setLitteralItem('AWARD_human relations', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_human relations#$"2017, June 24, Friday 8:01:52 PM"#$21')
+setLitteralItem('AWARD_crime prevention', '8|Part of Law Enforcement Training.|AWARD' + '#$AWARD_crime prevention#$"2017, June 24, Friday 8:01:52 PM"#$22')
+setLitteralItem('AWARD_accident investigation', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_accident investigation#$"2017, June 24, Friday 8:01:52 PM"#$23')
+setLitteralItem('AWARD_crime scene investigation', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_crime scene investigation#$"2017, June 24, Friday 8:01:52 PM"#$24')
+setLitteralItem('AWARD_fingerprinting and classification', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_fingerprinting and classification#$"2017, June 24, Friday 8:01:52 PM"#$25')
+setLitteralItem('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_narcotics and dangerous drugs#$"2017, June 24, Friday 8:01:52 PM"#$26')
+setLitteralItem('AWARD_arrest and search', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_arrest and search#$"2017, June 24, Friday 8:01:52 PM"#$27')
+ 
+	/*
 setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD')
 setCookie('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd trafficcontrol, parking service, community events, etc. Service must bepreapproved and logged by the Advisor.|AWARD')
 setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD')
@@ -1311,4 +1344,5 @@ setCookie('AWARD_crime scene investigation', '4|Part of Law Enforcement Training
 setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.|AWARD')
+*/
 }
