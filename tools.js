@@ -896,7 +896,7 @@ function getCookies2() {
     if (values.length == organizedValues.length) {
        // console.log(organizedValues)
     } else {
-        throw('Incomplete array.')
+        console.log('Incomplete array.')
     }
     return organizedValues;
 }
@@ -913,6 +913,7 @@ function getCookies() {
     var organizedValues = [];
     var found = ''
     var toPush = '';
+	
     while (values.length > i) {
      //   console.log('searching values ' + i + 'th time.')
 //	    console.log(organizedValues)
@@ -947,7 +948,8 @@ function getCookies() {
     if (values.length == organizedValues.length) {
   //      console.log(organizedValues)
     } else {
-        throw('Incomplete array.')
+	    
+        console.log('Incomplete array.')
     }
     return organizedValues;
 }
