@@ -896,7 +896,7 @@ function getCookies2() {
     if (values.length == organizedValues.length) {
        // console.log(organizedValues)
     } else {
-        console.log('Incomplete array.')
+        console.warn('Incomplete array.')
     }
     return organizedValues;
 }
@@ -949,7 +949,7 @@ function getCookies() {
   //      console.log(organizedValues)
     } else {
 	    
-        console.log('Incomplete array.')
+        console.warn('Incomplete array.')
     }
     return organizedValues;
 }
