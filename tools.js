@@ -229,8 +229,12 @@ function notify(message){
     newE.style.boxShadow = '0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
     newE.style.position = 'fixed';
     newE.style.bottom = '10px';
+    
+    <audio controls autoplay style="display:none;">  <source src="awareness.ogg" type="audio/ogg"></audio>
     newE.style.right = '10px';*/
-    newE.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>';
+	
+	
+    newE.innerHTML = ' <audio controls autoplay style="display:none;">  <source src="awareness.ogg" type="audio/ogg"></audio><div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>';
     document.body.insertBefore(newE, document.body.childNodes[0])
     //document.body.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>' + document.body.innerHTML;
     $("#messageNow").fadeOut(1);
