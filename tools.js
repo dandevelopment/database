@@ -1303,7 +1303,7 @@ setLitteralItem('AWARD_the contemporary law enforcement', '2|Part of Law Enforce
 setLitteralItem('AWARD_the criminal justice system', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_the criminal justice system#$2017, June 24, Friday 8:01:52 PM#$13')
 setLitteralItem('AWARD_radio procedures', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_radio procedures#$2017, June 24, Friday 8:01:52 PM#$14')
 setLitteralItem('AWARD_basic patrol procedures', '3|Part of Law Enforcement Training.|AWARD' + '#$AWARD_basic patrol procedures#$2017, June 24, Friday 8:01:52 PM#$15')
-setLitteralItem('AWARD_report wrighting', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_report writing#$2017, June 24, Friday 8:01:52 PM#$16')
+setLitteralItem('AWARD_report writing', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_report writing#$2017, June 24, Friday 8:01:52 PM#$16')
 setLitteralItem('AWARD_criminal law', '6|Part of Law Enforcement Training.|AWARD' + '#$AWARD_criminal law#$2017, June 24, Friday 8:01:52 PM#$17')
 setLitteralItem('AWARD_junevel law', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_junevel law#$2017, June 24, Friday 8:01:52 PM#$18')
 setLitteralItem('AWARD_traffic law', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_traffic law#$2017, June 24, Friday 8:01:52 PM#$19')
