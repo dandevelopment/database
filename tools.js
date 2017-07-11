@@ -48,6 +48,7 @@ setTimeout(function(){
 	setTimeout(function(){document.location.href = document.location.href},28)
 }
 */
+setLitteralItem('undefined','')
 resetAchievments()
 
 
