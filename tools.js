@@ -1318,7 +1318,7 @@ function deleteData(ID) {
   return 'deleted.'
 }
 
-function resetAchievments(){
+function resetAchievments(){/*
 setLitteralItem('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD' + '#$AWARD_law enforcement training#$2017, June 24, Friday 8:01:52 PM#$1')
 setLitteralItem('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd traffic control, parking service, community events, etc. Service must be preapproved and logged by the Advisor.|AWARD' + '#$AWARD_community service#$2017, June 24, Friday 8:01:52 PM#$2')
 setLitteralItem('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD' + '#$AWARD_crime prevention#$2017, June 24, Friday 8:01:52 PM#$3')
@@ -1347,11 +1347,11 @@ setLitteralItem('AWARD_fingerprinting and classification', '4|Part of Law Enforc
 setLitteralItem('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.|AWARD' + '#$AWARD_narcotics and dangerous drugs#$2017, June 24, Friday 8:01:52 PM#$26')
 setLitteralItem('AWARD_arrest and search', '4|Part of Law Enforcement Training.|AWARD' + '#$AWARD_arrest and search#$2017, June 24, Friday 8:01:52 PM#$27')
  
- 
+ */
 
  
 
-	/*
+	
 setCookie('AWARD_law enforcement training', '60|Recognizes the accumulation of 60 hours of training in decided areas.|AWARD')
 setCookie('AWARD_community service', '100|Acknowledges 100 hours of community service, including crowd trafficcontrol, parking service, community events, etc. Service must bepreapproved and logged by the Advisor.|AWARD')
 setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD')
@@ -1367,7 +1367,7 @@ setCookie('AWARD_the contemporary law enforcement', '2|Part of Law Enforcement T
 setCookie('AWARD_the criminal justice system', '2|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_radio procedures', '2|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_basic patrol procedures', '3|Part of Law Enforcement Training.|AWARD')
-setCookie('AWARD_report wrighting', '4|Part of Law Enforcement Training.|AWARD')
+setCookie('AWARD_report writing', '4|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_criminal law', '6|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_junevel law', '2|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_traffic law', '2|Part of Law Enforcement Training.|AWARD')
@@ -1379,5 +1379,5 @@ setCookie('AWARD_crime scene investigation', '4|Part of Law Enforcement Training
 setCookie('AWARD_fingerprinting and classification', '4|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_narcotics and dangerous drugs', '2|Part of Law Enforcement Training.|AWARD')
 setCookie('AWARD_arrest and search', '4|Part of Law Enforcement Training.|AWARD')
-*/
+
 }
