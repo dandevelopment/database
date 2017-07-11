@@ -876,7 +876,7 @@ function getCookies2() {
                 if (!sorry) {
                     toPush = Number(values[i2].split('#$')[3])
                     toActualyPush = values[i2]
-}
+                }
             }
             i2++
         }
@@ -1256,13 +1256,13 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
   Home = 'HOME:' + Home + '|'
   Email = 'EMAIL:' + Email + '|'
   setCookie(ID, Name + Option2 + Option3+ Dob+ Address+ Town+ Cell+ Home+ Email)
-	var allOem = Name + Option2 + Option3 + Dob + Address + Town + Home + Email;
-	var toReturn = ''
+	var allOem = Name + '' + ', ' + Option2 + ', ' + Option3 + ', ' + Dob + ', ' + Address + ', ' + Town + ', ' + Home + ', ' + Email;
+	var toReturn = allOem
 	var i = 0;
-	while(i < allOem.length){
-	toReturn = allOem[i] + ',  ' + toReturn
-		i++
-	}
+	//while(i < allOem.length){
+	//toReturn = allOem[i] + ',  ' + toReturn
+//		i++
+//	}
     addUserRecord(ID, toReturn, 'ADDED')
   return 'set.'
 }
