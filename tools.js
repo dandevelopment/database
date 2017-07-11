@@ -852,25 +852,40 @@ function getLitteralItem(nameZ){
 }
 
 //getCookies2();
-function getCookies2() {
-	var values = getDisorganisedCookies2();
+getCookies2 = new function() {
+    var values = getDisorganisedCookies2();
     var organizedValues = [];
-	var i = 0;
-	var lastPushed = ''
-	while(i < values.length){
-	var toPush = '';
-		var i2 = 0;
-		while(i2 < values.length){
-		if(values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush){
-		toPush = Number(values[i2].split('#$')[3])
-		}
-			i2++
-		}
-		lastPushed = toPush;
-		organizedValues.push(toPush)
-		i++
-	}
-	return organizedValues
+    var i = 0;
+    var lastPushed = ''
+    while (i < values.length) {
+        var toPush = 999999999999999999999999999999999999;
+        var i2 = 0;
+        var toActualyPush = ''
+        while (i2 < values.length) {
+            if (values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush) {
+                var i3 = 0;
+                var sorry = false;
+                while (i3 < organizedValues.length) {
+                    if(organizedValues.length != 0){
+                    if (values[i2].split('#$')[2] == organizedValues[i3].split('#$')[2]) {
+                        sorry = true;
+                    }
+                }
+                    i3++
+                }
+                if (!sorry) {
+                    toPush = Number(values[i2].split('#$')[3])
+                    toActualyPush = values[i2]
+}
+            }
+            i2++
+        }
+        lastPushed = toPush;
+        organizedValues.push(toActualyPush)
+        i++
+    }
+    return organizedValues
+
 	/*
     if (searchedForCookies) {
        // return ''
