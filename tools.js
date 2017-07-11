@@ -118,6 +118,9 @@ if(document.location.href.split('/')[document.location.href.split('/').length - 
 
 document.body.insertBefore(ght, document.getElementById('loadingTag'))
 }
+function reloadPage(){
+document.location.reload()
+}
 function addScroll(yc){
 	//alert('called')
 	var i = 1;
