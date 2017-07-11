@@ -862,7 +862,7 @@ function getCookies2() {
 		var i2 = 0;
 		while(i2 < values.length){
 		if(values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush){
-		toPush = values[i2].split('#$')[3]
+		toPush = Number(values[i2].split('#$')[3])
 		}
 			i2++
 		}
