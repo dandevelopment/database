@@ -870,7 +870,7 @@ function getCookies2() {
 		organizedValues.push(toPush)
 		i++
 	}
-	
+	return organizedValues
 	/*
     if (searchedForCookies) {
        // return ''
