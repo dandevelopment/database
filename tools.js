@@ -852,40 +852,60 @@ function getLitteralItem(nameZ){
 }
 
 //getCookies2();
+function toNum(n) {
+   var nStr = (n + ""); 
+   if(nStr.indexOf(".") > -1) 
+      nStr = nStr.replace(".","").replace(/\d+$/, function(m){ return --m; });
+   return nStr.replace(/(\d+)e\+?(\d+)/, function(m, g1, g2){
+      return g1 + new Array(+g2).join("0") + "0";
+   })
+}
 function getCookies2() {
-    var values = getDisorganisedCookies2();
-    var organizedValues = [];
-    var i = 0;
-    var lastPushed = ''
-    while (i < values.length) {
-        var toPush = 999999999999999999999999999999999999;
-        var i2 = 0;
-        var toActualyPush = ''
-	console.log(i + ' is ' + values[i])
-        while (i2 < values.length) {
-            if (values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush) {
-                var i3 = 0;
-                var sorry = false;
-                while (i3 < organizedValues.length) {
-                    if(organizedValues.length != 0){
-                    if (values[i2].split('#$')[2] == organizedValues[i3].split('#$')[2]) {
+   var test = ['contains#$name#$date#$43', 'contains#$name#$date#$45', 'contains#$name#$date#$3', 'contains#$name#$date#$2', 'contains#$name#$datee#$2']
+var warn = false;
+var values = test //getDisorganisedCookies2();
+var organizedValues = [];
+var i = 0;
+var lastPushed = 0 //values[10].split('#$')[3]
+while (i < values.length) {
+    var toPush = 99999999999999;
+    var i2 = 0;
+    var toActualyPush = 'No result qualified for all peramiters.'
+    //console.log(i + ' is ' + values[i])
+ //   console.log(i + ' is ' + Number(values[i].split('#$')[3]))
+    
+    while (i2 < values.length) {
+       // console.log(toNum(values[i2].split('#$')[3]) + ' >= ' + toNum(lastPushed) + ' && ' + toNum(values[i2].split('#$')[3]) + ' < ' + toNum(toPush))
+//console.log(organizedValues)
+        if (values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush) {
+            var i3 = 0;
+            var sorry = false;
+            while (i3 < organizedValues.length) {
+                if (organizedValues.length != 0) {
+                    if (values[i2] == organizedValues[i3]) {
                         sorry = true;
                     }
                 }
-                    i3++
-                }
-                if (!sorry) {
-                    toPush = Number(values[i2].split('#$')[3])
-                    toActualyPush = values[i2]
-                }
+                i3++
             }
-            i2++
+            if (!sorry) {
+                toPush = Number(values[i2].split('#$')[3])
+                toActualyPush = values[i2]
+            }
         }
-        lastPushed = toPush;
-        organizedValues.push(toActualyPush)
-        i++
+        i2++
     }
-    return organizedValues
+    lastPushed = toPush;
+if(toActualyPush == 'No result qualified for all peramiters.'){
+warn = true
+}
+    organizedValues.push(toActualyPush)
+    i++
+}
+if(warn){
+console.warn('No result qualified for all peramiters.')
+}
+	return organizedValues
 
 	/*
     if (searchedForCookies) {
