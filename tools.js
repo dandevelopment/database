@@ -289,7 +289,7 @@ var i = 0;
     var toReturn = '';
 	var cook = getCookies2()
     while (i < cook.length){
-    toReturn += cook[i] + '¼¯';
+    toReturn += cook[i] + '@#$!!';
         i++
     }
     return toReturn;
