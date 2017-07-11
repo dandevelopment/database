@@ -861,6 +861,7 @@ function getCookies2() {
         var toPush = 999999999999999999999999999999999999;
         var i2 = 0;
         var toActualyPush = ''
+	console.log(i + ' is ' + values[i])
         while (i2 < values.length) {
             if (values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush) {
                 var i3 = 0;
