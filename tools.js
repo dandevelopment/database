@@ -853,6 +853,25 @@ function getLitteralItem(nameZ){
 
 //getCookies2();
 function getCookies2() {
+	var values = getDisorganisedCookies2();
+    var organizedValues = [];
+	var i = 0;
+	var lastPushed = ''
+	while(i < values.length){
+	var toPush = '';
+		var i2 = 0;
+		while(i2 < values.length){
+		if(values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush){
+		toPush = values[i2].split('#$')[3]
+		}
+			i2++
+		}
+		lastPushed = toPush;
+		organizedValues.push(toPush)
+		i++
+	}
+	
+	/*
     if (searchedForCookies) {
        // return ''
     }
@@ -895,7 +914,7 @@ function getCookies2() {
         }
 	    organizedValues.push(toPush)
         i++
-    }
+    }*/
     if (values.length == organizedValues.length) {
        // console.log(organizedValues)
     } else {
@@ -1052,10 +1071,13 @@ var i2 = 0;
     }
      var fulltime = getFullTime();
     //if(getCookie(cname) != ''){
-  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + i)
+  return localStorage.setItem(cname, val + '#$' + cname + '#$' + fulltime + '#$' + getSeconds())
     //}
     
     }
+function getSeconds(){
+return String(new Date().getTime())
+}
 function getFullTime(){
 var d = new Date();
 var year = d.getFullYear();//2017
