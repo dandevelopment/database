@@ -852,7 +852,7 @@ function getLitteralItem(nameZ){
 }
 
 //getCookies2();
-getCookies2 = new function() {
+var getCookies2 = new function() {
     var values = getDisorganisedCookies2();
     var organizedValues = [];
     var i = 0;
