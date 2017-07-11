@@ -48,7 +48,7 @@ setTimeout(function(){
 	setTimeout(function(){document.location.href = document.location.href},28)
 }
 */
-setLitteralItem('undefined','')
+//setLitteralItem('undefined','')
 resetAchievments()
 
 
@@ -293,7 +293,11 @@ var i = 0;
     var toReturn = '';
 	var cook = getCookies2()
     while (i < cook.length){
-    toReturn += cook[i] + '@#$!!';
+	    if(toReturn == ''){
+	    toReturn += cook[i];
+	    } else {
+    toReturn += '@#$!!' + cook[i];
+	    }
         i++
     }
     return toReturn;
