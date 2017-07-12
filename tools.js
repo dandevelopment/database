@@ -51,7 +51,7 @@ setTimeout(function(){
 //setLitteralItem('undefined','')
 resetAchievments()
 function putInConsole(data) {
-    setCookie('consoleToken', data + '<br>' + getLitteralItem('consoleToken'))
+    setLitteralItem('consoleToken', data + '<br>' + getLitteralItem('consoleToken'))
 }
 function logit(data) {
     putInConsole(data)
@@ -1139,9 +1139,6 @@ function getCookie2(cname) {
     return "";
 }
 function setLitteralItem(cname, val) {
-	if(val == ''){
-	removeLitteralItem(cname)
-	}
     return localStorage.setItem(cname, val)
 }
 function setCookie(cname, val) {
