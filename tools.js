@@ -1333,7 +1333,8 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
 	var toReturn = ''//allOem
 	var i = 0;
 	while(i < allOem.split('|').length - 1){
-	toReturn = allOem.split('|')[i] + ',  ' + toReturn
+	toReturn = toReturn + allOem.split('|')[i] + ', '
+		console.log('completing record: ' + toReturn + allOem.split('|')[i] + ', ')
 		i++
 	}
     addUserRecord(ID, toReturn, 'ADDED')
