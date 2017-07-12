@@ -53,6 +53,10 @@ resetAchievments()
 function putInConsole(data){
 setLitteralItem('consoleToken', data + '<br>' + getLitteralItem('consoleToken'))
 }
+function logit(data){
+putInConsole(data)
+	console.log(data)
+}
 
 var searchedForCookies = false;
 var achl = [];
