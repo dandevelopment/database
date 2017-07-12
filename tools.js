@@ -51,7 +51,9 @@ setTimeout(function(){
 //setLitteralItem('undefined','')
 resetAchievments()
 function putInConsole(data) {
+	if(data.split('#$').length > 1){
     setLitteralItem('consoleToken', data + '<br>' + getLitteralItem('consoleToken'))
+}
 }
 function logit(data) {
     putInConsole(String(data))
