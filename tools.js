@@ -102,6 +102,7 @@ function firstTime() {
 if (getCollegeOptions() == '') {
     addCollegeOption('none')
 }
+
 /*
 window.onload = function () { 
   window.onscroll = function () { 
@@ -218,6 +219,65 @@ function readSingleFile(evt) {
         alert("Failed to load file");
     }
 }
+function setLawEnforcementTraining(userid,tf){
+//var i = 0
+//while(getCookie(userid + '|lawEnforcementTraining Complete|' + i) != ''){
+
+	//i++
+//}
+	setCookie(userid + '|lawEnforcementTrainingComplete', tf)
+	return 'done.'
+}
+function getLawEnforcementTraining(userid,tf){
+//var i = 0
+//while(getCookie(userid + '|lawEnforcementTraining Complete|' + i) != ''){
+
+	//i++
+//}
+	return getCookie(userid + '|lawEnforcementTrainingComplete')
+	return 'done.'
+}
+setInterval(function(){
+	var achievments = getAchievments()
+	var numberOfUsers = getAllUsersNumber()
+	var i = 1;
+	var grandTotal = 0;
+	while(i < numberOfUsers){
+        var i2 = 0;
+		var alreadyCompleted = ''
+		if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
+		   alreadyCompleted = true
+		} else {
+		   alreadyCompleted = false
+		}
+		var totalCompletedForUser = 0
+		while(i2 < achievments.length){
+		        if(getAward(achievments[i2]).split('|')[1] = 'Part of Law Enforcement Training.'){
+			      if(getAward(achievments[i2]).split('|')[0] > getAchievmentCompletedHours(i,achievments[i2])){
+			        totalCompletedForUser += getAward(achievments[i2]).split('|')[2]
+			      } else {
+				totalCompletedForUser += getAchievmentCompletedHours(i,achievments[i2])
+			      }
+			}
+			i2++
+		}
+		totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i,'law enforcement training')
+		addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
+	        if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
+		   setLawEnforcementTraining(i,'true')
+			if(!alreadyCompleted){
+			notify(getData(i, 'Name') + ' has just earned law enforcement training!')
+			}
+		} else {
+		   setLawEnforcementTraining(i,'false')
+			if(alreadyCompleted){
+			notify(getData(i, 'Name') + ' has just lost law enforcement training!')
+			}
+		}
+		i++
+	}
+},1000)
+
 function getAllUsersNumber() {
     var i = 1;
     while (getCookie(i) != '') {
