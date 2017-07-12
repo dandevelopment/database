@@ -54,7 +54,7 @@ function putInConsole(data) {
     setLitteralItem('consoleToken', data + '<br>' + getLitteralItem('consoleToken'))
 }
 function logit(data) {
-    putInConsole(data)
+    putInConsole(String(data))
     console.log(data)
 }
 
