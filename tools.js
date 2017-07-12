@@ -1139,6 +1139,9 @@ function getCookie2(cname) {
     return "";
 }
 function setLitteralItem(cname, val) {
+	if(val == ''){
+	removeLitteralItem(cname)
+	}
     return localStorage.setItem(cname, val)
 }
 function setCookie(cname, val) {
