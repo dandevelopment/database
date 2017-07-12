@@ -973,52 +973,14 @@ function getCookies2() {
     return organizedValues;
 }
 function getCookies() {
-    var test = ['contains#$name#$date#$43', 'contains#$name#$date#$45', 'contains#$name#$date#$3', 'contains#$name#$date#$2', 'contains#$name#$datee#$2']
-    var warn = false;
-    var values = getDisorganisedCookies2();
-    var organizedValues = [];
+    var cook = getCookies2()
+    var toReturn = []
     var i = 0;
-    var lastPushed = 0 //values[10].split('#$')[3]
-    while (i < values.length) {
-        var toPush = 99999999999999;
-        var i2 = 0;
-        var toActualyPush = 'No result qualified for all peramiters.'
-        //logit(i + ' is ' + values[i])
-        //   logit(i + ' is ' + Number(values[i].split('#$')[3]))
-
-        while (i2 < values.length) {
-            // logit(toNum(values[i2].split('#$')[3]) + ' >= ' + toNum(lastPushed) + ' && ' + toNum(values[i2].split('#$')[3]) + ' < ' + toNum(toPush))
-            //logit(organizedValues)
-            if (values[i2].split('#$')[3] >= lastPushed && values[i2].split('#$')[3] < toPush) {
-                var i3 = 0;
-                var sorry = false;
-                while (i3 < organizedValues.length) {
-                    if (organizedValues.length != 0) {
-                        if (values[i2] == organizedValues[i3]) {
-                            sorry = true;
-                        }
-                    }
-                    i3++
-                }
-                if (!sorry) {
-                    toPush = Number(values[i2].split('#$')[3])
-                    toActualyPush = values[i2].split('#$')[0]
-                }
-            }
-            i2++
-        }
-        lastPushed = toPush;
-        if (toActualyPush == 'No result qualified for all peramiters.') {
-            warn = true
-        }
-        organizedValues.push(toActualyPush)
-        i++
-    }
-    if (warn) {
-        console.warn('No result qualified for all peramiters.')
-    }
-    return organizedValues
-
+	while (i < cook.length){
+	toReturn.push(cook[i].split('#$')[0])
+		i++
+	}
+     return toReturn
     /*
      if (searchedForCookies) {
        // return ''
