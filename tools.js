@@ -122,6 +122,9 @@ document.body.insertBefore(ght, document.getElementById('loadingTag'))
 function reloadPage(){
 document.location.reload()
 }
+function runjs(torun){
+eval(torun)
+}
 function addScroll(yc){
 	//alert('called')
 	var i = 1;
