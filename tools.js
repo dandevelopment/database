@@ -447,7 +447,7 @@ function getHatSizeOptions(){
     return ['Option1','Option2','Option3']
 }
 function getActivityOptions(){
-    return ['User name','User id','Record type','Record action', 'Record difference', 'Record id']
+    return ['User name','User id','Record type','Record action', 'Record difference', 'Record id', 'Action and Difference']
 }
 function getActivityOption(){
 	if(getCookie('activityOption') == ''){
