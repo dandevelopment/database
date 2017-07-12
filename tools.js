@@ -264,8 +264,12 @@ setInterval(function(){
 			i2++
 		}
 		totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i,'law enforcement training')
+		if(totalCompletedForUser != 0 && totalCompletedForUser != NaN){
 		addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
-	        if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
+		} else if(totalCompletedForUser == NaN){
+		console.log('totalCompletedForUser is ' + totalCompletedForUser)
+		}
+		if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
 		   setLawEnforcementTraining(i,'true')
 			if(!alreadyCompleted){
 			notify(getData(i, 'Name') + ' has just earned law enforcement training!')
