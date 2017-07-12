@@ -1329,13 +1329,13 @@ function newData(Name, Option2, Option3, Dob, Address, Town, Cell, Home, Email) 
   Home = 'HOME:' + Home + '|'
   Email = 'EMAIL:' + Email + '|'
   setCookie(ID, Name + Option2 + Option3+ Dob+ Address+ Town+ Cell+ Home+ Email)
-	var allOem = Name + '' + ', ' + Option2 + ', ' + Option3 + ', ' + Dob + ', ' + Address + ', ' + Town + ', ' + Home + ', ' + Email;
-	var toReturn = allOem
+	var allOem = Name + Option2 + Option3 + Dob + Address + Town + Home + Email;
+	var toReturn = ''//allOem
 	var i = 0;
-	//while(i < allOem.length){
-	//toReturn = allOem[i] + ',  ' + toReturn
-//		i++
-//	}
+	while(i < allOem.split('|').length - 1){
+	toReturn = allOem.split('|')[i] + ',  ' + toReturn
+		i++
+	}
     addUserRecord(ID, toReturn, 'ADDED')
   return 'set.'
 }
