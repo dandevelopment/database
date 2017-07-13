@@ -420,7 +420,7 @@ function getAchievmentCompletedHours(user, achievment) {
         var hoursOfCurrentAchievment = Number(currentAchievment[3])
         if (currentAchievment[2] == achievment) {
 		if(String(hoursOfCurrentAchievment).split('-').length == 2){
-	            nmb -= hoursOfCurrentAchievment.split('-')[1];
+	            nmb -= Number(String(hoursOfCurrentAchievment).split('-')[1]);
 		} else {
             nmb += hoursOfCurrentAchievment;
 		}
