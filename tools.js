@@ -240,56 +240,64 @@ function getLawEnforcementTraining(userid,tf){
 	return 'done.'
 }
 //clearInterval(checkForAchievment)
-var checkForAchievment  = setInterval(function(){
-	var achievments = getAchievments()
-	var numberOfUsers = getAllUsersNumber()
-	var i = 1;
-	var grandTotal = 0;
-	while(i < numberOfUsers){
+var checkForAchievment = setInterval(function () {
+    var achievments = getAchievments()
+    var numberOfUsers = getAllUsersNumber()
+    var i = 1;
+    var grandTotal = 0;
+    while (i < numberOfUsers) {
         var i2 = 0;
-		var alreadyCompleted = ''
-		if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
-		   alreadyCompleted = true
-		} else {
-		   alreadyCompleted = false
-		}
-		var totalCompletedForUser = 0
-		while(i2 < achievments.length){
-		        if(getAward(achievments[i2]).split('|')[1] == 'Part of Law Enforcement Training.'){
-                  //logit('Doing Award: ' + getAward(achievments[i2]))
-			      if(getAward(achievments[i2]).split('|')[0] > getAchievmentCompletedHours(i,achievments[i2])){
-                //  logit('took first path, ' + getAchievmentCompletedHours(i,achievments[i2]))
-			        totalCompletedForUser += getAchievmentCompletedHours(i, achievments[i2]) //getAward(achievments[i2]).split('|')[2]
-			      } else if(getAward(achievments[i2]).split('|')[0] <= getAchievmentCompletedHours(i,achievments[i2])){
-			//	  logit('took second path, ' + getAchievmentCompletedHours(i,achievments[i2]))
-                  totalCompletedForUser += getAward(achievments[i2]).split('|')[0] //getAchievmentCompletedHours(i,achievments[i2])
-			      }
-			}
-			i2++
-		}
-		//logit('total completed before is ' + totalCompletedForUser)
-		totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i,'law enforcement training')
-		
-		if(totalCompletedForUser != 0 && totalCompletedForUser != NaN){
-			logit('totalCompletedForUser is ' + totalCompletedForUser)
-		addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
-		} else if(totalCompletedForUser == NaN){
-		//logit('totalCompletedForUser is ' + totalCompletedForUser)
-		}
-		if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
-		   setLawEnforcementTraining(i,'true')
-			if(!alreadyCompleted){
-			notify(getData(i, 'Name') + ' has just earned law enforcement training!')
-			}
-		} else {
-		   setLawEnforcementTraining(i,'false')
-			if(alreadyCompleted){
-			notify(getData(i, 'Name') + ' has just lost law enforcement training!')
-			}
-		}
-		i++
-	}
-},5000)
+        var alreadyCompleted = ''
+        if (getFractionCompleted(1, 'law enforcement training').split('/')[0] >= getFractionCompleted(1, 'law enforcement training').split('|')[1]) {
+            alreadyCompleted = true
+        } else {
+            alreadyCompleted = false
+        }
+        var totalCompletedForUser = 0
+	//for all achievments
+        while (i2 < achievments.length) {
+		//only achievments inside of law enforcement training
+            if (getAward(achievments[i2]).split('|')[1] == 'Part of Law Enforcement Training.') {
+                //    total achievment hours                >         completed hours for user
+                if (getAward(achievments[i2]).split('|')[0] > getAchievmentCompletedHours(i, achievments[i2])) {
+			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAchievmentCompletedHours(i, achievments[i2]) + ' hours.')
+                    //           add the hours completed from that achievment
+                    totalCompletedForUser += getAchievmentCompletedHours(i, achievments[i2]) //getAward(achievments[i2]).split('|')[2]
+                //the total ammount of possible hours for achievment <= the ammount of hours completed for achievment
+		} else if (getAward(achievments[i2]).split('|')[0] <= getAchievmentCompletedHours(i, achievments[i2])) {
+			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAward(achievments[i2]).split('|')[0] + ' hours.')
+                    //              add the total ammount of hours for acheivment
+                    totalCompletedForUser += getAward(achievments[i2]).split('|')[0] //getAchievmentCompletedHours(i,achievments[i2])
+                }
+            }
+            i2++
+        }
+        // set as the difference between what is already set as the hours for law enforcement training and the tally of what needs to be added
+	totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i, 'law enforcement training')
+        //if there is no difference
+        if (totalCompletedForUser != 0 && totalCompletedForUser != NaN) {
+            logit('adding... ' + totalCompletedForUser)
+            //add the difference of the tally found
+            addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
+        } else if (totalCompletedForUser == NaN) {
+            //logit('totalCompletedForUser is ' + totalCompletedForUser)
+        }
+        if (getFractionCompleted(1, 'law enforcement training').split('/')[0] >= getFractionCompleted(1, 'law enforcement training').split('|')[1]) {
+            if (!alreadyCompleted) {
+                setLawEnforcementTraining(i, 'true')
+
+                notify(getData(i, 'Name') + ' has just earned law enforcement training!')
+            }
+        } else {
+            if (alreadyCompleted) {
+                setLawEnforcementTraining(i, 'false')
+
+                notify(getData(i, 'Name') + ' has just lost law enforcement training!')
+            }
+        }
+        i++
+    }
+}, 5000)
 function getAllUsersNumber() {
     var i = 1;
     while (getCookie(i) != '') {
