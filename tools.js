@@ -614,6 +614,36 @@ function setOccupation(user, data) {
     }
     setCookie('Occupation.' + user, data)
 }
+if(getOccupationOptions() == ''){
+setOccupationOptions('none')
+}
+function getOccupationOptions(){
+return getCookie('occupationOptions')
+}
+function setOccupationOptions(data){
+setCookie('occupationOptions',data)
+}
+	function addOccupationOption(option){
+	setCookie('occupationOptions','|' + option + getOccupationOptions())
+	}
+function removeOccupationOption(option){
+var i = 0;
+	var toSet = ''
+	var removed  = false;
+	while(i < getOccupationOptions().split('|').length){
+	        if(option == getOccupationOptions().split('|')[i]){
+		      removed = true;
+		} else {
+		toSet = option + '|' + toSet;
+		}
+		i++
+		
+	}
+	
+	setOccupationOptions(toSet)
+	return removed
+
+}
 function getOccupation(user) {
     if (getCookie('Occupation.' + user) != '') {
         return getCookie('Occupation.' + user)
