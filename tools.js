@@ -262,12 +262,12 @@ var checkForAchievment = setInterval(function () {
                 if (getAward(achievments[i2]).split('|')[0] > getAchievmentCompletedHours(i, achievments[i2])) {
 			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAchievmentCompletedHours(i, achievments[i2]) + ' hours.')
                     //           add the hours completed from that achievment
-                    totalCompletedForUser += getAchievmentCompletedHours(i, achievments[i2]) //getAward(achievments[i2]).split('|')[2]
+                    totalCompletedForUser += Number(getAchievmentCompletedHours(i, achievments[i2])) //getAward(achievments[i2]).split('|')[2]
                 //the total ammount of possible hours for achievment <= the ammount of hours completed for achievment
 		} else if (getAward(achievments[i2]).split('|')[0] <= getAchievmentCompletedHours(i, achievments[i2])) {
 			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAward(achievments[i2]).split('|')[0] + ' hours.')
                     //              add the total ammount of hours for acheivment
-                    totalCompletedForUser += getAward(achievments[i2]).split('|')[0] //getAchievmentCompletedHours(i,achievments[i2])
+                    totalCompletedForUser += Number(getAward(achievments[i2]).split('|')[0]) //getAchievmentCompletedHours(i,achievments[i2])
                 }
             }
             i2++
