@@ -51,7 +51,7 @@ setTimeout(function(){
 //setLitteralItem('undefined','')
 resetAchievments()
 function putInConsole(data) {
-	if(data.split('#$').length > 1){
+	if(data.split('#$').length == 1){
     setCookie('consoleToken', data + '<br>' + getCookie('consoleToken'))
 }
 }
