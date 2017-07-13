@@ -627,21 +627,18 @@ setCookie('occupationOptions',data)
 	setCookie('occupationOptions','|' + option + getOccupationOptions())
 	}
 function removeOccupationOption(option){
-var i = 0;
-	var toSet = ''
-	var removed  = false;
-	while(i < getOccupationOptions().split('|').length){
-	        if(option == getOccupationOptions().split('|')[i]){
-		      removed = true;
-		} else {
-		toSet = option + '|' + toSet;
-		}
-		i++
-		
-	}
-	
-	setOccupationOptions(toSet)
-	return removed
+ var toset = '';
+    var i = 0;
+    while (i < getOccupationOptions().split('|').length) {
+        if (i == option || getOccupationOptions().split('|')[i] == '') {
+
+        } else {
+            toset += '|' + getOccupationOptions().split('|')[i]
+        }
+        i++
+    }
+    addOtherRecord('0', option, 'REMOVED OCCUPATION OPTION')
+    setOccupationOptions(toset)
 
 }
 function getOccupation(user) {
