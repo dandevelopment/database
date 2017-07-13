@@ -22,7 +22,7 @@ setTimeout(function(){
 	setCookie('AWARD_crime prevention', '25|Includes the basic 8 hours of crime prevention instruction as well as an additional 8 hours of training in areas such as neighborhood watch, home security survey, and bicycle registration. The award is presented to Explorers who participate in at least three departmental crime prevention projects with a total of 25 hours of activity.|AWARD')
 },3);setTimeout(function(){setCookie('AWARD_law enforcement service', '100|Includes assistance to the department in areas such as records, communications, data processing, etc. It recognizes an accumulation of 100 hours of service.|AWARD')
 },4);setTimeout(function(){setCookie('AWARD_emergency preparedness', '1|Certifies that the Explorer has received training in advanced first aid and CPR; has received training in how the post would assist in a disaster, such as flood, tornado, hurricane, etc.; and has participated in at least one civil defense or community-wide disaster training exercise.|AWARD')
-},5);setTimeout(function(){setCookie('AWARD_tenure', '1|Awarded to those Explorers who complete one year of satisfactory service to the post.|AWARD')
+},5);setTimeout(function(){setCookie('AWARD_tenure', '1|Awarded to those Exeplorers who complete one year of satisfactory service to the post.|AWARD')
 },6);setTimeout(function(){setCookie('AWARD_perfect attendance', '1|Recognizes attendance at each scheduled meeting of the post during thepreceding year.|AWARD')
 },7);setTimeout(function(){setCookie('AWARD_drug abuse prevention', '6|Acknowledges proficiency in drug abuse prevention training and service. Requires 6 hours of advanced training.|AWARD')
 },8);setTimeout(function(){setCookie('AWARD_eagle or gold award recognition', '1|May be worn by an Explorer who has achieved the Boy Scouts of America or Girl Scouts of the U.S.A. highest award and honor (the BSA Eagle or GSUSA Gold).|AWARD')
@@ -263,10 +263,12 @@ setInterval(function(){
 			}
 			i2++
 		}
+		logit('total completed before is ' + totalCompletedForUser)
 		totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i,'law enforcement training')
+		
 		if(totalCompletedForUser != 0 && totalCompletedForUser != NaN){
-			console.log('totalCompletedForUser is ' + totalCompletedForUser)
-		addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
+			logit('totalCompletedForUser is ' + totalCompletedForUser)
+		//addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
 		} else if(totalCompletedForUser == NaN){
 		console.log('totalCompletedForUser is ' + totalCompletedForUser)
 		}
