@@ -419,7 +419,7 @@ function getAchievmentCompletedHours(user, achievment) {
         var currentAchievment = getCookie(user + 'AchievementRecord' + i).split('|')
         var hoursOfCurrentAchievment = Number(currentAchievment[3])
         if (currentAchievment[2] == achievment) {
-		if(hoursOfCurrentAchievment.split('-').length != 2){
+		if(hoursOfCurrentAchievment.split('-').length == 2){
 	            nmb -= hoursOfCurrentAchievment.split('-')[1];
 		} else {
             nmb += hoursOfCurrentAchievment;
