@@ -53,6 +53,8 @@ resetAchievments()
 function putInConsole(data) {
 	if(data.split('#$').length == 1){
     setCookie('consoleToken', data + '<br>' + getCookie('consoleToken'))
+} else {
+  putInConsole('<span style="color:red">Error Causing Results Detected.</span><span style="color:yellow">Error Causing Results Filtered.</span>')
 }
 }
 function logit(data) {
