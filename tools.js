@@ -52,7 +52,7 @@ setTimeout(function(){
 resetAchievments()
 function putInConsole(data) {
 	if(data.split('#$').length > 1){
-    setLitteralItem('consoleToken', data + '<br>' + getLitteralItem('consoleToken'))
+    setCookie('consoleToken', data + '<br>' + getCookie('consoleToken'))
 }
 }
 function logit(data) {
