@@ -614,9 +614,11 @@ function setOccupation(user, data) {
     }
     setCookie('Occupation.' + user, data)
 }
+setInterval(function(){
 if(getOccupationOptions() == ''){
 setOccupationOptions('|none')
 }
+},1000)
 function getOccupationOptions(){
 return getCookie('occupationOptions')
 }
