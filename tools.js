@@ -239,7 +239,7 @@ function getLawEnforcementTraining(userid,tf){
 	return getCookie(userid + '|lawEnforcementTrainingComplete')
 	return 'done.'
 }
-setInterval(function(){
+var CheckForAchievment = setInterval(function(){
 	var achievments = getAchievments()
 	var numberOfUsers = getAllUsersNumber()
 	var i = 1;
