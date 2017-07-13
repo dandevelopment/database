@@ -835,7 +835,7 @@ function getNumberUsersAchievment(achievment) {
     return toReturn;
 }
 function getPercentUsersAchievment(achievment) {
-    return getNumberUsersAchievment(achievment) * Number(100 / getAllUsersNumber());
+    return getNumberUsersAchievment(achievment) * Number(100 / Number(getAllUsersNumber() - 1));
 }
 function getNumberUsersGraduated(college) {
     var i = 0;
