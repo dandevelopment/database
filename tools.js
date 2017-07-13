@@ -274,6 +274,7 @@ var checkForAchievment = setInterval(function () {
         }
         // set as the difference between what is already set as the hours for law enforcement training and the tally of what needs to be added
 	totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i, 'law enforcement training')
+	    logit('the difference is ' + totalCompletedForUser)
         //if there is no difference
         if (totalCompletedForUser != 0 && totalCompletedForUser != NaN) {
             logit('adding... ' + totalCompletedForUser)
