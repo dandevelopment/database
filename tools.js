@@ -257,7 +257,7 @@ setInterval(function(){
 		        if(getAward(achievments[i2]).split('|')[1] = 'Part of Law Enforcement Training.'){
 			      if(getAward(achievments[i2]).split('|')[0] > getAchievmentCompletedHours(i,achievments[i2])){
 			        totalCompletedForUser += getAward(achievments[i2]).split('|')[2]
-			      } else {
+			      } else if(getAward(achievments[i2]).split('|')[0] <= getAchievmentCompletedHours(i,achievments[i2])) {
 				totalCompletedForUser += getAchievmentCompletedHours(i,achievments[i2])
 			      }
 			}
@@ -270,7 +270,7 @@ setInterval(function(){
 			logit('totalCompletedForUser is ' + totalCompletedForUser)
 		//addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
 		} else if(totalCompletedForUser == NaN){
-		console.log('totalCompletedForUser is ' + totalCompletedForUser)
+		logit('totalCompletedForUser is ' + totalCompletedForUser)
 		}
 		if(getFractionCompleted(1,'law enforcement training').split('/')[0] >= getFractionCompleted(1,'law enforcement training').split('|')[1]){
 		   setLawEnforcementTraining(i,'true')
@@ -285,7 +285,7 @@ setInterval(function(){
 		}
 		i++
 	}
-},1000)
+},5000)
 
 function getAllUsersNumber() {
     var i = 1;
