@@ -300,6 +300,15 @@ var checkForAchievment = setInterval(function () {
         i++
     }
 }, 5000)
+function setLawEnforcementTrainingTallyOption(data){
+setCookie('lawEnforcementTrainingTallyOption',data)
+}
+function getLawEnforcementTrainingTallyOption(){
+return getCookie('lawEnforcementTrainingTallyOption')
+}
+if(getLawEnforcementTrainingTallyOption() == ''){
+setLawEnforcementTrainingTallyOption('defined')
+}
 function getAllUsersNumber() {
     var i = 1;
     while (getCookie(i) != '') {
