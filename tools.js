@@ -265,6 +265,7 @@ setInterval(function(){
 		}
 		totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i,'law enforcement training')
 		if(totalCompletedForUser != 0 && totalCompletedForUser != NaN){
+			console.log('totalCompletedForUser is ' + totalCompletedForUser)
 		addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
 		} else if(totalCompletedForUser == NaN){
 		console.log('totalCompletedForUser is ' + totalCompletedForUser)
