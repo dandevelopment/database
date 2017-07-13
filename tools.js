@@ -268,9 +268,13 @@ var checkForAchievment = setInterval(function () {
                 //the total ammount of possible hours for achievment <= the ammount of hours completed for achievment
 		} else if (getAward(achievments[i2]).split('|')[0] <= getAchievmentCompletedHours(i, achievments[i2])) {
 			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAward(achievments[i2]).split('|')[0] + ' hours.')
-                    //              add the total ammount of hours for acheivment
-                    totalCompletedForUser += Number(getAward(achievments[i2]).split('|')[0]) //getAchievmentCompletedHours(i,achievments[i2])
-                }
+                        if(getLawEnforcementTrainingTallyOption() == 'Overflow'){
+			    totalCompletedForUser += Number(getAchievmentCompletedHours(i, achievments[i2]))
+			}else{
+		            //              add the total ammount of hours for acheivment
+                            totalCompletedForUser += Number(getAward(achievments[i2]).split('|')[0]) //getAchievmentCompletedHours(i,achievments[i2])
+			}
+		}
             }
             i2++
         }
