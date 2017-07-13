@@ -615,7 +615,7 @@ function setOccupation(user, data) {
     setCookie('Occupation.' + user, data)
 }
 if(getOccupationOptions() == ''){
-setOccupationOptions('none')
+setOccupationOptions('|none')
 }
 function getOccupationOptions(){
 return getCookie('occupationOptions')
