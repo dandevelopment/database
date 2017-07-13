@@ -262,12 +262,12 @@ var checkForAchievment = setInterval(function () {
             if (getAward(achievments[i2]).split('|')[1] == 'Part of Law Enforcement Training.') {
                 //    total achievment hours                >         completed hours for user
                 if (getAward(achievments[i2]).split('|')[0] > getAchievmentCompletedHours(i, achievments[i2])) {
-			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAchievmentCompletedHours(i, achievments[i2]) + ' hours.')
+			//logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAchievmentCompletedHours(i, achievments[i2]) + ' hours.')
                     //           add the hours completed from that achievment
                     totalCompletedForUser += Number(getAchievmentCompletedHours(i, achievments[i2])) //getAward(achievments[i2]).split('|')[2]
                 //the total ammount of possible hours for achievment <= the ammount of hours completed for achievment
 		} else if (getAward(achievments[i2]).split('|')[0] <= getAchievmentCompletedHours(i, achievments[i2])) {
-			logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAward(achievments[i2]).split('|')[0] + ' hours.')
+			//logit('user has acheved ' + getFractionCompleted(i, achievments[i2]) + ' hours for ' + achievments[i2] + '. Adding ' + getAward(achievments[i2]).split('|')[0] + ' hours.')
                         if(getLawEnforcementTrainingTallyOption() == 'Overflow'){
 			    totalCompletedForUser += Number(getAchievmentCompletedHours(i, achievments[i2]))
 			}else{
@@ -278,13 +278,13 @@ var checkForAchievment = setInterval(function () {
             }
             i2++
         }
-	logit('doing the math... ' + totalCompletedForUser + ' - ' + getAchievmentCompletedHours(i, 'law enforcement training') + ' = ' + String(Number(totalCompletedForUser - getAchievmentCompletedHours(i, 'law enforcement training'))))
+	//logit('doing the math... ' + totalCompletedForUser + ' - ' + getAchievmentCompletedHours(i, 'law enforcement training') + ' = ' + String(Number(totalCompletedForUser - getAchievmentCompletedHours(i, 'law enforcement training'))))
         // set as the difference between what is already set as the hours for law enforcement training and the tally of what needs to be added
 	totalCompletedForUser = totalCompletedForUser - getAchievmentCompletedHours(i, 'law enforcement training')
-	    logit('the difference is ' + totalCompletedForUser)
+	    //logit('the difference is ' + totalCompletedForUser)
         //if there is no difference
         if (totalCompletedForUser != 0 && totalCompletedForUser != NaN) {
-            logit('adding... ' + totalCompletedForUser)
+            //logit('adding... ' + totalCompletedForUser)
             //add the difference of the tally found
             addAchievement('Auto law enforcement training achievment completer', i, ['law enforcement training'], totalCompletedForUser)
         } else if (totalCompletedForUser == NaN) {
