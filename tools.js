@@ -307,7 +307,7 @@ function getLawEnforcementTrainingTallyOption(){
 return getCookie('lawEnforcementTrainingTallyOption')
 }
 if(getLawEnforcementTrainingTallyOption() == ''){
-setLawEnforcementTrainingTallyOption('defined')
+setLawEnforcementTrainingTallyOption('Defined')
 }
 function getAllUsersNumber() {
     var i = 1;
