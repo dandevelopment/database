@@ -136,6 +136,26 @@ function reloadPage() {
 function runjs(torun) {
     eval(torun)
 }
+function deleteMetadata(){
+	setCookie('consoleToken', '');
+	var i = 0;
+	var allCookies = getCookies2();
+	while(i < allCookies.length){
+		if(getCookie(allCookies[i].split('#$')[1]) == ''){
+			removeLitteralItem(allCookies[i].split('#$')[1])
+		}
+		i++
+	}
+	i = 0;
+	var allRecords = getAllRecords()
+	while(allRecords.length > i){
+	        if(allRecords[i].split('#$')[1].split('|')[1] == 'OtherRecord'){
+			removeLitteralItem(allRecords[i].split('#$')[1])
+		}
+		i++
+	}
+}
+
 function addScroll(yc) {
     //alert('called')
     var i = 1;
