@@ -408,8 +408,8 @@ setTimeout(function(){notify(message)},6000)
     getit('messageNow').style.display = 'block'
 	$("#messageNow").fadeOut(1);
     $("#messageNow").fadeIn(900);
-    clearTimeout(notifyTimeout)
-	notifyTimeout = setTimeout(function () {
+    //clearTimeout(notifyTimeout)
+	setTimeout(function () {
         $("#messageNow").fadeOut(900);
 	    setTimeout(function(){getit('messageNow').style.display = 'none'},900)
     }, 6000)
