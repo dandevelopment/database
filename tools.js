@@ -647,6 +647,7 @@ setCookie('occupationOptions',data)
 }
 	function addOccupationOption(option){
 	setCookie('occupationOptions','|' + option + getOccupationOptions())
+		addOtherRecord('0', option, 'ADDED OCCUPATION OPTION')
 	}
 function removeOccupationOption(option){
  var toset = '';
