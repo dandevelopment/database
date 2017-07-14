@@ -136,6 +136,24 @@ function reloadPage() {
 function runjs(torun) {
     eval(torun)
 }
+function getTotalStorageUsed(){
+var total = 0;
+for(var x in localStorage) {
+  var amount = (localStorage[x].length * 2) / 1024 / 1024;
+  total += amount;
+  //console.log( x + " = " + amount.toFixed(2) + " MB");
+}
+return total.toFixed(2) + " MB";
+}
+function getTotalStorageUsedNumber(){
+var total = 0;
+for(var x in localStorage) {
+  var amount = (localStorage[x].length * 2) / 1024 / 1024;
+  total += amount;
+  //console.log( x + " = " + amount.toFixed(2) + " MB");
+}
+return total.toFixed(2);
+}
 function deleteMetadata(){
 	setCookie('consoleToken', '');
 	var i = 0;
