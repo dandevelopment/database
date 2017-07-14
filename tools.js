@@ -1503,7 +1503,10 @@ function isNotArchivedOrDeleted(ID) {
         return false
     }
 }
-
+function restoreData(ID){
+setCookie(ID, getCookie(ID).split('.')[Number(getCookie(ID).split('.').length - 1)])
+	return 'restored.'
+}
 function deleteData(ID) {
     setCookie(ID, 'deleted.' + getCookie(ID))
     return 'deleted.'
