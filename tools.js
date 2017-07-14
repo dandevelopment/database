@@ -301,7 +301,7 @@ var checkForAchievment = setInterval(function () {
     while (i < numberOfUsers) {
         var i2 = 0;
         var alreadyCompleted = ''
-        if (getFractionCompleted(1, 'law enforcement training').split('/')[0] >= getFractionCompleted(1, 'law enforcement training').split('/')[1]) {
+        if (getFractionCompleted(i, 'law enforcement training').split('/')[0] >= getFractionCompleted(i, 'law enforcement training').split('/')[1]) {
             alreadyCompleted = true
         } else {
             alreadyCompleted = false
