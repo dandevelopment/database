@@ -867,7 +867,7 @@ function getPercentUsersAchievment(achievment) {
     return getNumberUsersAchievment(achievment) * Number(100 / Number(getAllUsersNumber() - 1));
 }
 function getNumberUsersGraduated(college) {
-    var i = 0;
+    var i = 1;
     var i2 = 0;
     while (i < getAllUsersNumber()) {
         if (getCollege(i) == college) {
@@ -878,10 +878,10 @@ function getNumberUsersGraduated(college) {
     return i2;
 }
 function getPercentUsersGraduated(college) {
-    return getNumberUsersGraduated(college) * Number(100 / getAllUsersNumber());
+    return getNumberUsersGraduated(college) * Number(100 / getAllUsersNumber() - 1);
 }
 function getNumberUsersOccupation(occupation) {
-    var i = 0;
+    var i = 1;
     var i2 = 0;
     while (i < getAllUsersNumber()) {
         if (getOccupation(i) == occupation) {
@@ -892,7 +892,7 @@ function getNumberUsersOccupation(occupation) {
     return i2;
 }
 function getPercentUsersOccupation(occupation) {
-    return getNumberUsersOccupation(occupation) * Number(100 / getAllUsersNumber());
+    return getNumberUsersOccupation(occupation) * Number(100 / getAllUsersNumber() - 1);
 }
 function getNumberUsersShirtSize(shirtSize) {
     var i = 0;
