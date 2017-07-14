@@ -878,7 +878,7 @@ function getNumberUsersGraduated(college) {
     return i2;
 }
 function getPercentUsersGraduated(college) {
-    return getNumberUsersGraduated(college) * Number(100 / getAllUsersNumber() - 1);
+    return getNumberUsersGraduated(college) * Number(100 / Number(getAllUsersNumber() - 1));
 }
 function getNumberUsersOccupation(occupation) {
     var i = 1;
@@ -892,7 +892,7 @@ function getNumberUsersOccupation(occupation) {
     return i2;
 }
 function getPercentUsersOccupation(occupation) {
-    return getNumberUsersOccupation(occupation) * Number(100 / getAllUsersNumber() - 1);
+    return getNumberUsersOccupation(occupation) * Number(100 / Number(getAllUsersNumber() - 1));
 }
 function getNumberUsersShirtSize(shirtSize) {
     var i = 0;
