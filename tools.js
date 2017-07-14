@@ -61,7 +61,7 @@ function logit(data) {
     putInConsole(String(data))
     console.log(data)
 }
-
+var storageLimit = '10MB'//https://www.sitepoint.com/html5-local-storage-revisited/
 var searchedForCookies = false;
 var achl = [];
 var i45 = 1;
@@ -153,6 +153,19 @@ for(var x in localStorage) {
   //console.log( x + " = " + amount.toFixed(2) + " MB");
 }
 return total.toFixed(2);
+}
+function getStorageLimit(){
+return storageLimit;
+}
+function getStorageLimitNumber(){
+return storageLimit.split('MB')[0];
+}
+function getStorageUsedFraction(){
+return getTotalStorageUsedNumber() + '/' + getStorageLimitNumber()
+}
+
+function getStorageUsedPercent(){
+return Number(getTotalStorageUsedNumber() / getStorageLimitNumber()) * 100
 }
 function deleteMetadata(){
 	setCookie('consoleToken', '');
