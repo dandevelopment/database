@@ -379,9 +379,12 @@ function getAllUsersNumber() {
 //return getit('elementF').innerHTML
 //  },1000)
 
-
+var notifyTimeout = setTimeout(function(){},1)
+var newE = document.createElement('div');
+newE.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;display:none"></div>'
+document.body.insertBefore(newE, document.body.childNodes[0])
 function notify(message) {
-    var newE = document.createElement('div');
+    
     /*
     newE.style.width = '30%';
     newE.style.backgroundColor = '#4f4f4f';
@@ -394,15 +397,23 @@ function notify(message) {
     <audio controls autoplay style="display:none;">  <source src="awareness.ogg" type="audio/ogg"></audio>
     newE.style.right = '10px';*/
 
-
-    newE.innerHTML = ' <audio controls autoplay style="display:none;">  <source src="awareness.ogg" type="audio/ogg"></audio><div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>';
-    document.body.insertBefore(newE, document.body.childNodes[0])
-    //document.body.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>' + document.body.innerHTML;
-    $("#messageNow").fadeOut(1);
+if(getit('messageNow').style.display == 'block'){
+setTimeout(function(){notify(message)},6000)
+	return "waiting..."
+}
+    getit('messageNow').innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;"><audio controls autoplay style="display:none;">  <source src="awareness.ogg" type="audio/ogg"></audio><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div>';
+    
+//document.body.insertBefore(newE, document.body.childNodes[0])
+    //document.body.innerHTML = '<div id="messageNow" style="position:fixed;bottom:0px;right:0;"><div style="width:150px;background-color:#3a3a3a;border-radius:10px;color:white;boxShadow:0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;margin-right:10px;margin-bottom:10px;"><p style="">' + message + '</p></div></div>' + document.body.innerHTML;
+    getit('messageNow').style.display = 'block'
+	$("#messageNow").fadeOut(1);
     $("#messageNow").fadeIn(900);
-    setTimeout(function () {
+    clearTimeout(notifyTimeout)
+	notifyTimeout = setTimeout(function () {
         $("#messageNow").fadeOut(900);
+	    setTimeout(function(){getit('messageNow').style.display = 'none'},900)
     }, 6000)
+	
 }
 function addEventRecord(eventName) {
 
