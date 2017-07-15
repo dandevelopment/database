@@ -103,6 +103,7 @@ function firstTime() {
         return true;
     }
 }
+
 if (getCollegeOptions() == '') {
     addCollegeOption('none')
 }
@@ -112,6 +113,16 @@ setCookie('lastDataEditedToken', id + '|' + name + '|' + timeLastEdited + '|' + 
 }
 function getNewLoadData(){
 return getCookie('lastDataEditedToken')
+}
+if(getLogin() != "true"&& getCookie('bypasn') == ''&& document.location.href.split('/')[Number(document.location.href.split('/').length) - 1] != 'welcome.html'){
+notify('You have not completed the setup. Would you like to upload some data now? <div onclick="inq()" class="button">no</div><div onclick="inqy()" class="button">yes</div>')
+}
+function inq(){
+setCookie('bypasn','true')
+	notify('If you change your mind, go to settings.')
+}
+function inqy(){
+        document.location.href = 'welcome.html'
 }
 function setAllDataTo(data){
 var eachCookie = String(data)
