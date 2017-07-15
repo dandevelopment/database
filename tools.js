@@ -115,7 +115,8 @@ function getNewLoadData(){
 return getCookie('lastDataEditedToken')
 }
 if(getLogin() != "true"&& getCookie('bypasn') == ''&& document.location.href.split('/')[Number(document.location.href.split('/').length) - 1] != 'welcome.html'){
-notify('You have not completed the setup. Would you like to upload some data now? <div onclick="inq()" class="button">no</div><div onclick="inqy()" class="button">yes</div>')
+setTimeout(function(){notify('You have not completed the setup. Would you like to upload some data now? <div onclick="inq()" class="button">no</div><div onclick="inqy()" class="button">yes</div>')
+		     },100)
 }
 function inq(){
 setCookie('bypasn','true')
