@@ -106,7 +106,10 @@ function firstTime() {
 if (getCollegeOptions() == '') {
     addCollegeOption('none')
 }
-
+function setNewLoadData(id, timeLastEdited, lastIp, name){
+setCookie('lastDataEditedToken', id + '|' + name + '|' + timeLastEdited + '|' + lastIp)
+	return 'done'
+}
 /*
 window.onload = function () { 
   window.onscroll = function () { 
