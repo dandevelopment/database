@@ -166,7 +166,7 @@ return getTotalStorageUsedNumber() + '/' + getStorageLimitNumber()
 function setLogin(tf){
 setCookie('loginToken',tf)
 }
-getLogin(){
+function getLogin(){
 return getCookie('loginToken')
 }
 function getStorageUsedPercent(){
