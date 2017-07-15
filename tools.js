@@ -107,8 +107,11 @@ if (getCollegeOptions() == '') {
     addCollegeOption('none')
 }
 function setNewLoadData(id, timeLastEdited, lastIp, name){
-setCookie('lastDataEditedToken', id + '|' + name + '|' + timeLastEdited + '|' + lastIp)
+setCookie('lastDataEditedToken', id + '|' + name + '|' + timeLastEdited + '|' + lastIp + '|' + getFullTime())
 	return 'done'
+}
+function getNewLoadData(){
+return getCookie('lastDataEditedToken')
 }
 /*
 window.onload = function () { 
