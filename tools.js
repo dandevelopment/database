@@ -431,7 +431,7 @@ function getAllUsersNumber() {
 
 var notifyTimeout = setTimeout(function(){},1)
 var newE = document.createElement('div');
-newE.innerHTML = '<div id="messageNow" style="position:absolute;bottom:0px;right:0;display:none"></div>'
+newE.innerHTML = '<div id="messageNow" style="position:fixed;bottom:0px;right:0;display:none"></div>'
 document.body.insertBefore(newE, document.body.childNodes[0])
 function notify(message) {
     
