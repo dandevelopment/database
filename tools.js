@@ -163,7 +163,12 @@ return storageLimit.split('MB')[0];
 function getStorageUsedFraction(){
 return getTotalStorageUsedNumber() + '/' + getStorageLimitNumber()
 }
-
+function setLogin(tf){
+setCookie('loginToken',tf)
+}
+getLogin(){
+return getCookie('loginToken')
+}
 function getStorageUsedPercent(){
 return Number(getTotalStorageUsedNumber() / getStorageLimitNumber()) * 100
 }
