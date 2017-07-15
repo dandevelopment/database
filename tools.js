@@ -136,7 +136,7 @@ var toreturn = '';
                             i782++
                         }
                     } else {
-                        setTimeout(function () { toreturn = 'File not readable for userdata.' }, 5000)
+                         toreturn = 'File not readable for userdata.'
                     }
 	return toreturn
 }
