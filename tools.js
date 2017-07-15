@@ -114,7 +114,7 @@ setCookie('lastDataEditedToken', id + '|' + name + '|' + timeLastEdited + '|' + 
 function getNewLoadData(){
 return getCookie('lastDataEditedToken')
 }
-if(getLogin() != "true"&& getCookie('bypasn') == ''&& document.location.href.split('/')[Number(document.location.href.split('/').length) - 1] != 'welcome.html'){
+if(getLogin() != "true"&& getCookie('bypasn') == ''&& document.location.href.split('/')[Number(document.location.href.split('/').length) - 1] == 'index.html'){
 setTimeout(function(){notify('You have not completed the setup. Would you like to upload some data now? <div onclick="inq()" class="button">no</div><div onclick="inqy()" class="button">yes</div>')
 		     },100)
 }
