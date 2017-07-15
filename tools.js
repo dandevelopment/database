@@ -113,6 +113,33 @@ setCookie('lastDataEditedToken', id + '|' + name + '|' + timeLastEdited + '|' + 
 function getNewLoadData(){
 return getCookie('lastDataEditedToken')
 }
+function setAllDataTo(data){
+var eachCookie = String(data)
+                    //setLitteralItem('UPLOADING CHANGE FILE...',getit('elementF').innerHTML)
+                    //typeof(console.log(eachCookie))
+                    //eachCookie = //getLitteralItem('UPLOADING CHANGE FILE...')
+                    //console.log(eachCookie)
+var toreturn = '';
+	eachCookie = eachCookie.split('@#$!!');
+                    //console.log(eachCookie)
+                    if (eachCookie.length > 1) {
+                        resetAllData()
+                        //console.log('EACHCOOKIE2: ' + eachCookie.length)
+                        //console.log('EACHCOOKIE:' + eachCookie)
+                        //var eachCookie = file[0].split('Ｏ')
+                        var i782 = 0;
+                        toreturn = 'Reading file and integrating data...'; 
+			    setTimeout(function(){document.location.href = 'manage.html'},2000)
+                        while (eachCookie.length > i782) {
+                            setLitteralItem(eachCookie[i782].split('#$')[1], eachCookie[i782])
+                            //console.log('adding ' + eachCookie[i782])
+                            i782++
+                        }
+                    } else {
+                        setTimeout(function () { toreturn = 'File not readable for userdata.' }, 5000)
+                    }
+	return toreturn
+}
 /*
 window.onload = function () { 
   window.onscroll = function () { 
