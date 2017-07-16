@@ -230,7 +230,7 @@ function deleteMetadata(){
 	i = 0;
 	var allRecords = getAllRecords()
 	while(allRecords.length > i){
-	        if(allRecords[i].split('#$')[1].split('|')[1] == 'OtherRecord'){
+	        if(allRecords[i].split('#$')[1].split('|')[1] == 'OtherRecord'||allRecords[i].split('#$')[1].split('|')[1] == 'UserRecord'){
 			removeLitteralItem(allRecords[i].split('#$')[1])
 		}
 		i++
