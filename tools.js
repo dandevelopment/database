@@ -391,7 +391,7 @@ var checkForAchievment = setInterval(function () {
         } else if (totalCompletedForUser == NaN) {
             //logit('totalCompletedForUser is ' + totalCompletedForUser)
         }
-        if (getFractionCompleted(1, 'law enforcement training').split('/')[0] >= getFractionCompleted(1, 'law enforcement training').split('|')[1]) {
+        if (getFractionCompleted(i, 'law enforcement training').split('/')[0] >= getFractionCompleted(i, 'law enforcement training').split('/')[1]) {
             if (!alreadyCompleted) {
                 setLawEnforcementTraining(i, 'true')
 
