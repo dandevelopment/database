@@ -236,7 +236,9 @@ function deleteMetadata(){
 		i++
 	}
 }
-
+if(getCookie('soundO')==''){
+setCookie('soundO','true')
+}
 function addScroll(yc) {
     //alert('called')
     var i = 1;
