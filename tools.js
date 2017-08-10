@@ -90,7 +90,7 @@ document.body.onload = function () {
     } catch (e) {
       s.text = code;
       document.body.appendChild(s);
-    }*/
+    }
 	
 	var s = document.createElement('script');
     s.type = 'text/javascript';
@@ -102,7 +102,7 @@ document.body.onload = function () {
       s.text = code;
       document.body.appendChild(s);
     }
-	
+	*/
     if (getit('loadingHider') != null) {
         getit('loadingTag').style.display = 'none'
         getit('loaderH').style.display = 'none'
