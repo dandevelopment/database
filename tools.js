@@ -1031,7 +1031,7 @@ function getNumberUsersShirtSize(shirtSize) {
     return i2;
 }
 function getPercentUsersShirtSize(shirtSize) {
-    return getNumberUsersShirtSize(shirtSize) * Number(100 / getAllUsersNumber());
+    return getNumberUsersShirtSize(shirtSize) * Number(100 / getAllUsersNumber() - 1);
 }
 function getNumberUsersPantSize(pantSize) {
     var i = 0;
@@ -1045,7 +1045,7 @@ function getNumberUsersPantSize(pantSize) {
     return i2;
 }
 function getPercentUsersPantSize(pantSize) {
-    return getNumberUsersPantSize(pantSize) * Number(100 / getAllUsersNumber());
+    return getNumberUsersPantSize(pantSize) * Number(100 / getAllUsersNumber() - 1);
 }
 function getNumberUsersHatSize(hatSize) {
     var i = 0;
@@ -1059,7 +1059,7 @@ function getNumberUsersHatSize(hatSize) {
     return i2;
 }
 function getPercentUsersHatSize(hatSize) {
-    return getNumberUsersHatSize(hatSize) * Number(100 / getAllUsersNumber());
+    return getNumberUsersHatSize(hatSize) * Number(100 / getAllUsersNumber() - 1);
 }
 function getNumberHoursintheProgram() {
     var i = 0;
