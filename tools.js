@@ -198,7 +198,7 @@ var allStrings = '';
                 allStrings += window.localStorage[key];
             }
         }
-        return allStrings ? ((3 + ((allStrings.length*16)/(8*1024)))/ 1000) /*+ ' MB'*/ : /*'Empty (0 KB)'*/ 0;
+        return allStrings ? ((3 + ((allStrings.length*16)/(8*1024)))/ 1000).toFixed(2) /*+ ' MB'*/ : /*'Empty (0 KB)'*/ 0;
     
 }
 
