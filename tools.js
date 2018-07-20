@@ -188,20 +188,18 @@ function runjs(torun) {
     eval(torun)
 }
 function getTotalStorageUsed(){
-var total = 0;
-for(var x in localStorage) {
-  var amount = (localStorage[x].length * 2) / 1024 / 1024;
-  total += amount;
-  //console.log( x + " = " + amount.toFixed(2) + " MB");
-}
-return total.toFixed(2) + " MB";
+
+return getTotalStorageUsedNumber() + " MB";
 }
 function getTotalStorageUsedNumber(){
-var total = 0;
-for(var x in localStorage) {
-  var amount = (localStorage[x].length * 2) / 1024 / 1024;
-  total += amount;
-  //console.log( x + " = " + amount.toFixed(2) + " MB");
+var allStrings = '';
+        for(var key in window.localStorage){
+            if(window.localStorage.hasOwnProperty(key)){
+                allStrings += window.localStorage[key];
+            }
+        }
+        return allStrings ? ((3 + ((allStrings.length*16)/(8*1024)))/ 1000) /*+ ' MB'*/ : /*'Empty (0 KB)'*/ 0;
+    
 }
 return total.toFixed(2);
 }
