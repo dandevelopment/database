@@ -201,8 +201,7 @@ var allStrings = '';
         return allStrings ? ((3 + ((allStrings.length*16)/(8*1024)))/ 1000) /*+ ' MB'*/ : /*'Empty (0 KB)'*/ 0;
     
 }
-return total.toFixed(2);
-}
+
 function getStorageLimit(){
 return storageLimit;
 }
